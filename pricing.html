@@ -18,6 +18,29 @@
     .comparison-table th { font-family:var(--font-display); }
     .check-icon { color:var(--mint-dark); font-size:1rem; }
     .cross-icon { color:var(--gray-200); font-size:1rem; }
+    /* Cake Packages: equal-height cards + bottom-aligned buttons */
+    section[aria-labelledby="main-pricing-heading"] .grid-3 { align-items:stretch; }
+    section[aria-labelledby="main-pricing-heading"] .pricing-card { display:flex; flex-direction:column; height:100%; transform:none; padding:2.25rem 2rem; }
+    section[aria-labelledby="main-pricing-heading"] .pricing-card:hover { transform:translateY(-8px); }
+    section[aria-labelledby="main-pricing-heading"] .pricing-card .pricing-name { margin-bottom:0.75rem; }
+    section[aria-labelledby="main-pricing-heading"] .pricing-card .pricing-amount { margin-bottom:0.35rem; }
+    section[aria-labelledby="main-pricing-heading"] .pricing-card .pricing-divider { margin:1.25rem 0; }
+    section[aria-labelledby="main-pricing-heading"] .pricing-card .pricing-features { flex:1; margin-bottom:1.75rem; }
+    section[aria-labelledby="main-pricing-heading"] .pricing-card .btn { margin-top:auto; width:100%; justify-content:center; }
+    /* Save More: equal-height bundle cards + bottom-aligned buttons */
+    section[aria-labelledby="bundles-pricing-heading"] .grid-3 { align-items:stretch; }
+    .bundle-eq { display:flex; flex-direction:column; height:100%; }
+    .bundle-eq ul { flex:1; }
+    .bundle-eq .btn { margin-top:auto; width:100%; justify-content:center; }
+    .bundle-toplabel { font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; line-height:1.5; }
+    /* Compare Plans: strong red X marks */
+    .comparison-table .cross-icon { color:#DC3545; font-size:1.1rem; font-weight:700; }
+    .comparison-table .pricing-x { background:rgba(220,53,69,0.12); color:#DC3545; }
+    /* Extras table: filled, non-collapsing price columns */
+    .addon-table { table-layout:fixed; }
+    .addon-table th:nth-child(n+2), .addon-table td:nth-child(n+2) { min-width:130px; white-space:nowrap; }
+    /* CTA badge icon */
+    .cta-badge-icon { margin:0 auto 1.5rem; width:88px; height:88px; border-radius:50%; background:rgba(255,240,201,0.18); border:1.5px solid rgba(255,240,201,0.5); display:flex; align-items:center; justify-content:center; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); box-shadow:0 8px 30px rgba(0,0,0,0.25); }
   </style>
 </head>
 <body>
@@ -88,7 +111,7 @@
         <div class="pricing-tier"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg> Sweetie</div>
         <div class="pricing-name">Classic Joy</div>
         <div class="pricing-amount"><span class="pricing-currency">$</span><span class="pricing-price">149</span></div>
-        <p style="font-size:0.875rem; color:var(--gray-300); margin-bottom:1.5rem;">Serves 15–25 guests</p>
+        <p style="font-size:0.875rem; color:var(--gray-300); margin-bottom:0;">Serves 15–25 guests</p>
         <div class="pricing-divider"></div>
         <ul class="pricing-features">
           <li class="pricing-feature"><div class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>1-tier custom cake (6")</li>
@@ -108,7 +131,7 @@
         <div class="pricing-tier"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l3-9 5 6 3-9 3 9 3-9 3 9"/><path d="M3 17h18v2H3z"/></svg> Royale</div>
         <div class="pricing-name">Dream Celebration</div>
         <div class="pricing-amount"><span class="pricing-currency">$</span><span class="pricing-price">289</span></div>
-        <p style="font-size:0.875rem; color:rgba(255,255,255,0.6); margin-bottom:1.5rem;">Serves 35–55 guests</p>
+        <p style="font-size:0.875rem; color:rgba(255,255,255,0.7); margin-bottom:0;">Serves 35–55 guests</p>
         <div class="pricing-divider"></div>
         <ul class="pricing-features">
           <li class="pricing-feature"><div class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>3-tier masterpiece (6+8+10")</li>
@@ -127,7 +150,7 @@
         <div class="pricing-tier"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.7 7.3L12 22l9.3-14.7M2.7 7.3L7 2h10l4.3 5.3M2.7 7.3h18.6"/><path d="M7 2l5 5.3L17 2"/><path d="M12 7.3L7 2"/></svg> Diamond</div>
         <div class="pricing-name">Grand Extravaganza</div>
         <div class="pricing-amount"><span class="pricing-currency">$</span><span class="pricing-price">499</span></div>
-        <p style="font-size:0.875rem; color:var(--gray-300); margin-bottom:1.5rem;">Serves 80–120 guests</p>
+        <p style="font-size:0.875rem; color:var(--gray-300); margin-bottom:0;">Serves 80–120 guests</p>
         <div class="pricing-divider"></div>
         <ul class="pricing-features">
           <li class="pricing-feature"><div class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>5-tier showstopper</li>
@@ -155,7 +178,7 @@
       <h2 class="section-title" id="addon-pricing-heading">Add-On <span class="gradient-text">Pricing</span></h2>
     </div>
     <div style="overflow-x:auto;">
-      <table style="width:100%; border-collapse:separate; border-spacing:0; background:var(--white); border-radius:var(--radius-xl); box-shadow:var(--shadow-md); overflow:hidden;">
+      <table class="addon-table" style="width:100%; border-collapse:separate; border-spacing:0; background:var(--white); border-radius:var(--radius-xl); box-shadow:var(--shadow-md); overflow:hidden;">
         <thead>
           <tr style="background:linear-gradient(135deg, var(--plum), var(--lavender-dark));">
             <th style="padding:1.25rem 1.5rem; text-align:left; color:var(--buttercream); font-family:var(--font-display);" scope="col">Add-On Item</th>
@@ -167,14 +190,15 @@
         <tbody>
           <tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:1.25rem 1.5rem; font-weight:600; color:var(--plum);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2c2 0 3 1 3 2.5 0 1-1 2-1 3l1 1h-1c1 0 2 1 2 2H8c0-1 1-2 2-2H9l1-1c0-1-1-2-1-3C9 3 10 2 12 2z"/><path d="M7.5 10.5l-1.5 9h12l-1.5-9"/></svg> Matching Cupcakes</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);">$65 / 12</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);">$120 / 24</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);">$220 / 48</td></tr>
           <tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:1.25rem 1.5rem; font-weight:600; color:var(--plum);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg> Sugar Cookie Pack</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);">$55 / 12</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);">$100 / 24</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);">$185 / 48</td></tr>
-          <tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:1.25rem 1.5rem; font-weight:600; color:var(--plum);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z"/><path d="M4 14h16"/><path d="M8 10V6"/><path d="M16 10V6"/><path d="M12 10V4"/><path d="M8 4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2"/><path d="M6 20v2M18 20v2"/></svg> Smash Cake Mini</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);" colspan="3">$45 per smash cake</td></tr>
-          <tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:1.25rem 1.5rem; font-weight:600; color:var(--plum);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg> Edible Photo Print</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);" colspan="3">$25 per print</td></tr>
-          <tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:1.25rem 1.5rem; font-weight:600; color:var(--plum);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/><path d="M4.5 16.5l.75 2.25L7.5 19.5l-2.25.75L4.5 22.5l-.75-2.25L1.5 19.5l2.25-.75L4.5 16.5z"/><path d="M19.5 3l.75 2.25L22.5 6l-2.25.75L19.5 9l-.75-2.25L16.5 6l2.25-.75L19.5 3z"/></svg> Candy & Drip Pack</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);" colspan="3">$35 per cake</td></tr>
-          <tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:1.25rem 1.5rem; font-weight:600; color:var(--plum);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> Luxury Gift Packaging</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);" colspan="3">$20 per order</td></tr>
+          <tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:1.25rem 1.5rem; font-weight:600; color:var(--plum);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z"/><path d="M4 14h16"/><path d="M8 10V6"/><path d="M16 10V6"/><path d="M12 10V4"/><path d="M8 4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2"/><path d="M6 20v2M18 20v2"/></svg> Smash Cake Mini</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);">$45</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);">$45</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);">$45</td></tr>
+          <tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:1.25rem 1.5rem; font-weight:600; color:var(--plum);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg> Edible Photo Print</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);">$25</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);">$25</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);">$25</td></tr>
+          <tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:1.25rem 1.5rem; font-weight:600; color:var(--plum);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/><path d="M4.5 16.5l.75 2.25L7.5 19.5l-2.25.75L4.5 22.5l-.75-2.25L1.5 19.5l2.25-.75L4.5 16.5z"/><path d="M19.5 3l.75 2.25L22.5 6l-2.25.75L19.5 9l-.75-2.25L16.5 6l2.25-.75L19.5 3z"/></svg> Candy & Drip Pack</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);">$35</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);">$35</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);">$35</td></tr>
+          <tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:1.25rem 1.5rem; font-weight:600; color:var(--plum);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> Luxury Gift Packaging</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);">$20</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);">$20</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);">$20</td></tr>
           <tr><td style="padding:1.25rem 1.5rem; font-weight:600; color:var(--plum);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Delivery (beyond 10km)</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);">$25 (10–20km)</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);">$45 (20–50km)</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);">POA (50km+)</td></tr>
         </tbody>
       </table>
     </div>
+    <p style="text-align:center; color:var(--gray-400); font-size:0.875rem; margin-top:1.5rem;">Smash cake ($45), photo print ($25), candy & drip ($35) and gift packaging ($20) are flat-rate — same price for any size.</p>
   </div>
 </section>
 
@@ -186,7 +210,8 @@
       <h2 class="section-title" id="bundles-pricing-heading">Bundle & <span class="gradient-text">Save Up to 20%</span></h2>
     </div>
     <div class="grid-3 stagger-children">
-      <div style="background:var(--white); border-radius:var(--radius-xl); padding:2.5rem; box-shadow:var(--shadow-md); border:2px solid var(--gray-100); text-align:center;">
+      <div class="bundle-eq" style="background:var(--white); border-radius:var(--radius-xl); padding:2.5rem; box-shadow:var(--shadow-md); border:2px solid var(--gray-100); text-align:center;">
+        <div class="bundle-toplabel" aria-hidden="true" style="visibility:hidden;">Bundle</div>
         <div style="margin-bottom:1rem;" aria-hidden="true" class="icon-coral"><svg class="icon icon-2xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></div>
         <h4 style="margin-bottom:0.5rem;">Sweetie Bundle</h4>
         <div style="font-family:var(--font-display); font-size:2.5rem; font-weight:800; color:var(--coral); margin-bottom:0.5rem;">$199</div>
@@ -200,8 +225,8 @@
         <a href="contact.html" class="btn btn-secondary" style="width:100%; justify-content:center;">Order Bundle</a>
       </div>
 
-      <div style="background:linear-gradient(135deg, var(--plum), var(--lavender-dark)); border-radius:var(--radius-xl); padding:2.5rem; box-shadow:var(--shadow-xl); text-align:center; transform:scale(1.05);">
-        <div style="font-size:0.75rem; font-weight:700; color:var(--buttercream); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem;"><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> Best Value</div>
+      <div class="bundle-eq" style="background:linear-gradient(135deg, var(--plum), var(--lavender-dark)); border-radius:var(--radius-xl); padding:2.5rem; box-shadow:var(--shadow-xl); text-align:center;">
+        <div class="bundle-toplabel" style="color:var(--buttercream);"><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> Best Value</div>
         <div style="margin-bottom:1rem;" aria-hidden="true" class="icon-gold"><svg class="icon icon-2xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l3-9 5 6 3-9 3 9 3-9 3 9"/><path d="M3 17h18v2H3z"/></svg></div>
         <h4 style="color:white; margin-bottom:0.5rem;">Dream Bundle</h4>
         <div style="font-family:var(--font-display); font-size:2.5rem; font-weight:800; color:var(--buttercream); margin-bottom:0.5rem;">$389</div>
@@ -216,7 +241,8 @@
         <a href="contact.html" class="btn btn-featured">Order Bundle <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       </div>
 
-      <div style="background:var(--white); border-radius:var(--radius-xl); padding:2.5rem; box-shadow:var(--shadow-md); border:2px solid var(--gray-100); text-align:center;">
+      <div class="bundle-eq" style="background:var(--white); border-radius:var(--radius-xl); padding:2.5rem; box-shadow:var(--shadow-md); border:2px solid var(--gray-100); text-align:center;">
+        <div class="bundle-toplabel" aria-hidden="true" style="visibility:hidden;">Bundle</div>
         <div style="margin-bottom:1rem;" aria-hidden="true" class="icon-lavender"><svg class="icon icon-2xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.7 7.3L12 22l9.3-14.7M2.7 7.3L7 2h10l4.3 5.3M2.7 7.3h18.6"/><path d="M7 2l5 5.3L17 2"/><path d="M12 7.3L7 2"/></svg></div>
         <h4 style="margin-bottom:0.5rem;">Grand Bundle</h4>
         <div style="font-family:var(--font-display); font-size:2.5rem; font-weight:800; color:var(--coral); margin-bottom:0.5rem;">$649</div>
@@ -281,7 +307,7 @@
       <div class="section-badge"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Pricing FAQ</div>
       <h2 class="section-title" id="pricing-faq-heading">Pricing <span class="gradient-text">Questions</span></h2>
     </div>
-    <div class="faq-item open"><div class="faq-question" tabindex="0" role="button" aria-expanded="true">Are the prices shown final? <div class="faq-icon" aria-hidden="true">+</div></div><div class="faq-answer">The prices shown are starting prices. Your final quote depends on the complexity of your design, number of tiers, special ingredients and any add-ons. We always provide a detailed, itemised quote before you commit — no surprises!</div></div>
+    <div class="faq-item"><div class="faq-question" tabindex="0" role="button" aria-expanded="false">Are the prices shown final? <div class="faq-icon" aria-hidden="true">+</div></div><div class="faq-answer">The prices shown are starting prices. Your final quote depends on the complexity of your design, number of tiers, special ingredients and any add-ons. We always provide a detailed, itemised quote before you commit — no surprises!</div></div>
     <div class="faq-item"><div class="faq-question" tabindex="0" role="button" aria-expanded="false">When do I pay? <div class="faq-icon" aria-hidden="true">+</div></div><div class="faq-answer">We require a 50% deposit to confirm your booking and date. The remaining balance is due 7 days before your delivery date. We accept bank transfer, credit/debit card and PayPal.</div></div>
     <div class="faq-item"><div class="faq-question" tabindex="0" role="button" aria-expanded="false">Do you offer payment plans? <div class="faq-icon" aria-hidden="true">+</div></div><div class="faq-answer">For Diamond tier orders over $400, we offer a 3-month interest-free payment plan. Contact us for details — we want every family to be able to access our magic!</div></div>
     <div class="faq-item"><div class="faq-question" tabindex="0" role="button" aria-expanded="false">What is your cancellation policy? <div class="faq-icon" aria-hidden="true">+</div></div><div class="faq-answer">Cancellations more than 4 weeks before delivery: full deposit refund. 2–4 weeks: 50% deposit refund. Less than 2 weeks: no refund (materials already purchased). We recommend event insurance for added peace of mind.</div></div>
@@ -292,7 +318,7 @@
 <section class="pricing-cta-banner" aria-labelledby="pricing-cta-heading">
   <div class="container text-center">
     <div class="reveal">
-      <div style="font-size:3.5rem; margin-bottom:1.5rem;" aria-hidden="true"><svg class="icon icon-xl icon-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z"/><path d="M4 14h16"/><path d="M8 10V6"/><path d="M16 10V6"/><path d="M12 10V4"/></svg></div>
+      <div class="cta-badge-icon" aria-hidden="true"><svg class="icon" style="width:44px; height:44px; color:var(--buttercream);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z"/><path d="M4 14h16"/><path d="M8 10V6"/><path d="M16 10V6"/><path d="M12 10V4"/><path d="M8 4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2"/></svg></div>
       <h2 id="pricing-cta-heading" style="color:white; margin-bottom:1rem; font-size:2.25rem;">Ready to Create Magic?</h2>
       <p style="color:rgba(255,255,255,0.85); max-width:600px; margin:0 auto 2.5rem; font-size:1.05rem;">Let's build the most extraordinary birthday cake your child has ever dreamed of. Contact us today for your personalised quote!</p>
       <div style="display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap;">

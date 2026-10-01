@@ -1417,7 +1417,7 @@ section { padding: var(--space-5xl) 0; overflow: hidden; }
   font-size: 1.75rem;
   font-weight: 800;
   color: var(--plum);
-  margin-bottom: var(--space-lg);
+  margin-bottom: 0.75rem;
 }
 
 .pricing-card.featured .pricing-name { color: #FFFFFF !important; }
@@ -1427,7 +1427,7 @@ section { padding: var(--space-5xl) 0; overflow: hidden; }
   display: flex;
   align-items: baseline;
   gap: 0.25rem;
-  margin-bottom: var(--space-xl);
+  margin-bottom: 0.35rem;
 }
 
 .pricing-currency { font-size: 1.25rem; font-weight: 700; color: var(--coral); }
@@ -1442,7 +1442,7 @@ section { padding: var(--space-5xl) 0; overflow: hidden; }
 .pricing-divider {
   height: 1px;
   background: var(--gray-100);
-  margin: var(--space-xl) 0;
+  margin: 1.25rem 0;
 }
 
 .pricing-card.featured .pricing-divider { background: rgba(255,255,255,0.25); }
