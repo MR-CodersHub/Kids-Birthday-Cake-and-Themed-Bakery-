@@ -2,17 +2,17 @@
 <html lang="en" dir="ltr" data-theme="light">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Princess Themed Birthday Cake — Sugar Bliss Bakery. Royal 5-tier cake with gold crown, butterfly details and pearl decorations. Custom princess cakes from £149." />
-  <title>Princess Birthday Cake — Service Detail | Sugar Bliss Bakery</title>
+  <meta id="sd-meta-desc" name="description" content="Princess Themed Birthday Cake — Sugar Bliss Bakery. Royal 5-tier cake with gold crown, butterfly details and pearl decorations. Custom princess cakes from £149." />
+  <title id="sd-doc-title">Princess Birthday Cake — Service Detail | Sugar Bliss Bakery</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E87578' stroke-width='1.8'%3E%3Cpath d='M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z'/%3E%3Cpath d='M4 14h16M8 10V6M16 10V6M12 10V4'/%3E%3C/svg%3E" />
   <style>
-    .detail-gallery { display:grid; grid-template-columns:1fr 1fr; grid-template-rows:auto auto; gap:1rem; }
-    .detail-gallery-main { grid-row:span 2; border-radius:var(--radius-2xl); overflow:hidden; box-shadow:var(--shadow-xl); }
-    .detail-gallery-main img, .detail-gallery-thumb img { width:100%; height:100%; object-fit:cover; transition:transform var(--transition-slow); cursor:pointer; }
+    .detail-gallery { display:grid; grid-template-columns:1.15fr 1fr; grid-template-rows:repeat(2, minmax(0, 1fr)); gap:1rem; height:560px; }
+    .detail-gallery-main { grid-row:span 2; border-radius:var(--radius-2xl); overflow:hidden; box-shadow:var(--shadow-xl); min-height:0; min-width:0; background:var(--light-gray); }
+    .detail-gallery-main img, .detail-gallery-thumb img { width:100%; height:100%; object-fit:cover; object-position:center top; transition:transform var(--transition-slow); cursor:pointer; display:block; background:var(--light-gray); }
     .detail-gallery-main:hover img, .detail-gallery-thumb:hover img { transform:scale(1.05); }
-    .detail-gallery-thumb { border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md); }
+    .detail-gallery-thumb { border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md); min-height:0; min-width:0; height:100%; background:var(--light-gray); }
     .detail-sidebar { position:sticky; top:calc(var(--header-h) + 2rem); }
     .detail-card { background:var(--white); border-radius:var(--radius-xl); padding:2.5rem; box-shadow:var(--shadow-md); border:1px solid var(--gray-100); margin-bottom:1.5rem; }
     [data-theme="dark"] .detail-card { background:var(--light-gray); border-color:var(--gray-200); }
@@ -20,10 +20,11 @@
     .related-card { display:grid; grid-template-columns:100px 1fr; gap:1rem; background:var(--white); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-sm); border:1px solid var(--gray-100); margin-bottom:1rem; transition:all var(--transition-base); }
     [data-theme="dark"] .related-card { background:var(--light-gray); border-color:var(--gray-200); }
     .related-card:hover { transform:translateX(4px); box-shadow:var(--shadow-md); }
-    .related-card img { width:100%; height:100%; object-fit:cover; }
+    .related-card > div:first-child { height:110px; min-height:110px; overflow:hidden; background:var(--light-gray); }
+    .related-card img { width:100%; height:110px; object-fit:cover; object-position:center; display:block; }
     .review-bar { height:8px; background:var(--gray-100); border-radius:4px; overflow:hidden; flex:1; }
     .review-fill { height:100%; border-radius:4px; background:linear-gradient(to right, var(--coral), var(--lavender)); }
-    @media(max-width:992px) { .detail-gallery { grid-template-columns:1fr; grid-template-rows:auto; } .detail-gallery-main { grid-row:span 1; } .detail-sidebar { position:static; } }
+    @media(max-width:992px) { .detail-gallery { grid-template-columns:1fr; grid-template-rows:none; height:auto; } .detail-gallery-main { grid-row:auto; aspect-ratio:4/3; } .detail-gallery-thumb { aspect-ratio:16/10; height:auto; } .detail-sidebar { position:static; } }
   </style>
 </head>
 <body>
@@ -75,9 +76,9 @@
 <div class="page-hero page-hero--inner" role="banner">
   <div class="floating-shapes"><div class="shape shape-1"></div></div>
   <div class="container page-hero-content">
-    <div class="section-badge" style="margin:0 auto 1.5rem; background:rgba(255,240,201,0.2); color:var(--buttercream); border:1px solid rgba(255,240,201,0.3); display:inline-flex;"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l3-9 5 6 3-9 3 9 3-9 3 9"/><path d="M3 17h18v2H3z"/></svg> Princess Theme</div>
-    <h1 class="page-hero-title">Royal Princess <span style="color:var(--buttercream);">Birthday Cakes</span></h1>
-    <p class="page-hero-sub">Five tiers of royal elegance with handcrafted details — explore sizes, flavours and pricing for our princess masterpiece.</p>
+    <div id="sd-hero-badge" class="section-badge" style="margin:0 auto 1.5rem; background:rgba(255,240,201,0.2); color:var(--buttercream); border:1px solid rgba(255,240,201,0.3); display:inline-flex;"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l3-9 5 6 3-9 3 9 3-9 3 9"/><path d="M3 17h18v2H3z"/></svg>&nbsp;Princess Theme</div>
+    <h1 id="sd-hero-title" class="page-hero-title">Royal Princess <span style="color:var(--buttercream);">Birthday Cakes</span></h1>
+    <p id="sd-hero-sub" class="page-hero-sub">Five tiers of royal elegance with handcrafted details — explore sizes, flavours and pricing for our princess masterpiece.</p>
   </div>
 </div>
 
@@ -92,14 +93,14 @@
       <div>
         <!-- Gallery -->
         <div class="detail-gallery reveal" style="margin-bottom:3rem;" role="region" aria-label="Cake photo gallery">
-          <div class="detail-gallery-main" data-lightbox="images/hero_cake_princess_1790771679745.jpg">
-            <img src="images/hero_cake_princess_1790771679745.jpg" alt="Royal princess 5-tier birthday cake with gold crown, butterfly decorations and pearl accents" loading="lazy" />
+          <div id="sd-main-wrap" class="detail-gallery-main" data-lightbox="images/hero_cake_princess_1790771679745.jpg">
+            <img id="sd-main-img" src="images/hero_cake_princess_1790771679745.jpg" alt="Royal princess 5-tier birthday cake with gold crown, butterfly decorations and pearl accents" loading="lazy" />
           </div>
-          <div class="detail-gallery-thumb" data-lightbox="images/cake_unicorn_1790771753982.jpg">
-            <img src="images/cake_unicorn_1790771753982.jpg" alt="Companion unicorn style for princess theme" loading="lazy" style="height:200px;" />
+          <div id="sd-thumb1-wrap" class="detail-gallery-thumb" data-lightbox="images/cake_unicorn_1790771753982.jpg">
+            <img id="sd-thumb1-img" src="images/cake_unicorn_1790771753982.jpg" alt="Companion unicorn style for princess theme" loading="lazy" />
           </div>
-          <div class="detail-gallery-thumb" data-lightbox="images/cake_floral_1790772004332.jpg">
-            <img src="images/cake_floral_1790772004332.jpg" alt="Floral accents on princess cake variation" loading="lazy" style="height:200px;" />
+          <div id="sd-thumb2-wrap" class="detail-gallery-thumb" data-lightbox="images/cake_floral_1790772004332.jpg">
+            <img id="sd-thumb2-img" src="images/cake_floral_1790772004332.jpg" alt="Floral accents on princess cake variation" loading="lazy" />
           </div>
         </div>
 
@@ -107,12 +108,12 @@
         <div class="reveal">
           <div class="section-badge"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/><path d="M4.5 16.5l.75 2.25L7.5 19.5l-2.25.75L4.5 22.5l-.75-2.25L1.5 19.5l2.25-.75L4.5 16.5z"/><path d="M19.5 3l.75 2.25L22.5 6l-2.25.75L19.5 9l-.75-2.25L16.5 6l2.25-.75L19.5 3z"/></svg> About This Design</div>
           <h2 id="cake-detail-heading" style="margin-bottom:1.5rem;">The <span class="gradient-text">Royal Princess Collection</span></h2>
-          <p style="margin-bottom:1.5rem;">Our Royal Princess Collection is our most beloved and requested design series. Each cake is a breathtaking multi-tier masterpiece, meticulously hand-crafted to transform your daughter's birthday into a royal fairy tale.</p>
-          <p style="margin-bottom:2rem;">Featuring hand-painted fondant roses, edible gold lacework, lifelike butterfly sugar sculptures, shimmering pearl beadwork and a regal gold crown topper — this is edible royalty at its finest.</p>
+          <p id="sd-desc-1" style="margin-bottom:1.5rem;">Our Royal Princess Collection is our most beloved and requested design series. Each cake is a breathtaking multi-tier masterpiece, meticulously hand-crafted to transform your daughter's birthday into a royal fairy tale.</p>
+          <p id="sd-desc-2" style="margin-bottom:2rem;">Featuring hand-painted fondant roses, edible gold lacework, lifelike butterfly sugar sculptures, shimmering pearl beadwork and a regal gold crown topper — this is edible royalty at its finest.</p>
 
           <!-- What's Included -->
           <h3 style="font-size:1.5rem; margin-bottom:1.5rem;">What's Included</h3>
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:2.5rem;">
+          <div id="sd-includes" style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:2.5rem;">
             <div style="display:flex; align-items:flex-start; gap:0.75rem; padding:1rem; background:var(--buttercream); border-radius:var(--radius-lg);">
               <span class="pricing-check" style="color:var(--coral);"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
               <div><div style="font-weight:700; color:var(--plum); font-size:0.9rem;">Custom tiered cake</div><div style="font-size:0.8rem; color:var(--gray-400);">1 to 5 tiers available</div></div>
@@ -141,7 +142,7 @@
 
           <!-- Flavour Options -->
           <h3 style="font-size:1.5rem; margin-bottom:1.5rem;">Available Flavours</h3>
-          <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-bottom:2.5rem;">
+          <div id="sd-flavours" style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-bottom:2.5rem;">
             <span style="padding:0.5rem 1.25rem; background:var(--coral-light); color:var(--plum); border-radius:var(--radius-full); font-size:0.875rem; font-weight:600;">Strawberry & Cream</span>
             <span style="padding:0.5rem 1.25rem; background:var(--lavender-light); color:var(--plum); border-radius:var(--radius-full); font-size:0.875rem; font-weight:600;">Rose & Lychee</span>
             <span style="padding:0.5rem 1.25rem; background:var(--mint-light); color:var(--plum); border-radius:var(--radius-full); font-size:0.875rem; font-weight:600;">Lemon Elderflower</span>
@@ -198,11 +199,11 @@
       <!-- Right: Sidebar -->
       <aside class="detail-sidebar">
         <div class="detail-card">
-          <div style="font-size:0.85rem; font-weight:700; color:var(--coral); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.5rem;"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l3-9 5 6 3-9 3 9 3-9 3 9"/><path d="M3 17h18v2H3z"/></svg> Princess Collection</div>
+          <div id="sd-side-label" style="font-size:0.85rem; font-weight:700; color:var(--coral); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.5rem;"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l3-9 5 6 3-9 3 9 3-9 3 9"/><path d="M3 17h18v2H3z"/></svg> Princess Collection</div>
           <h3 style="margin-bottom:1.5rem; font-size:1.5rem;">Order This Cake</h3>
           <div style="margin-bottom:1.5rem;">
             <div style="font-size:0.875rem; color:var(--gray-300); margin-bottom:0.25rem;">Starting from</div>
-            <div class="detail-price">$149</div>
+            <div id="sd-side-price" class="detail-price">$149</div>
             <div style="font-size:0.85rem; color:var(--gray-300); margin-top:0.25rem;">Price varies by size & complexity</div>
           </div>
 
@@ -238,7 +239,7 @@
             <input type="text" id="sd-name" class="form-control" placeholder="e.g., Isabella" />
           </div>
 
-          <a href="contact.html" class="btn btn-primary btn-lg" style="width:100%; justify-content:center; margin-bottom:1rem;">Order This Cake <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a id="sd-order-btn" href="contact.html" class="btn btn-primary btn-lg" style="width:100%; justify-content:center; margin-bottom:1rem;">Order This Cake <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           <a href="contact.html" class="btn btn-secondary" style="width:100%; justify-content:center;">Ask a Question <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></a>
         </div>
 
@@ -267,7 +268,8 @@
         <!-- Related -->
         <div class="detail-card">
           <h4 style="font-size:1rem; margin-bottom:1.25rem;"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z"/><path d="M4 14h16"/><path d="M8 10V6"/><path d="M16 10V6"/><path d="M12 10V4"/><path d="M8 4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2"/><path d="M6 20v2M18 20v2"/></svg> You May Also Love</h4>
-          <a href="service-detail.html" class="related-card">
+          <div id="sd-related">
+          <a href="service-detail.html?service=enchanted-unicorn" class="related-card">
             <div style="overflow:hidden;"><img src="images/cake_unicorn_1790771753982.jpg" alt="Unicorn cake" loading="lazy" /></div>
             <div style="padding:0.875rem; display:flex; flex-direction:column; justify-content:center;">
               <div style="font-size:0.75rem; color:var(--coral); font-weight:700; margin-bottom:0.25rem;"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L9 7H4l4 3-1.5 5L12 12l5.5 3L16 10l4-3h-5L12 2z"/><path d="M8 19c0 2 2 3 4 3s4-1 4-3"/><path d="M10 12v7"/><path d="M14 12v7"/></svg> Fantasy</div>
@@ -275,23 +277,23 @@
               <div style="font-size:0.8rem; color:var(--gray-300);">From $169</div>
             </div>
           </a>
-          <a href="service-detail.html" class="related-card">
+          <a href="service-detail.html?service=mermaid-cove" class="related-card">
             <div style="overflow:hidden;"><img src="images/cake_mermaid_1790771864114.jpg" alt="Mermaid cake" loading="lazy" /></div>
             <div style="padding:0.875rem; display:flex; flex-direction:column; justify-content:center;">
-              <div style="font-size:0.75rem; color:var(--coral); font-weight:700; margin-bottom:0.25rem;"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12c1.5-3 3-3 4.5 0s3 3 4.5 0 3-3 4.5 0 3 3 4.5 0"/><path d="M2 17c1.5-3 3-3 4.5 0s3 3 4.5 0 3-3 4.5 0 3 3 4.5 0"/></svg> Ocean</div>
+              <div style="font-size:0.75rem; color:var(--coral); font-weight:700; margin-bottom:0.25rem;">Ocean</div>
               <div style="font-family:var(--font-display); font-weight:700; font-size:0.9rem; color:var(--plum);">Mermaid Cove</div>
               <div style="font-size:0.8rem; color:var(--gray-300);">From $175</div>
             </div>
           </a>
-          <a href="service-detail.html" class="related-card" style="margin-bottom:0;">
+          <a href="service-detail.html?service=botanical-garden" class="related-card" style="margin-bottom:0;">
             <div style="overflow:hidden;"><img src="images/cake_floral_1790772004332.jpg" alt="Floral cake" loading="lazy" /></div>
             <div style="padding:0.875rem; display:flex; flex-direction:column; justify-content:center;">
-              <div style="font-size:0.75rem; color:var(--coral); font-weight:700; margin-bottom:0.25rem;"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2a3 3 0 0 1 3 3c0 1.66-1.34 3-3 3a3 3 0 0 1-3-3 3 3 0 0 1 3-3z"/><path d="M12 16a3 3 0 0 1 3 3c0 1.66-1.34 3-3 3a3 3 0 0 1-3-3 3 3 0 0 1 3-3z"/><path d="M2 12a3 3 0 0 1 3-3c1.66 0 3 1.34 3 3a3 3 0 0 1-3 3 3 3 0 0 1-3-3z"/><path d="M16 12a3 3 0 0 1 3-3c1.66 0 3 1.34 3 3a3 3 0 0 1-3 3 3 3 0 0 1-3-3z"/></svg> Floral</div>
+              <div style="font-size:0.75rem; color:var(--coral); font-weight:700; margin-bottom:0.25rem;">Floral</div>
               <div style="font-family:var(--font-display); font-weight:700; font-size:0.9rem; color:var(--plum);">Botanical Garden</div>
               <div style="font-size:0.8rem; color:var(--gray-300);">From $179</div>
             </div>
           </a>
-        </div>
+          </div>
       </aside>
 
     </div>
@@ -305,7 +307,7 @@
   <div class="container">
     <div class="section-header reveal">
       <div class="section-badge"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/><path d="M4.5 16.5l.75 2.25L7.5 19.5l-2.25.75L4.5 22.5l-.75-2.25L1.5 19.5l2.25-.75L4.5 16.5z"/><path d="M19.5 3l.75 2.25L22.5 6l-2.25.75L19.5 9l-.75-2.25L16.5 6l2.25-.75L19.5 3z"/></svg> Our Design Process</div>
-      <h2 class="section-title" id="process-detail-heading">How Your Princess Cake <span class="gradient-text">Comes to Life</span></h2>
+      <h2 class="section-title" id="process-detail-heading">How Your <span id="sd-process-name">Princess</span> Cake <span class="gradient-text">Comes to Life</span></h2>
     </div>
     <div class="grid-4 stagger-children">
       <div style="text-align:center; padding:2rem 1.5rem; background:var(--white); border:1px solid var(--gray-100); border-radius:var(--radius-xl); box-shadow:var(--shadow-sm);">
@@ -343,7 +345,7 @@
   <div class="container">
     <div class="section-header reveal">
       <div class="section-badge"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> More Reviews</div>
-      <h2 class="section-title" id="more-reviews-heading">What Princess Families <span class="gradient-text">Say</span></h2>
+      <h2 class="section-title" id="more-reviews-heading">What <span id="sd-reviews-name">Princess</span> Families <span class="gradient-text">Say</span></h2>
     </div>
     <div class="grid-3 stagger-children">
       <div class="testimonial-card"><div class="testimonial-stars"><div class="star-rating" style="display:inline-flex; gap:2px;" aria-label="5 out of 5 stars"><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div></div><p class="testimonial-text">"Every single guest was in awe. The gold lacework was so intricate you'd think it was real gold filigree!"</p><div class="testimonial-author"><div class="testimonial-avatar">C</div><div><div class="testimonial-name">Charlotte B.</div><div class="testimonial-role">Isabella's Mum · 5th Birthday</div></div></div></div>
@@ -359,8 +361,8 @@
 <section style="background:linear-gradient(135deg, var(--coral), var(--lavender-dark));" aria-labelledby="similar-cta-heading">
   <div class="container text-center">
     <div class="reveal">
-      <h2 id="similar-cta-heading" style="color:white; margin-bottom:1rem;">Love Princess? You'll Adore These Too!</h2>
-      <p style="color:rgba(255,255,255,0.8); max-width:600px; margin:0 auto 2.5rem;">Explore our other enchanting collections — every theme carries the same level of extraordinary detail and craftsmanship.</p>
+      <h2 id="similar-cta-heading" style="color:white; margin-bottom:1rem;">Love <span id="sd-cta-name">Princess</span>? You'll Adore These Too!</h2>
+      <p id="sd-cta-sub" style="color:rgba(255,255,255,0.8); max-width:600px; margin:0 auto 2.5rem;">Explore our other enchanting collections — every theme carries the same level of extraordinary detail and craftsmanship.</p>
       <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
         <a href="services.html" class="btn btn-white btn-lg">Browse All Themes <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         <a href="contact.html" class="btn btn-outline btn-lg">Start Custom Order</a>
@@ -376,7 +378,7 @@
   <div class="container">
     <div class="section-header reveal">
       <div class="section-badge"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="2"/><path d="M4 2h5.5L21 13.5l-7.5 7.5L2 9.5V4c0-1.1.9-2 2-2z"/></svg> Clear Pricing</div>
-      <h2 class="section-title" id="pricing-table-heading">Princess Cake <span class="gradient-text">Pricing Guide</span></h2>
+      <h2 class="section-title" id="pricing-table-heading"><span id="sd-pricing-name">Princess Cake</span> <span class="gradient-text">Pricing Guide</span></h2>
     </div>
     <div style="overflow-x:auto; -webkit-overflow-scrolling:touch;">
       <table style="width:100%; border-collapse:separate; border-spacing:0; background:var(--white); border-radius:var(--radius-xl); box-shadow:var(--shadow-md); overflow:hidden;" role="table" aria-label="Pricing table">
@@ -437,14 +439,16 @@
 <section class="bg-cream" aria-labelledby="sd-faq-heading">
   <div class="container" style="max-width:800px;">
     <div class="section-header reveal">
-      <div class="section-badge"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Princess Cake FAQ</div>
+      <div id="sd-faq-badge" class="section-badge"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>&nbsp;Princess Cake FAQ</div>
       <h2 class="section-title" id="sd-faq-heading">Common <span class="gradient-text">Questions</span></h2>
     </div>
-    <div class="faq-item open"><div class="faq-question" tabindex="0" role="button" aria-expanded="true">How many tiers can the Princess cake have? <div class="faq-icon" aria-hidden="true">+</div></div><div class="faq-answer">We can create princess cakes with 1 to 5 tiers. The price and lead time increases with each tier. Our most popular choice is the 3-tier Classic which serves 35–55 guests beautifully.</div></div>
+    <div id="sd-faq-list">
+    <div class="faq-item"><div class="faq-question" tabindex="0" role="button" aria-expanded="false">How many tiers can the Princess cake have? <div class="faq-icon" aria-hidden="true">+</div></div><div class="faq-answer">We can create princess cakes with 1 to 5 tiers. The price and lead time increases with each tier. Our most popular choice is the 3-tier Classic which serves 35–55 guests beautifully.</div></div>
     <div class="faq-item"><div class="faq-question" tabindex="0" role="button" aria-expanded="false">Can I choose specific character princesses? <div class="faq-icon" aria-hidden="true">+</div></div><div class="faq-answer">While we cannot use copyrighted licensed characters directly, we create stunning princess-inspired designs based on character themes — castle environments, signature colour palettes, iconic accessories. Contact us with your child's favourite and we'll design something magical.</div></div>
     <div class="faq-item"><div class="faq-question" tabindex="0" role="button" aria-expanded="false">Is the crown topper edible or a keepsake? <div class="faq-icon" aria-hidden="true">+</div></div><div class="faq-answer">We offer both options! Edible fondant crowns are included in the base price. For an additional $15, we can also create a non-edible acrylic or metal crown topper that your child can keep as a birthday memento.</div></div>
     <div class="faq-item"><div class="faq-question" tabindex="0" role="button" aria-expanded="false">How should I store and serve the cake? <div class="faq-icon" aria-hidden="true">+</div></div><div class="faq-answer">Our cakes are best at room temperature. Store in a cool, dry place away from direct sunlight. If your environment is warm (over 25°C), refrigerate and bring back to room temp 2 hours before serving for best flavour and texture.</div></div>
-    <div style="text-align:center; margin-top:2.5rem;"><a href="contact.html" class="btn btn-primary btn-lg">Order Your Princess Cake <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+    </div>
+    <div style="text-align:center; margin-top:2.5rem;"><a id="sd-faq-cta" href="contact.html" class="btn btn-primary btn-lg">Order Your Princess Cake <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
   </div>
 </section>
 
@@ -540,5 +544,478 @@
 <button id="back-to-top" aria-label="Back to top"><svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button>
 <script src="js/icons.js"></script>
 <script src="js/main.js"></script>
+<script>
+/* Single-file dynamic service details — ?service=slug (no extra HTML files) */
+(function () {
+  var CHECK = '<span class="pricing-check" style="color:var(--coral);"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>';
+  var FLAV_BG = ['var(--coral-light)', 'var(--lavender-light)', 'var(--mint-light)', 'var(--buttercream)'];
+
+  var SERVICES = {
+    'royal-princess': {
+      badge: 'Princess Theme', shortName: 'Princess', fullName: 'Royal Princess Collection', category: 'Princess',
+      heroTitle: 'Royal Princess <span style="color:var(--buttercream);">Birthday Cakes</span>',
+      heroSub: 'Five tiers of royal elegance with handcrafted details — explore sizes, flavours and pricing for our princess masterpiece.',
+      meta: 'Royal Princess birthday cake — 5-tier cake with gold crown, butterflies and pearls. Custom princess cakes from $149.',
+      image: 'images/hero_cake_princess_1790771679745.jpg', price: '$149', tiers: '1–5 tiers available',
+      gallery: ['images/hero_cake_princess_1790771679745.jpg', 'images/cake_unicorn_1790771753982.jpg', 'images/cake_floral_1790772004332.jpg'],
+      alt: 'Royal princess 5-tier birthday cake with gold crown, butterfly decorations and pearl accents',
+      desc1: "Our Royal Princess Collection is our most beloved and requested design series. Each cake is a breathtaking multi-tier masterpiece, meticulously hand-crafted to transform your daughter's birthday into a royal fairy tale.",
+      desc2: 'Featuring hand-painted fondant roses, edible gold lacework, lifelike butterfly sugar sculptures, shimmering pearl beadwork and a regal gold crown topper — this is edible royalty at its finest.',
+      includes: [
+        { t: 'Custom tiered cake', d: '1 to 5 tiers available' },
+        { t: 'Gold crown topper', d: 'Edible & keepsake options' },
+        { t: 'Hand-painted details', d: 'Gold lace & floral accents' },
+        { t: 'Sugar butterflies', d: 'Hand-crafted individually' },
+        { t: 'Personalised name', d: 'Custom calligraphy plaque' },
+        { t: 'Pearl beadwork', d: 'Edible sugar pearls' }
+      ],
+      flavours: ['Strawberry & Cream', 'Rose & Lychee', 'Lemon Elderflower', 'White Chocolate', 'Peach & Prosecco', 'Blueberry Lavender'],
+      faq: [
+        { q: 'How many tiers can the Princess cake have?', a: 'We can create princess cakes with 1 to 5 tiers. The price and lead time increases with each tier. Our most popular choice is the 3-tier Classic which serves 35–55 guests beautifully.' },
+        { q: 'Can I choose specific character princesses?', a: 'While we cannot use copyrighted licensed characters directly, we create stunning princess-inspired designs based on character themes — castle environments, signature colour palettes, iconic accessories.' },
+        { q: 'Is the crown topper edible or a keepsake?', a: 'We offer both! Edible fondant crowns are included in the base price. For an additional $15, we can create a non-edible acrylic or metal crown topper your child can keep.' },
+        { q: 'How should I store and serve the cake?', a: 'Best at room temperature. Store in a cool, dry place away from sunlight. If warm (over 25°C), refrigerate and bring back to room temp 2 hours before serving.' }
+      ]
+    },
+    'hero-hq': {
+      badge: 'Superhero Theme', shortName: 'Superhero', fullName: 'Hero HQ Collection', category: 'Superhero',
+      heroTitle: 'Hero HQ <span style="color:var(--buttercream);">Birthday Cakes</span>',
+      heroSub: 'Bold comic colours, lightning bolts and shield toppers — a high-energy centrepiece for little heroes.',
+      meta: 'Superhero birthday cake — Hero HQ collection with shields and lightning bolts. Custom superhero cakes from $159.',
+      image: 'images/cake_superhero_1790771720769.jpg', price: '$159', tiers: '1–4 tiers available',
+      gallery: ['images/cake_superhero_1790771720769.jpg', 'images/hero_superhero_cake.jpg', 'images/cake_space_1790771885759.jpg'],
+      alt: 'Superhero birthday cake with comic decorations, shield and lightning bolts',
+      desc1: 'Our Hero HQ Collection turns birthdays into action-movie premieres. Bold primary colours, comic-burst panels, city-skyline tiers and a heroic topper make every slice feel powerful.',
+      desc2: 'Choose your hero colours, add a personalised comic name plaque, edible lightning bolts, stars and a shield topper — all hand-modelled in sugar.',
+      includes: [
+        { t: 'Custom tiered cake', d: '1 to 4 tiers available' },
+        { t: 'Shield topper', d: 'Edible or keepsake' },
+        { t: 'Comic panels', d: 'Hand-painted bursts' },
+        { t: 'Lightning bolts', d: 'Sugar-modelled' },
+        { t: 'Personalised name', d: 'Comic-style plaque' },
+        { t: 'City skyline', d: 'Edible silhouette' }
+      ],
+      flavours: ['Chocolate Fudge', 'Vanilla Bean', 'Red Velvet', 'Cookies & Cream', 'Caramel Crunch', 'Blueberry Blast'],
+      faq: [
+        { q: 'How many tiers can the Superhero cake have?', a: 'Hero HQ cakes come in 1 to 4 tiers. The 2-tier Classic is the most popular for parties of 35–55 guests.' },
+        { q: 'Can you match a specific hero colour?', a: 'Yes! Tell us the hero colours or theme and we will match capes, masks, shields and comic panels to it — without using copyrighted logos directly.' },
+        { q: 'Is the shield topper edible?', a: 'The standard shield is edible fondant. A keepsake acrylic shield is available for an extra $15.' },
+        { q: 'How should I store and serve the cake?', a: 'Best at room temperature. Store cool and dry, away from sunlight. Refrigerate only if very warm, then rest 2 hours before serving.' }
+      ]
+    },
+    'enchanted-unicorn': {
+      badge: 'Fantasy Theme', shortName: 'Unicorn', fullName: 'Enchanted Unicorn', category: 'Fantasy',
+      heroTitle: 'Enchanted <span style="color:var(--buttercream);">Unicorn Cakes</span>',
+      heroSub: 'Pastel swirls, golden horns and floral crowns — pure magic for unicorn lovers.',
+      meta: 'Unicorn birthday cake — pastel tiers with golden horn and florals. Custom unicorn cakes from $169.',
+      image: 'images/cake_unicorn_1790771753982.jpg', price: '$169', tiers: '2–4 tiers available',
+      gallery: ['images/cake_unicorn_1790771753982.jpg', 'images/hero_cake_princess_1790771679745.jpg', 'images/cake_floral_1790772004332.jpg'],
+      alt: 'Unicorn birthday cake with golden horn, pastel swirls and edible flowers',
+      desc1: 'Our Enchanted Unicorn cake is pastel fantasy brought to life — soft buttercream swirls, a hand-modelled golden horn, ears and a crown of sugar flowers.',
+      desc2: 'Each tier can hide rainbow sponge inside. Add eyelashes, star sprinkles and a personalised name plaque for the full magical effect.',
+      includes: [
+        { t: 'Custom tiered cake', d: '2 to 4 tiers available' },
+        { t: 'Golden horn & ears', d: 'Hand-modelled sugar' },
+        { t: 'Floral crown', d: 'Sugar blossoms' },
+        { t: 'Rainbow layers', d: 'Hidden sponge option' },
+        { t: 'Personalised name', d: 'Custom plaque' },
+        { t: 'Star sprinkles', d: 'Premium selection' }
+      ],
+      flavours: ['Vanilla Rainbow', 'Strawberry & Cream', 'Lemon Elderflower', 'Blueberry Lavender', 'White Chocolate', 'Rose & Lychee'],
+      faq: [
+        { q: 'How many tiers can the Unicorn cake have?', a: 'Unicorn cakes come in 2 to 4 tiers. Two tiers are perfect for 15–25 guests; three tiers serve 35–55.' },
+        { q: 'Can the inside be rainbow?', a: 'Yes! Rainbow sponge layers are our most requested add-on and are free to request — just mention it when ordering.' },
+        { q: 'Is the horn edible?', a: 'The standard horn is edible fondant with gold lustre. A keepsake horn can be arranged on request.' },
+        { q: 'How should I store and serve the cake?', a: 'Best at room temperature in a cool, dry place. Refrigerate only if warm, then rest 2 hours before serving.' }
+      ]
+    },
+    'dino-jungle': {
+      badge: 'Adventure Theme', shortName: 'Dinosaur', fullName: 'Dino Jungle Quest', category: 'Adventure',
+      heroTitle: 'Dino Jungle <span style="color:var(--buttercream);">Quest Cakes</span>',
+      heroSub: 'Volcanoes, jungles and friendly T-Rex toppers — a roaring adventure in every tier.',
+      meta: 'Dinosaur birthday cake — jungle tiers with volcano and T-Rex topper. Custom dino cakes from $155.',
+      image: 'images/cake_dinosaur_1790771782894.jpg', price: '$155', tiers: '1–3 tiers available',
+      gallery: ['images/cake_dinosaur_1790771782894.jpg', 'images/cake_space_1790771885759.jpg', 'images/cake_cartoon_1790771817713.jpg'],
+      alt: 'Dinosaur birthday cake with jungle leaves, volcano and T-Rex topper',
+      desc1: 'Our Dino Jungle Quest cake brings the prehistoric world to the party — textured jungle tiers, an erupting volcano topper and a friendly hand-modelled dinosaur.',
+      desc2: 'Add palm leaves, footprints, a personalised cave-writing name plaque and your child\u2019s favourite dino for a truly roaring showpiece.',
+      includes: [
+        { t: 'Custom tiered cake', d: '1 to 3 tiers available' },
+        { t: 'Dino topper', d: 'Hand-modelled T-Rex' },
+        { t: 'Volcano detail', d: 'Eruption effect' },
+        { t: 'Jungle leaves', d: 'Edible foliage' },
+        { t: 'Personalised name', d: 'Cave-style plaque' },
+        { t: 'Footprint trail', d: 'Piped details' }
+      ],
+      flavours: ['Chocolate Fudge', 'Vanilla Bean', 'Caramel Crunch', 'Cookies & Cream', 'Lemon Drizzle', 'Mint Choc'],
+      faq: [
+        { q: 'How many tiers can the Dinosaur cake have?', a: 'Dino cakes come in 1 to 3 tiers. Most families choose 2 tiers for 15–35 guests.' },
+        { q: 'Can I pick the dinosaur?', a: 'Yes! T-Rex, Triceratops, Stegosaurus and more — tell us the favourite and we will model it in sugar.' },
+        { q: 'Is the volcano edible?', a: 'Yes, the volcano is cake and fondant with edible eruption details. Smoke effects are decorative only.' },
+        { q: 'How should I store and serve the cake?', a: 'Best at room temperature, cool and dry. Refrigerate only if very warm, then rest 2 hours before serving.' }
+      ]
+    },
+    'mermaid-cove': {
+      badge: 'Ocean Theme', shortName: 'Mermaid', fullName: 'Mermaid Cove', category: 'Ocean',
+      heroTitle: 'Mermaid Cove <span style="color:var(--buttercream);">Birthday Cakes</span>',
+      heroSub: 'Seashells, pearls and ocean shimmer — dive into an under-the-sea celebration.',
+      meta: 'Mermaid birthday cake — ocean tiers with shells and pearls. Custom mermaid cakes from $175.',
+      image: 'images/cake_mermaid_1790771864114.jpg', price: '$175', tiers: '2–4 tiers available',
+      gallery: ['images/cake_mermaid_1790771864114.jpg', 'images/cake_unicorn_1790771753982.jpg', 'images/cake_floral_1790772004332.jpg'],
+      alt: 'Mermaid birthday cake with seashells, pearls and ocean-blue tiers',
+      desc1: 'Our Mermaid Cove cake is an ocean dream — ombre blue tiers, hand-crafted shells, starfish, pearls and shimmering scales.',
+      desc2: 'Add a mermaid tail topper, edible bubbles and a personalised sand-dollar name plaque for the full under-the-sea magic.',
+      includes: [
+        { t: 'Custom tiered cake', d: '2 to 4 tiers available' },
+        { t: 'Mermaid tail', d: 'Hand-modelled topper' },
+        { t: 'Shells & starfish', d: 'Sugar-modelled' },
+        { t: 'Pearl details', d: 'Edible pearls' },
+        { t: 'Personalised name', d: 'Sand-dollar plaque' },
+        { t: 'Shimmer finish', d: 'Lustre airbrush' }
+      ],
+      flavours: ['Blueberry Lavender', 'Lemon Elderflower', 'Coconut & Lime', 'Vanilla Bean', 'Strawberry & Cream', 'White Chocolate'],
+      faq: [
+        { q: 'How many tiers can the Mermaid cake have?', a: 'Mermaid Cove cakes come in 2 to 4 tiers. Three tiers serve 35–55 guests beautifully.' },
+        { q: 'Is the mermaid tail edible?', a: 'Yes, the standard tail is edible fondant with lustre. Keepsake toppers are available on request.' },
+        { q: 'Can you do a matching smash cake?', a: 'Absolutely — a 4-inch mini in the same ocean theme is available from $45.' },
+        { q: 'How should I store and serve the cake?', a: 'Best at room temperature, cool and dry. Refrigerate only if warm, then rest 2 hours before serving.' }
+      ]
+    },
+    'galaxy-explorer': {
+      badge: 'Galaxy Theme', shortName: 'Galaxy', fullName: 'Galaxy Explorer', category: 'Adventure',
+      heroTitle: 'Galaxy Explorer <span style="color:var(--buttercream);">Cakes</span>',
+      heroSub: 'Planets, stars and astronaut toppers — blast off into a space celebration.',
+      meta: 'Space birthday cake — galaxy tiers with planets and astronaut. Custom space cakes from $165.',
+      image: 'images/cake_space_1790771885759.jpg', price: '$165', tiers: '2–3 tiers available',
+      gallery: ['images/cake_space_1790771885759.jpg', 'images/cake_dinosaur_1790771782894.jpg', 'images/cake_superhero_1790771720769.jpg'],
+      alt: 'Space birthday cake with planets, stars and galaxy buttercream',
+      desc1: 'Our Galaxy Explorer cake is out of this world — deep-space airbrushed tiers, edible planets, stars and a cute astronaut topper.',
+      desc2: 'Add a rocket, constellations of your child\u2019s zodiac, and a glowing name plaque for a cosmic centrepiece.',
+      includes: [
+        { t: 'Custom tiered cake', d: '2 to 3 tiers available' },
+        { t: 'Astronaut topper', d: 'Hand-modelled' },
+        { t: 'Edible planets', d: 'Sugar-modelled' },
+        { t: 'Galaxy airbrush', d: 'Nebula effect' },
+        { t: 'Personalised name', d: 'Star plaque' },
+        { t: 'Rocket detail', d: 'Optional add-on' }
+      ],
+      flavours: ['Chocolate Fudge', 'Cookies & Cream', 'Blueberry Blast', 'Vanilla Bean', 'Caramel Crunch', 'Mint Choc'],
+      faq: [
+        { q: 'How many tiers can the Galaxy cake have?', a: 'Galaxy Explorer cakes come in 2 to 3 tiers, serving 15–55 guests depending on size.' },
+        { q: 'Can you add my child\u2019s age as planets?', a: 'Yes! We love turning ages into planets, stars or a countdown rocket — just ask.' },
+        { q: 'Does it have lights?', a: 'LED cake lights can be added as a non-edible extra. Ask us when ordering.' },
+        { q: 'How should I store and serve the cake?', a: 'Best at room temperature, cool and dry. Refrigerate only if warm, then rest 2 hours before serving.' }
+      ]
+    },
+    'cartoon-characters': {
+      badge: 'Cartoon Theme', shortName: 'Cartoon', fullName: 'Cartoon Characters', category: 'Fantasy',
+      heroTitle: 'Cartoon <span style="color:var(--buttercream);">Character Cakes</span>',
+      heroSub: 'Bright colours and favourite-character styling — joy in every slice.',
+      meta: 'Cartoon birthday cake — bright character-inspired tiers. Custom cartoon cakes from $149.',
+      image: 'images/cake_cartoon_1790771817713.jpg', price: '$149', tiers: '1–3 tiers available',
+      gallery: ['images/cake_cartoon_1790771817713.jpg', 'images/cake_celebration_kids.png', 'images/cake_dinosaur_1790771782894.jpg'],
+      alt: 'Cartoon birthday cake with bright colours and character decorations',
+      desc1: 'Our Cartoon Characters cakes capture pure childhood joy — bright palettes, playful toppers and character-inspired styling kids instantly recognise.',
+      desc2: 'Tell us the favourite show or character and we will design an inspired theme with colours, accessories and a personalised plaque.',
+      includes: [
+        { t: 'Custom tiered cake', d: '1 to 3 tiers available' },
+        { t: 'Character topper', d: 'Inspired styling' },
+        { t: 'Bright palette', d: 'Custom colours' },
+        { t: 'Piped details', d: 'Stars & dots' },
+        { t: 'Personalised name', d: 'Custom plaque' },
+        { t: 'Sprinkle mix', d: 'Premium selection' }
+      ],
+      flavours: ['Vanilla Bean', 'Chocolate Fudge', 'Strawberry & Cream', 'Cookies & Cream', 'Caramel Crunch', 'Lemon Drizzle'],
+      faq: [
+        { q: 'How many tiers can the Cartoon cake have?', a: 'Cartoon cakes come in 1 to 3 tiers. One tier serves 15–25 guests; two tiers serve up to 35.' },
+        { q: 'Can you do a specific cartoon?', a: 'We create inspired designs based on colours and themes. Share the favourite and we will design something magical.' },
+        { q: 'Can you add a photo print?', a: 'Yes! Edible photo prints on wafer or fondant are available from $25.' },
+        { q: 'How should I store and serve the cake?', a: 'Best at room temperature, cool and dry. Refrigerate only if warm, then rest 2 hours before serving.' }
+      ]
+    },
+    'botanical-garden': {
+      badge: 'Floral Theme', shortName: 'Floral', fullName: 'Botanical Garden', category: 'Floral',
+      heroTitle: 'Botanical Garden <span style="color:var(--buttercream);">Cakes</span>',
+      heroSub: 'Fresh florals, gold touches and elegant tiers — garden-party perfection.',
+      meta: 'Floral birthday cake — botanical tiers with sugar flowers. Custom floral cakes from $179.',
+      image: 'images/cake_floral_1790772004332.jpg', price: '$179', tiers: '2–3 tiers available',
+      gallery: ['images/cake_floral_1790772004332.jpg', 'images/cake_custom_tiered.png', 'images/cake_unicorn_1790771753982.jpg'],
+      alt: 'Floral birthday cake with sugar flowers and elegant tiers',
+      desc1: 'Our Botanical Garden cake is elegant and fresh — smooth tiers dressed with sugar blossoms, leaves and soft gold accents.',
+      desc2: 'Perfect for garden parties and spring birthdays. Choose your flower colours and add a personalised calligraphy plaque.',
+      includes: [
+        { t: 'Custom tiered cake', d: '2 to 3 tiers available' },
+        { t: 'Sugar flowers', d: 'Hand-crafted blooms' },
+        { t: 'Gold accents', d: 'Leaf & drip options' },
+        { t: 'Leaf details', d: 'Edible foliage' },
+        { t: 'Personalised name', d: 'Calligraphy plaque' },
+        { t: 'Fresh option', d: 'Real flowers on request' }
+      ],
+      flavours: ['Lemon Elderflower', 'Rose & Lychee', 'Blueberry Lavender', 'Vanilla Bean', 'Peach & Prosecco', 'White Chocolate'],
+      faq: [
+        { q: 'How many tiers can the Floral cake have?', a: 'Botanical Garden cakes come in 2 to 3 tiers, serving 15–55 guests.' },
+        { q: 'Real or sugar flowers?', a: 'Standard is sugar flowers (fully edible). Real fresh flowers can be arranged on request.' },
+        { q: 'Can you match party colours?', a: 'Yes! Share your palette and we will match blooms, ribbons and plaques.' },
+        { q: 'How should I store and serve the cake?', a: 'Best at room temperature, cool and dry. Refrigerate only if warm, then rest 2 hours before serving.' }
+      ]
+    },
+    'enchanted-fairytale': {
+      badge: 'Fairytale Theme', shortName: 'Fairytale', fullName: 'Enchanted Fairytale', category: 'Fantasy',
+      heroTitle: 'Enchanted <span style="color:var(--buttercream);">Fairytale Cakes</span>',
+      heroSub: 'Castles, carriages and sparkling magic — a storybook come to life.',
+      meta: 'Fairytale birthday cake — castle and carriage details. Custom fairytale cakes from $189.',
+      image: 'images/hero_magical_cake.jpg', price: '$189', tiers: '2–5 tiers available',
+      gallery: ['images/hero_magical_cake.jpg', 'images/hero_cake_princess_1790771679745.jpg', 'images/cake_unicorn_1790771753982.jpg'],
+      alt: 'Fairytale birthday cake with castle, carriage and sparkling details',
+      desc1: 'Our Enchanted Fairytale cake is pure storybook magic — castle turrets, carriage toppers, sparkling sugar and dreamy pastel tiers.',
+      desc2: 'Add twinkling details, a personalised storybook plaque and your child\u2019s favourite fairytale colours for an unforgettable reveal.',
+      includes: [
+        { t: 'Custom tiered cake', d: '2 to 5 tiers available' },
+        { t: 'Castle details', d: 'Hand-modelled turrets' },
+        { t: 'Carriage topper', d: 'Sugar-modelled' },
+        { t: 'Sparkle finish', d: 'Edible glitter' },
+        { t: 'Personalised name', d: 'Storybook plaque' },
+        { t: 'Twinkle lights', d: 'Optional extra' }
+      ],
+      flavours: ['Rose & Lychee', 'Strawberry & Cream', 'Vanilla Bean', 'Peach & Prosecco', 'Lemon Elderflower', 'White Chocolate'],
+      faq: [
+        { q: 'How many tiers can the Fairytale cake have?', a: 'Fairytale cakes come in 2 to 5 tiers. Three tiers (35–55 guests) is the most popular.' },
+        { q: 'Can you include a carriage?', a: 'Yes! A sugar carriage or castle can be modelled as the centrepiece — tell us the story you want.' },
+        { q: 'Is the glitter edible?', a: 'Yes, we only use 100% edible lustre and glitter.' },
+        { q: 'How should I store and serve the cake?', a: 'Best at room temperature, cool and dry. Refrigerate only if warm, then rest 2 hours before serving.' }
+      ]
+    },
+    'superhero-legends': {
+      badge: 'Superhero Theme', shortName: 'Legends', fullName: 'Superhero Legends', category: 'Superhero',
+      heroTitle: 'Superhero <span style="color:var(--buttercream);">Legends Cakes</span>',
+      heroSub: 'Epic comic tiers with capes, masks and city lights — legendary parties start here.',
+      meta: 'Superhero legends birthday cake — epic comic tiers. Custom legend cakes from $179.',
+      image: 'images/hero_superhero_cake.jpg', price: '$179', tiers: '2–4 tiers available',
+      gallery: ['images/hero_superhero_cake.jpg', 'images/cake_superhero_1790771720769.jpg', 'images/cake_space_1790771885759.jpg'],
+      alt: 'Superhero legends birthday cake with epic comic decorations',
+      desc1: 'Our Superhero Legends cake goes bigger — dramatic comic tiers, capes, masks, skyscrapers and glowing city details for the ultimate hero party.',
+      desc2: 'Personalise with the birthday hero\u2019s name in lights, comic bursts and a legendary topper they will never forget.',
+      includes: [
+        { t: 'Custom tiered cake', d: '2 to 4 tiers available' },
+        { t: 'Legend topper', d: 'Cape & mask' },
+        { t: 'City skyline', d: 'Light-up option' },
+        { t: 'Comic bursts', d: 'Hand-painted' },
+        { t: 'Personalised name', d: 'Hero plaque' },
+        { t: 'Star details', d: 'Sugar models' }
+      ],
+      flavours: ['Chocolate Fudge', 'Red Velvet', 'Cookies & Cream', 'Vanilla Bean', 'Caramel Crunch', 'Blueberry Blast'],
+      faq: [
+        { q: 'How many tiers can the Legends cake have?', a: 'Legends cakes come in 2 to 4 tiers, serving 15–90 guests depending on size.' },
+        { q: 'Can you add lights?', a: 'Yes, LED city lights are a popular non-edible extra — ask when ordering.' },
+        { q: 'Can siblings share the theme?', a: 'Absolutely — we can add two names and dual hero colours on request.' },
+        { q: 'How should I store and serve the cake?', a: 'Best at room temperature, cool and dry. Refrigerate only if warm, then rest 2 hours before serving.' }
+      ]
+    },
+    'pastel-confetti': {
+      badge: 'Fantasy Theme', shortName: 'Confetti', fullName: 'Pastel Confetti Dream', category: 'Fantasy',
+      heroTitle: 'Pastel Confetti <span style="color:var(--buttercream);">Dream Cakes</span>',
+      heroSub: 'Soft pastel tiers with confetti sprinkles — sweet, dreamy and photo-perfect.',
+      meta: 'Confetti birthday cake — pastel tiers with sprinkles. Custom confetti cakes from $165.',
+      image: 'images/cake_celebration_kids.png', price: '$165', tiers: '2–4 tiers available',
+      gallery: ['images/cake_celebration_kids.png', 'images/cake_cartoon_1790771817713.jpg', 'images/cake_unicorn_1790771753982.jpg'],
+      alt: 'Pastel confetti birthday cake with sprinkles and soft colours',
+      desc1: 'Our Pastel Confetti Dream cake is soft, sweet and joyful — pastel buttercream, confetti sprinkles and a dreamy drip.',
+      desc2: 'Add a number topper, matching cupcakes and a personalised plaque for the perfect pastel party table.',
+      includes: [
+        { t: 'Custom tiered cake', d: '2 to 4 tiers available' },
+        { t: 'Confetti sprinkles', d: 'Premium mix' },
+        { t: 'Pastel buttercream', d: 'Custom palette' },
+        { t: 'Drip detail', d: 'White choc option' },
+        { t: 'Personalised name', d: 'Custom plaque' },
+        { t: 'Number topper', d: 'Included' }
+      ],
+      flavours: ['Vanilla Bean', 'Strawberry & Cream', 'Lemon Elderflower', 'Blueberry Lavender', 'White Chocolate', 'Funfetti'],
+      faq: [
+        { q: 'How many tiers can the Confetti cake have?', a: 'Confetti Dream cakes come in 2 to 4 tiers, serving 15–55 guests.' },
+        { q: 'Can the sponge be funfetti?', a: 'Yes! Funfetti rainbow sponge inside is free to request.' },
+        { q: 'Can you match the party palette?', a: 'Absolutely — share your colours and we will match buttercream and sprinkles.' },
+        { q: 'How should I store and serve the cake?', a: 'Best at room temperature, cool and dry. Refrigerate only if warm, then rest 2 hours before serving.' }
+      ]
+    },
+    'botanical-blossom': {
+      badge: 'Floral Theme', shortName: 'Blossom', fullName: 'Botanical Blossom Elegance', category: 'Floral',
+      heroTitle: 'Botanical Blossom <span style="color:var(--buttercream);">Elegance</span>',
+      heroSub: 'Tall blossom tiers with delicate petals — refined elegance for special birthdays.',
+      meta: 'Blossom elegance birthday cake — tall floral tiers. Custom blossom cakes from $185.',
+      image: 'images/cake_custom_tiered.png', price: '$185', tiers: '2–5 tiers available',
+      gallery: ['images/cake_custom_tiered.png', 'images/cake_floral_1790772004332.jpg', 'images/cake_celebration_kids.png'],
+      alt: 'Botanical blossom elegance cake with tall tiers and delicate petals',
+      desc1: 'Our Botanical Blossom Elegance cake is tall, refined and romantic — extended tiers wrapped in delicate sugar blossoms and petals.',
+      desc2: 'Choose blush, ivory or your party palette, with gold leaf and a calligraphy plaque for the finishing touch.',
+      includes: [
+        { t: 'Custom tiered cake', d: '2 to 5 tiers available' },
+        { t: 'Sugar blossoms', d: 'Hand-crafted petals' },
+        { t: 'Gold leaf', d: 'Edible accents' },
+        { t: 'Tall tiers', d: 'Elegant proportions' },
+        { t: 'Personalised name', d: 'Calligraphy plaque' },
+        { t: 'Petal finish', d: 'Textured buttercream' }
+      ],
+      flavours: ['Rose & Lychee', 'Lemon Elderflower', 'Vanilla Bean', 'Peach & Prosecco', 'Blueberry Lavender', 'Pistachio & Rose'],
+      faq: [
+        { q: 'How many tiers can the Blossom cake have?', a: 'Blossom Elegance cakes come in 2 to 5 tiers, from intimate parties to 100+ guests.' },
+        { q: 'Can you do tall tiers?', a: 'Yes — tall elegant tiers are our signature for this design.' },
+        { q: 'Is gold leaf edible?', a: 'Yes, we use 100% edible gold leaf and lustre.' },
+        { q: 'How should I store and serve the cake?', a: 'Best at room temperature, cool and dry. Refrigerate only if warm, then rest 2 hours before serving.' }
+      ]
+    }
+  };
+
+  function getSlug() {
+    try {
+      var s = new URLSearchParams(window.location.search).get('service');
+      if (s && SERVICES[s]) return s;
+      var h = (window.location.hash || '').replace('#', '');
+      if (h && SERVICES[h]) return h;
+    } catch (e) {}
+    return 'royal-princess';
+  }
+
+  function setBadge(el, text) {
+    if (!el) return;
+    var icon = el.querySelector('svg');
+    var iconHtml = icon ? icon.outerHTML : '';
+    el.innerHTML = iconHtml + '&nbsp;' + text;
+  }
+
+  function render(d, slug) {
+    document.title = d.fullName + ' — Service Detail | Sugar Bliss Bakery';
+    var docTitle = document.getElementById('sd-doc-title');
+    if (docTitle) docTitle.textContent = document.title;
+    var meta = document.getElementById('sd-meta-desc');
+    if (meta) meta.setAttribute('content', d.meta);
+
+    setBadge(document.getElementById('sd-hero-badge'), d.badge);
+    var ht = document.getElementById('sd-hero-title');
+    if (ht) ht.innerHTML = d.heroTitle;
+    var hs = document.getElementById('sd-hero-sub');
+    if (hs) hs.textContent = d.heroSub;
+
+    var mainImg = document.getElementById('sd-main-img');
+    var mainWrap = document.getElementById('sd-main-wrap');
+    if (mainImg) { mainImg.src = d.gallery[0]; mainImg.alt = d.alt; }
+    if (mainWrap) mainWrap.setAttribute('data-lightbox', d.gallery[0]);
+    var t1 = document.getElementById('sd-thumb1-img');
+    var t1w = document.getElementById('sd-thumb1-wrap');
+    if (t1) { t1.src = d.gallery[1]; t1.alt = d.fullName + ' alternate view'; }
+    if (t1w) t1w.setAttribute('data-lightbox', d.gallery[1]);
+    var t2 = document.getElementById('sd-thumb2-img');
+    var t2w = document.getElementById('sd-thumb2-wrap');
+    if (t2) { t2.src = d.gallery[2]; t2.alt = d.fullName + ' detail view'; }
+    if (t2w) t2w.setAttribute('data-lightbox', d.gallery[2]);
+
+    var h2 = document.getElementById('cake-detail-heading');
+    if (h2) h2.innerHTML = 'The <span class="gradient-text">' + d.fullName + '</span>';
+    var d1 = document.getElementById('sd-desc-1');
+    if (d1) d1.textContent = d.desc1;
+    var d2 = document.getElementById('sd-desc-2');
+    if (d2) d2.textContent = d.desc2;
+
+    var inc = document.getElementById('sd-includes');
+    if (inc) {
+      inc.innerHTML = d.includes.map(function (it) {
+        return '<div style="display:flex; align-items:flex-start; gap:0.75rem; padding:1rem; background:var(--buttercream); border-radius:var(--radius-lg);">' + CHECK +
+          '<div><div style="font-weight:700; color:var(--plum); font-size:0.9rem;">' + it.t + '</div><div style="font-size:0.8rem; color:var(--gray-400);">' + it.d + '</div></div></div>';
+      }).join('');
+    }
+
+    var fl = document.getElementById('sd-flavours');
+    if (fl) {
+      fl.innerHTML = d.flavours.map(function (f, i) {
+        return '<span style="padding:0.5rem 1.25rem; background:' + FLAV_BG[i % FLAV_BG.length] + '; color:var(--plum); border-radius:var(--radius-full); font-size:0.875rem; font-weight:600;">' + f + '</span>';
+      }).join('');
+    }
+    var fsel = document.getElementById('sd-flavour');
+    if (fsel) {
+      fsel.innerHTML = d.flavours.map(function (f) { return '<option>' + f + '</option>'; }).join('');
+    }
+
+    setBadge(document.getElementById('sd-side-label'), d.fullName);
+    var sp = document.getElementById('sd-side-price');
+    if (sp) sp.textContent = d.price;
+
+    var pn = document.getElementById('sd-process-name');
+    if (pn) pn.textContent = d.shortName;
+    var rn = document.getElementById('sd-reviews-name');
+    if (rn) rn.textContent = d.shortName;
+    var cn = document.getElementById('sd-cta-name');
+    if (cn) cn.textContent = d.shortName;
+    var prn = document.getElementById('sd-pricing-name');
+    if (prn) prn.textContent = d.shortName + ' Cake';
+    setBadge(document.getElementById('sd-faq-badge'), d.shortName + ' Cake FAQ');
+
+    var faqList = document.getElementById('sd-faq-list');
+    if (faqList) {
+      faqList.innerHTML = d.faq.map(function (f) {
+        return '<div class="faq-item"><div class="faq-question" tabindex="0" role="button" aria-expanded="false">' + f.q + ' <div class="faq-icon" aria-hidden="true">+</div></div><div class="faq-answer">' + f.a + '</div></div>';
+      }).join('');
+      bindFaq(faqList);
+    }
+
+    var faqCta = document.getElementById('sd-faq-cta');
+    if (faqCta) {
+      var label = 'Order Your ' + d.shortName + ' Cake ';
+      faqCta.innerHTML = label + '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+    }
+
+    var orderBtn = document.getElementById('sd-order-btn');
+    if (orderBtn) orderBtn.setAttribute('href', 'contact.html?service=' + encodeURIComponent(slug));
+
+    renderRelated(slug, d);
+  }
+
+  function renderRelated(slug, d) {
+    var box = document.getElementById('sd-related');
+    if (!box) return;
+    var keys = Object.keys(SERVICES).filter(function (k) { return k !== slug; });
+    var same = keys.filter(function (k) { return SERVICES[k].category === d.category; });
+    var others = same.concat(keys.filter(function (k) { return SERVICES[k].category !== d.category; })).slice(0, 3);
+    box.innerHTML = others.map(function (k, i) {
+      var r = SERVICES[k];
+      var style = i === 2 ? ' class="related-card" style="margin-bottom:0;"' : ' class="related-card"';
+      return '<a href="service-detail.html?service=' + k + '"' + style + '>' +
+        '<div style="overflow:hidden;"><img src="' + r.image + '" alt="' + r.fullName + '" loading="lazy" /></div>' +
+        '<div style="padding:0.875rem; display:flex; flex-direction:column; justify-content:center;">' +
+        '<div style="font-size:0.75rem; color:var(--coral); font-weight:700; margin-bottom:0.25rem;">' + r.category + '</div>' +
+        '<div style="font-family:var(--font-display); font-weight:700; font-size:0.9rem; color:var(--plum);">' + r.fullName + '</div>' +
+        '<div style="font-size:0.8rem; color:var(--gray-300);">From ' + r.price + '</div>' +
+        '</div></a>';
+    }).join('');
+  }
+
+  function bindFaq(scope) {
+    var questions = (scope || document).querySelectorAll('.faq-question');
+    questions.forEach(function (q) {
+      q.addEventListener('click', function () { toggleFaq(q); });
+      q.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleFaq(q); }
+      });
+    });
+  }
+
+  function toggleFaq(question) {
+    var item = question.closest('.faq-item');
+    var wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function (el) {
+      el.classList.remove('open');
+      var qq = el.querySelector('.faq-question');
+      if (qq) qq.setAttribute('aria-expanded', 'false');
+    });
+    if (!wasOpen) {
+      item.classList.add('open');
+      question.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var slug = getSlug();
+    render(SERVICES[slug], slug);
+  });
+})();
+</script>
 </body>
 </html>
