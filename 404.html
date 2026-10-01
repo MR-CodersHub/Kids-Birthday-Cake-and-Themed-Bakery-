@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Page not found — Sugar Bliss Bakery. The page you're looking for has moved or doesn't exist. Find your way back to birthday cake magic!" />
+  <title>404 — Page Not Found | Sugar Bliss Bakery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E87578' stroke-width='1.8'%3E%3Cpath d='M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z'/%3E%3Cpath d='M4 14h16M8 10V6M16 10V6M12 10V4'/%3E%3C/svg%3E" />
+  <style>
+    .error-page { min-height: 100vh; display: flex; flex-direction: column; }
+    .error-main { flex: 1; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; background: linear-gradient(160deg, var(--plum) 0%, #2a1427 50%, var(--lavender-dark) 100%); }
+    .error-content { text-align: center; padding: 3rem 2rem; position: relative; z-index: 2; max-width: 700px; }
+    .error-number { font-family: var(--font-display); font-size: clamp(8rem, 20vw, 16rem); font-weight: 900; line-height: 1; background: linear-gradient(135deg, var(--coral), var(--gold), var(--lavender)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: block; letter-spacing: -0.05em; animation: pulse 3s ease-in-out infinite; }
+    .error-cake { font-size: clamp(3rem, 8vw, 6rem); margin: -1rem 0; display: block; animation: float 4s ease-in-out infinite; }
+    @keyframes float { 0%, 100% { transform: translateY(0) rotate(-5deg); } 50% { transform: translateY(-20px) rotate(5deg); } }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.85; } }
+    .error-particle { position: absolute; border-radius: 50%; animation: floatParticle var(--duration, 6s) ease-in-out infinite; animation-delay: var(--delay, 0s); pointer-events: none; }
+    @keyframes floatParticle { 0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.6; } 50% { transform: translateY(-30px) rotate(180deg); opacity: 1; } }
+    .quick-link-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-top: 2.5rem; }
+    .quick-link-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: var(--radius-xl); padding: 1.25rem 1rem; text-align: center; text-decoration: none; transition: all var(--transition-bounce); }
+    .quick-link-card:hover { background: rgba(255,255,255,0.15); transform: translateY(-4px); }
+    .quick-link-card-icon { font-size: 1.75rem; margin-bottom: 0.5rem; display: block; }
+    .quick-link-card-label { color: rgba(255,255,255,0.85); font-size: 0.85rem; font-weight: 600; }
+  </style>
+</head>
+<body>
+<div class="page-transition" aria-hidden="true"></div>
+
+<div class="error-page">
+  <!-- Minimal Nav -->
+  <nav style="padding:1.5rem 2rem; display:flex; justify-content:space-between; align-items:center; position:relative; z-index:10; background:rgba(0,0,0,0.2);" role="navigation" aria-label="Error page navigation">
+    <a href="index.html" class="nav-logo nav-logo--light" aria-label="Sugar Bliss Bakery Home">
+      <div class="nav-logo-icon" aria-hidden="true"><svg class="icon icon-xl icon-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z"/><path d="M4 14h16"/><path d="M8 10V6"/><path d="M16 10V6"/><path d="M12 10V4"/><path d="M8 4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2"/></svg></div>
+      <div class="nav-logo-text">Sugar<span>Bliss</span></div>
+    </a>
+    <div style="display:flex; gap:0.75rem;">
+      <a href="index.html" class="btn btn-outline btn-sm" style="border-color:rgba(255,255,255,0.3); color:white;"><svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Home</a>
+      <a href="contact.html" class="btn btn-primary btn-sm">Contact</a>
+    </div>
+  </nav>
+
+  <main class="error-main" role="main" aria-labelledby="error-heading">
+    <!-- Floating particles -->
+    <div class="error-particle" style="width:8px; height:8px; background:var(--coral); top:15%; left:10%; --duration:5s;" aria-hidden="true"></div>
+    <div class="error-particle" style="width:12px; height:12px; background:var(--lavender); top:25%; right:15%; --duration:7s; --delay:1s;" aria-hidden="true"></div>
+    <div class="error-particle" style="width:6px; height:6px; background:var(--gold); top:70%; left:20%; --duration:6s; --delay:2s;" aria-hidden="true"></div>
+    <div class="error-particle" style="width:10px; height:10px; background:var(--mint); bottom:25%; right:25%; --duration:8s; --delay:0.5s;" aria-hidden="true"></div>
+    <div class="error-particle" style="width:5px; height:5px; background:var(--buttercream); top:40%; left:5%; --duration:5.5s; --delay:1.5s;" aria-hidden="true"></div>
+    <div class="error-particle" style="width:14px; height:14px; background:var(--coral); bottom:15%; right:10%; --duration:9s; --delay:0.3s;" aria-hidden="true"></div>
+
+    <div class="error-content">
+      <span class="error-number" aria-hidden="true">404</span>
+      <span class="error-cake" role="img" aria-label="Confused birthday cake" style="display:inline-flex; align-items:center; justify-content:center;"><svg class="icon icon-4xl" style="width:72px;height:72px;color:var(--coral);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z"/><path d="M4 14h16"/><path d="M8 10V6"/><path d="M16 10V6"/><path d="M12 10V4"/><path d="M8 4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2"/><path d="M6 20v2M18 20v2"/></svg></span>
+
+      <h1 id="error-heading" style="color:white; font-size:clamp(1.5rem, 4vw, 2.5rem); margin:1.5rem 0 1rem;">
+        Oops! This Page Ran Away <span style="color:var(--buttercream);">with the Cake!</span>
+      </h1>
+      <p style="color:rgba(255,255,255,0.75); font-size:1.05rem; max-width:480px; margin:0 auto 2rem; line-height:1.75;">
+        The page you're looking for seems to have gone missing — a bit like the last slice of birthday cake at a party! But don't worry, we've got plenty more sweetness waiting for you.
+      </p>
+
+      <!-- Action buttons -->
+      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-bottom:2.5rem;">
+        <a href="index.html" class="btn btn-lg" style="background:var(--coral); color:white; font-weight:700;">Take Me Home</a>
+        <a href="javascript:history.back()" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,0.3); color:white;">Go Back</a>
+      </div>
+
+      <!-- Quick Links -->
+      <p style="color:rgba(255,255,255,0.5); font-size:0.85rem; margin-bottom:1.25rem;">Or jump straight to one of these:</p>
+      <nav class="quick-link-grid" aria-label="Quick page links">
+        <a href="services.html" class="quick-link-card">
+          <span class="quick-link-card-icon" aria-hidden="true"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z"/><path d="M4 14h16"/><path d="M8 10V6"/><path d="M16 10V6"/><path d="M12 10V4"/><path d="M8 4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2"/><path d="M6 20v2M18 20v2"/></svg></span>
+          <span class="quick-link-card-label">All Themes</span>
+        </a>
+        <a href="pricing.html" class="quick-link-card">
+          <span class="quick-link-card-icon" aria-hidden="true"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="2"/><path d="M4 2h5.5L21 13.5l-7.5 7.5L2 9.5V4c0-1.1.9-2 2-2z"/></svg></span>
+          <span class="quick-link-card-label">Pricing</span>
+        </a>
+        <a href="blog.html" class="quick-link-card">
+          <span class="quick-link-card-icon" aria-hidden="true"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></span>
+          <span class="quick-link-card-label">Blog</span>
+        </a>
+        <a href="contact.html" class="quick-link-card">
+          <span class="quick-link-card-icon" aria-hidden="true"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.47-1.47a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <span class="quick-link-card-label">Contact</span>
+        </a>
+        <a href="sitemap.html" class="quick-link-card">
+          <span class="quick-link-card-icon" aria-hidden="true"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></span>
+          <span class="quick-link-card-label">Sitemap</span>
+        </a>
+      </nav>
+
+      <!-- Error search -->
+      <div style="margin-top:2.5rem; max-width:380px; margin-left:auto; margin-right:auto;">
+        <p style="color:rgba(255,255,255,0.5); font-size:0.85rem; margin-bottom:0.75rem;">Still lost? Search our site:</p>
+        <form style="display:flex; gap:0.75rem;" role="search" aria-label="Site search">
+          <input type="search" class="form-control" placeholder="Search cakes, themes..." aria-label="Search term" style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.2); color:white;" />
+          <button type="submit" class="btn btn-primary" aria-label="Submit search"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer strip -->
+  <div style="background:rgba(0,0,0,0.3); padding:1.5rem 2rem; text-align:center;">
+    <p style="color:rgba(255,255,255,0.5); font-size:0.8rem; margin:0;">© 2025 Sugar Bliss Bakery · <a href="privacy.html" style="color:rgba(255,255,255,0.5);">Privacy</a> · <a href="terms.html" style="color:rgba(255,255,255,0.5);">Terms</a></p>
+  </div>
+</div>
+
+<script src="js/icons.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

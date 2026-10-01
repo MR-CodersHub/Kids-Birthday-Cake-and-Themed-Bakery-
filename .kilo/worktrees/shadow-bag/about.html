@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Sugar Bliss Bakery — Meet our passionate team of cake artisans, learn our story, our values and why we're London's most loved children's birthday cake studio." />
+  <title>About Us — Sugar Bliss Bakery | Our Story & Team</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E87578' stroke-width='1.8'%3E%3Cpath d='M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z'/%3E%3Cpath d='M4 14h16M8 10V6M16 10V6M12 10V4'/%3E%3C/svg%3E" />
+  <style>
+    .timeline { position: relative; padding-left: 3rem; }
+    .timeline::before { content:''; position:absolute; left:1rem; top:0; bottom:0; width:2px; background:linear-gradient(to bottom, var(--coral), var(--lavender), var(--mint)); border-radius:2px; }
+    .timeline-item { position:relative; margin-bottom:3rem; }
+    .timeline-dot { position:absolute; left:-2.25rem; top:0.5rem; width:16px; height:16px; border-radius:50%; background:var(--coral); border:3px solid var(--white); box-shadow:0 0 0 4px var(--coral); transition:transform var(--transition-bounce); }
+    .timeline-item:hover .timeline-dot { transform:scale(1.5); }
+    .timeline-year { font-size:0.8rem; font-weight:700; color:var(--coral); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.5rem; }
+    .timeline-title { font-family:var(--font-display); font-size:1.2rem; font-weight:700; color:var(--plum); margin-bottom:0.5rem; }
+    [data-theme="dark"] .timeline-title { color:var(--buttercream); }
+    .team-card { background:var(--white); border-radius:var(--radius-xl); overflow:hidden; box-shadow:var(--shadow-md); border:1px solid var(--gray-100); transition:all var(--transition-slow); }
+    [data-theme="dark"] .team-card { background:var(--light-gray); border-color:var(--gray-200); }
+    .team-card:hover { transform:translateY(-8px); box-shadow:var(--shadow-xl); }
+    .team-img { position:relative; aspect-ratio:4/5; overflow:hidden; }
+    .team-img img { width:100%; height:100%; object-fit:cover; transition:transform var(--transition-slow); }
+    .team-card:hover .team-img img { transform:scale(1.05); }
+    .team-body { padding:1.75rem; }
+    .team-role { font-size:0.8rem; font-weight:700; color:var(--coral); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.25rem; }
+    .team-name { font-family:var(--font-display); font-size:1.3rem; font-weight:800; color:var(--plum); margin-bottom:0.75rem; }
+    [data-theme="dark"] .team-name { color:var(--buttercream); }
+    .team-bio { font-size:0.875rem; color:var(--gray-400); line-height:1.7; margin-bottom:1.25rem; }
+    .team-social { display:flex; gap:0.5rem; }
+    .team-social-btn { width:34px; height:34px; border-radius:50%; background:var(--light-gray); display:flex; align-items:center; justify-content:center; font-size:0.875rem; transition:all var(--transition-bounce); }
+    .team-social-btn:hover { background:var(--coral); color:white; transform:scale(1.1); }
+    .value-card { padding:2rem; border-radius:var(--radius-xl); text-align:center; transition:all var(--transition-slow); position:relative; overflow:hidden; background:var(--white); border:1px solid var(--gray-100); box-shadow:var(--shadow-sm); }
+    [data-theme="dark"] .value-card { background:var(--light-gray); border-color:var(--gray-200); }
+    .value-card::before { content:''; position:absolute; inset:0; opacity:0; transition:opacity var(--transition-base); background:linear-gradient(135deg, var(--lavender-light), var(--coral-light)); }
+    .value-card:hover::before { opacity:0.1; }
+    .value-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-lg); }
+    .award-item { display:flex; align-items:center; gap:1.5rem; padding:1.5rem; background:var(--white); border-radius:var(--radius-lg); box-shadow:var(--shadow-sm); border:1px solid var(--gray-100); margin-bottom:1rem; transition:all var(--transition-base); }
+    [data-theme="dark"] .award-item { background:var(--light-gray); border-color:var(--gray-200); }
+    .award-item:hover { transform:translateX(6px); box-shadow:var(--shadow-md); }
+    .award-icon { width:56px; height:56px; border-radius:var(--radius-lg); display:flex; align-items:center; justify-content:center; font-size:1.5rem; flex-shrink:0; }
+    @media (max-width:768px) { .team-grid { grid-template-columns:repeat(2,1fr) !important; } }
+    @media (max-width:480px) { .team-grid { grid-template-columns:1fr !important; } }
+  </style>
+</head>
+<body>
+<div class="page-transition" aria-hidden="true"></div>
+
+<!-- Navbar -->
+<nav class="navbar scrolled" role="navigation" aria-label="Main navigation" id="main-navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo"><div class="nav-logo-icon"><svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z"/><path d="M4 14h16"/><path d="M8 10V6"/><path d="M16 10V6"/><path d="M12 10V4"/><path d="M8 4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2"/><path d="M6 20v2M18 20v2"/></svg></div><div class="nav-logo-text">Sugar<span>Bliss</span></div></a>
+    <ul class="nav-menu" role="list">
+      <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="home2.html" class="nav-link">Home 2</a></li>
+      <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+      <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+      <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+      <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+      <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="nav-icon-btn" id="theme-toggle" aria-label="Toggle dark mode"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+      <button class="nav-icon-btn nav-text-btn" id="rtl-toggle" aria-label="Toggle RTL/LTR direction" title="Toggle RTL/LTR">RTL</button>
+      <a href="login.html" class="btn btn-secondary btn-sm nav-login-btn">Login/Signup</a>
+      <a href="contact.html" class="btn btn-primary btn-sm">Order Now</a>
+    </div>
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+  <a href="index.html" class="mobile-nav-link">Home</a>
+  <a href="home2.html" class="mobile-nav-link">Home 2</a>
+  <a href="about.html" class="mobile-nav-link">About</a>
+  <a href="services.html" class="mobile-nav-link">Services</a>
+  <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+  <a href="blog.html" class="mobile-nav-link">Blog</a>
+  <a href="contact.html" class="mobile-nav-link">Contact</a>
+  <div style="margin-top: 2rem; display:flex; flex-direction:column; gap: 1rem;">
+    <a href="contact.html" class="btn btn-primary" style="flex:1; justify-content:center;">Order Now</a>
+    <a href="login.html" class="btn btn-secondary" style="flex:1; justify-content:center;">Login/Signup</a>
+  </div>
+</nav>
+
+<!-- Page Hero -->
+<div class="page-hero" role="banner">
+  <div class="floating-shapes"><div class="shape shape-1"></div><div class="shape shape-2"></div></div>
+  <div class="container page-hero-content">
+    <div class="section-badge" style="margin:0 auto 1.5rem; background:rgba(255,240,201,0.2); color:var(--buttercream); border:1px solid rgba(255,240,201,0.3); display:inline-flex;"><svg class="icon icon-sm icon-coral" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> Our Story</div>
+    <h1 class="page-hero-title">The Sweet Story Behind<br><span style="color:var(--buttercream);">Sugar Bliss Bakery</span></h1>
+    <nav class="page-hero-breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html" style="color:rgba(255,255,255,0.7);">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">About Us</span>
+    </nav>
+  </div>
+</div>
+
+<!-- =============================
+     SECTION 1: BRAND STORY
+     ============================= -->
+<section aria-labelledby="brand-story-heading">
+  <div class="container">
+    <div class="grid-2" style="align-items:center; gap:5rem;">
+      <div class="reveal-left">
+        <div class="section-badge"><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> Founded 2018</div>
+        <h2 class="section-title" id="brand-story-heading">Born from a Mom's Love & a <span class="gradient-text">Passion for Art</span></h2>
+        <p style="margin-bottom:1.5rem;">It all started in a small home kitchen in South London when Clara Whitmore, a trained pastry chef and mother of two, couldn't find a birthday cake that truly matched her daughter's love for unicorns.</p>
+        <p style="margin-bottom:1.5rem;">So she made one herself. And then another. And another. Her kitchen became a magical studio, word spread, and Sugar Bliss Bakery was born — a boutique where edible art meets childhood dreams.</p>
+        <p style="margin-bottom:2.5rem;">Today, we serve hundreds of families across London and beyond, crafting luxury children's cakes that don't just look extraordinary — they taste like pure joy.</p>
+        <div style="display:flex; gap:1.5rem; flex-wrap:wrap;">
+          <a href="contact.html" class="btn btn-primary btn-lg">Order Your Dream Cake <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a href="services.html" class="btn btn-secondary btn-lg">Explore Themes</a>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <div style="border-radius:32px; overflow:hidden; box-shadow:var(--shadow-xl); position:relative;">
+          <img src="images/bakery_interior_1790771843318.jpg" alt="The Sugar Bliss Bakery boutique studio interior" style="width:100%; display:block;" loading="lazy" />
+          <div style="position:absolute; top:2rem; left:-1.5rem; background:var(--coral); border-radius:var(--radius-xl); padding:1.25rem 1.75rem; box-shadow:var(--shadow-xl); color:white; text-align:center;">
+            <div style="font-family:var(--font-display); font-weight:800; font-size:2rem; line-height:1;">8</div>
+            <div style="font-size:0.8rem; font-weight:600;">Years of Magic</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================
+     SECTION 2: VALUES
+     ============================= -->
+<section class="bg-cream" aria-labelledby="values-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-badge"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.7 7.3L12 22l9.3-14.7M2.7 7.3L7 2h10l4.3 5.3M2.7 7.3h18.6"/><path d="M7 2l5 5.3L17 2"/><path d="M12 7.3L7 2"/></svg> What We Stand For</div>
+      <h2 class="section-title" id="values-heading">Our Core <span class="gradient-text">Values</span></h2>
+      <p class="section-subtitle">The principles that guide every cake we bake, every candle we place, every smile we create.</p>
+    </div>
+    <div class="grid-3 stagger-children">
+      <div class="value-card">
+        <div style="margin-bottom:1.5rem;" aria-hidden="true" class="icon-coral"><svg class="icon icon-2xl icon-coral" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <h4 style="margin-bottom:0.75rem;">Passion in Every Layer</h4>
+        <p style="font-size:0.9rem;">We pour genuine love into every cake. No shortcuts, no compromises — just artistry, care and dedication to perfection.</p>
+      </div>
+      <div class="value-card">
+        <div style="margin-bottom:1.5rem;" aria-hidden="true" class="icon-mint"><svg class="icon icon-2xl icon-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+        <h4 style="margin-bottom:0.75rem;">Pure & Premium</h4>
+        <p style="font-size:0.9rem;">Organic flour, free-range eggs, natural colorants, real butter. What goes into your child's cake matters — so we only use the finest.</p>
+      </div>
+      <div class="value-card">
+        <div style="margin-bottom:1.5rem;" aria-hidden="true" class="icon-lavender"><svg class="icon icon-2xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg></div>
+        <h4 style="margin-bottom:0.75rem;">Artistry Without Limits</h4>
+        <p style="font-size:0.9rem;">We treat each cake as a canvas. Our designs push boundaries of what edible art can be — whimsical, detailed, and uniquely yours.</p>
+      </div>
+      <div class="value-card">
+        <div style="margin-bottom:1.5rem;" aria-hidden="true" class="icon-gold"><svg class="icon icon-2xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h4 style="margin-bottom:0.75rem;">Families First</h4>
+        <p style="font-size:0.9rem;">Every interaction is personal. We listen, we collaborate, we care. Your family's joy is our greatest achievement.</p>
+      </div>
+      <div class="value-card">
+        <div style="margin-bottom:1.5rem;" aria-hidden="true" class="icon-mint"><svg class="icon icon-2xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <h4 style="margin-bottom:0.75rem;">Sustainable Baking</h4>
+        <p style="font-size:0.9rem;">Eco-friendly packaging, local sourcing, zero food waste policies. We bake with the planet in mind — for the children who'll inherit it.</p>
+      </div>
+      <div class="value-card">
+        <div style="margin-bottom:1.5rem;" aria-hidden="true" class="icon-gold"><svg class="icon icon-2xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/><path d="M4.5 16.5l.75 2.25L7.5 19.5l-2.25.75L4.5 22.5l-.75-2.25L1.5 19.5l2.25-.75L4.5 16.5z"/><path d="M19.5 3l.75 2.25L22.5 6l-2.25.75L19.5 9l-.75-2.25L16.5 6l2.25-.75L19.5 3z"/></svg></div>
+        <h4 style="margin-bottom:0.75rem;">Moment Makers</h4>
+        <p style="font-size:0.9rem;">Birthdays are precious — we understand the weight of that magic moment. We don't make cakes; we make memories that last forever.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================
+     SECTION 3: TEAM
+     ============================= -->
+<section aria-labelledby="team-page-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-badge"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18h12v3a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-3z"/><path d="M6 14v4h12v-4"/><path d="M6 14a4 4 0 0 1-2.5-7.1 5 5 0 0 1 9-3.9 5 5 0 0 1 9 3.9A4 4 0 0 1 18 14"/></svg> Meet the Artists</div>
+      <h2 class="section-title" id="team-page-heading">The Talented <span class="gradient-text">Hands</span> Behind the Magic</h2>
+      <p class="section-subtitle">Three extraordinary artisans, united by a love of childhood wonder and the craft of sugar.</p>
+    </div>
+
+    <div class="grid-3 team-grid stagger-children">
+      <div class="team-card">
+        <div class="team-img">
+          <img src="images/baker_team_1790771959250.jpg" alt="Clara Whitmore - Head Pastry Artist and Founder of Sugar Bliss Bakery" loading="lazy" style="object-position:left center;" />
+        </div>
+        <div class="team-body">
+          <div class="team-role">Founder & Head Pastry Artist</div>
+          <div class="team-name">Clara Whitmore</div>
+          <p class="team-bio">Award-winning pastry chef trained at Le Cordon Bleu Paris. Clara founded Sugar Bliss to give children the extraordinary birthday cakes they deserve. Her princess designs are legendary.</p>
+          <div class="team-social">
+            <a href="#" class="team-social-btn" aria-label="Instagram"><svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" class="team-social-btn" aria-label="LinkedIn"><svg class="icon icon-sm icon-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-img">
+          <img src="images/baker_team_1790771959250.jpg" alt="Sarah Chen - Lead Sugar Artist at Sugar Bliss Bakery" loading="lazy" style="object-position:center center;" />
+        </div>
+        <div class="team-body">
+          <div class="team-role">Lead Sugar Artist & Designer</div>
+          <div class="team-name">Sarah Chen</div>
+          <p class="team-bio">Former fine arts graduate who discovered her passion for edible sculpture. Sarah specialises in hyper-realistic fondant figurines and character cake toppers that amaze everyone.</p>
+          <div class="team-social">
+            <a href="#" class="team-social-btn" aria-label="Instagram"><svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" class="team-social-btn" aria-label="Pinterest"><svg class="icon icon-md icon-fill" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-img">
+          <img src="images/baker_team_1790771959250.jpg" alt="Maria Santos - Floral Sugar Specialist at Sugar Bliss Bakery" loading="lazy" style="object-position:right center;" />
+        </div>
+        <div class="team-body">
+          <div class="team-role">Floral Sugar Specialist</div>
+          <div class="team-name">Maria Santos</div>
+          <p class="team-bio">Botanically-trained sugar flower artist with a gift for creating breathtaking edible floral arrangements. Every petal Maria crafts could be mistaken for the real thing.</p>
+          <div class="team-social">
+            <a href="#" class="team-social-btn" aria-label="Instagram"><svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" class="team-social-btn" aria-label="TikTok"><svg class="icon icon-md icon-fill" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.24 8.24 0 0 0 4.83 1.54V6.78a4.85 4.85 0 0 1-1.06-.09z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================
+     SECTION 4: TIMELINE
+     ============================= -->
+<section style="background:linear-gradient(135deg, var(--plum) 0%, var(--lavender-dark) 100%); color:white;" aria-labelledby="timeline-heading">
+  <div class="container">
+    <div class="grid-2" style="gap:5rem; align-items:start;">
+      <div>
+        <div class="section-badge reveal" style="background:rgba(255,240,201,0.2); color:var(--buttercream); border:1px solid rgba(255,240,201,0.3);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg> Our Journey</div>
+        <h2 class="section-title reveal" id="timeline-heading" style="color:white;">8 Years of <span style="color:var(--buttercream);">Growing Magic</span></h2>
+        <p class="reveal" style="color:rgba(255,255,255,0.75); margin-bottom:3rem;">From a home kitchen to London's most celebrated children's cake studio — here's how Sugar Bliss became a fairytale in itself.</p>
+
+        <div class="timeline reveal">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2018</div>
+            <div class="timeline-title" style="color:var(--buttercream);">The Spark</div>
+            <p style="font-size:0.9rem; color:rgba(255,255,255,0.65);">Clara bakes her first custom unicorn cake for her daughter's 5th birthday — and receives 30 orders from party guests the next day.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:var(--lavender);"></div>
+            <div class="timeline-year">2019</div>
+            <div class="timeline-title" style="color:var(--buttercream);">First Studio</div>
+            <p style="font-size:0.9rem; color:rgba(255,255,255,0.65);">Sugar Bliss opens its first boutique kitchen studio in Notting Hill. Sarah joins as lead designer. First month: 45 orders.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:var(--mint);"></div>
+            <div class="timeline-year">2021</div>
+            <div class="timeline-title" style="color:var(--buttercream);">Award Recognition</div>
+            <p style="font-size:0.9rem; color:rgba(255,255,255,0.65);">Wins "Best Children's Cake Studio — London" at the Great British Cake Awards. Features in Vogue and Hello magazine.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:var(--gold);"></div>
+            <div class="timeline-year">2023</div>
+            <div class="timeline-title" style="color:var(--buttercream);">Expansion & Maria Joins</div>
+            <p style="font-size:0.9rem; color:rgba(255,255,255,0.65);">New flagship studio opens in Covent Garden. Maria Santos joins as floral specialist. Capacity doubles to 60 cakes/week.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:var(--coral);"></div>
+            <div class="timeline-year">2025</div>
+            <div class="timeline-title" style="color:var(--buttercream);">Today — More Magic Than Ever</div>
+            <p style="font-size:0.9rem; color:rgba(255,255,255,0.65);">2,500+ families served. 50+ premium themes. Nationwide delivery. A waitlist. And the same love that started it all.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal-right">
+        <div style="border-radius:32px; overflow:hidden; box-shadow:var(--shadow-xl); margin-bottom:2rem;">
+          <img src="images/baker_team_1790771959250.jpg" alt="The Sugar Bliss team working together in the bakery" style="width:100%; display:block;" loading="lazy" />
+        </div>
+        <!-- Awards -->
+        <div>
+          <div style="color:var(--buttercream); font-family:var(--font-display); font-size:1.1rem; font-weight:700; margin-bottom:1.25rem;"><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h2"/><path d="M18 9h2a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-2"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.45 1-1 1H7v4h10v-4h-2c-.55 0-1-.45-1-1v-2.34"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg> Recognition & Awards</div>
+          <div class="award-item">
+            <div class="award-icon" style="background:rgba(212,174,106,0.2); display:flex; align-items:center; justify-content:center; color:var(--gold);" aria-hidden="true"><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h2"/><path d="M18 9h2a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-2"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.45 1-1 1H7v4h10v-4h-2c-.55 0-1-.45-1-1v-2.34"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></div>
+            <div>
+              <div style="font-weight:700; font-size:0.95rem; color:var(--plum);">Best Children's Cake Studio</div>
+              <div style="font-size:0.8rem; color:var(--gray-400);">Great British Cake Awards 2021 & 2023</div>
+            </div>
+          </div>
+          <div class="award-item">
+            <div class="award-icon" style="background:rgba(168,138,212,0.2); display:flex; align-items:center; justify-content:center; color:var(--lavender);" aria-hidden="true"><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+            <div>
+              <div style="font-weight:700; font-size:0.95rem; color:var(--plum);">Top 10 UK Bakeries</div>
+              <div style="font-size:0.8rem; color:var(--gray-400);">Good Food Magazine Feature 2022</div>
+            </div>
+          </div>
+          <div class="award-item">
+            <div class="award-icon" style="background:rgba(168,213,194,0.2); display:flex; align-items:center; justify-content:center; color:var(--mint);" aria-hidden="true"><svg class="icon icon-sm icon-coral" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+            <div>
+              <div style="font-weight:700; font-size:0.95rem; color:var(--plum);">Green Bakery Certified</div>
+              <div style="font-size:0.8rem; color:var(--gray-400);">Sustainable Baking Initiative 2024</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================
+     SECTION 5: STATS SHOWCASE
+     ============================= -->
+<section aria-labelledby="stats-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-badge"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="12" y2="16"/></svg> By the Numbers</div>
+      <h2 class="section-title" id="stats-heading">The Magic in <span class="gradient-text">Numbers</span></h2>
+    </div>
+    <div class="grid-4 stagger-children">
+      <div style="text-align:center; padding:2.5rem 2rem; background:var(--white); border-radius:var(--radius-xl); box-shadow:var(--shadow-md); border:1px solid var(--gray-100);">
+        <div style="font-size:2.5rem; margin-bottom:0.75rem;" aria-hidden="true"><svg class="icon icon-xl icon-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z"/><path d="M4 14h16"/><path d="M8 10V6"/><path d="M16 10V6"/><path d="M12 10V4"/></svg></div>
+        <div style="font-family:var(--font-display); font-size:2.5rem; font-weight:800; color:var(--coral);" data-count="2500" data-suffix="+">2500+</div>
+        <div style="font-size:0.9rem; color:var(--gray-400); font-weight:600;">Cakes Created</div>
+      </div>
+      <div style="text-align:center; padding:2.5rem 2rem; background:var(--white); border-radius:var(--radius-xl); box-shadow:var(--shadow-md); border:1px solid var(--gray-100);">
+        <div style="margin-bottom:0.75rem;" aria-hidden="true" class="icon-lavender"><svg class="icon icon-2xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div style="font-family:var(--font-display); font-size:2.5rem; font-weight:800; color:var(--lavender);" data-count="800" data-suffix="+">800+</div>
+        <div style="font-size:0.9rem; color:var(--gray-400); font-weight:600;">5-Star Reviews</div>
+      </div>
+      <div style="text-align:center; padding:2.5rem 2rem; background:var(--white); border-radius:var(--radius-xl); box-shadow:var(--shadow-md); border:1px solid var(--gray-100);">
+        <div style="margin-bottom:0.75rem;" aria-hidden="true" class="icon-coral"><svg class="icon icon-2xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg></div>
+        <div style="font-family:var(--font-display); font-size:2.5rem; font-weight:800; color:var(--mint-dark);" data-count="50" data-suffix="+">50+</div>
+        <div style="font-size:0.9rem; color:var(--gray-400); font-weight:600;">Premium Themes</div>
+      </div>
+      <div style="text-align:center; padding:2.5rem 2rem; background:var(--white); border-radius:var(--radius-xl); box-shadow:var(--shadow-md); border:1px solid var(--gray-100);">
+        <div style="margin-bottom:0.75rem;" aria-hidden="true" class="icon-gold"><svg class="icon icon-2xl icon-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h2"/><path d="M18 9h2a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-2"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.45 1-1 1H7v4h10v-4h-2c-.55 0-1-.45-1-1v-2.34"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></div>
+        <div style="font-family:var(--font-display); font-size:2.5rem; font-weight:800; color:var(--gold);" data-count="12" data-suffix="">12</div>
+        <div style="font-size:0.9rem; color:var(--gray-400); font-weight:600;">Industry Awards</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================
+     SECTION 6: STUDIO GALLERY + CTA
+     ============================= -->
+<section class="bg-cream" aria-labelledby="studio-cta-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-badge"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Our Space</div>
+      <h2 class="section-title" id="studio-cta-heading">Come Visit Our <span class="gradient-text">Magical Studio</span></h2>
+      <p class="section-subtitle">Our bakery is open for studio consultations by appointment. See the magic happen in person — from batter to masterpiece.</p>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-bottom:4rem;">
+      <div style="border-radius:var(--radius-xl); overflow:hidden; box-shadow:var(--shadow-md); aspect-ratio:4/3; cursor:pointer;" data-lightbox="images/bakery_interior_1790771843318.jpg" class="reveal-scale">
+        <img src="images/bakery_interior_1790771843318.jpg" alt="Sugar Bliss bakery interior" style="width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" loading="lazy" />
+      </div>
+      <div style="border-radius:var(--radius-xl); overflow:hidden; box-shadow:var(--shadow-md); aspect-ratio:4/3; cursor:pointer;" data-lightbox="images/cupcakes_display_1790772029150.jpg" class="reveal-scale">
+        <img src="images/cupcakes_display_1790772029150.jpg" alt="Our cupcake display" style="width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" loading="lazy" />
+      </div>
+      <div style="border-radius:var(--radius-xl); overflow:hidden; box-shadow:var(--shadow-md); aspect-ratio:4/3; cursor:pointer;" data-lightbox="images/baker_team_1790771959250.jpg" class="reveal-scale">
+        <img src="images/baker_team_1790771959250.jpg" alt="Our team at work" style="width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" loading="lazy" />
+      </div>
+    </div>
+
+    <div style="background:linear-gradient(135deg, var(--plum), var(--coral)); border-radius:var(--radius-2xl); padding:4rem; text-align:center; position:relative; overflow:hidden;" class="reveal">
+      <div style="position:absolute; inset:0; opacity:0.05; background-image:radial-gradient(circle, white 1px, transparent 1px); background-size:24px 24px;" aria-hidden="true"></div>
+      <div style="position:relative; z-index:2;">
+        <div style="margin-bottom:1.5rem;" aria-hidden="true" class="icon-gold"><svg class="icon icon-2xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/><path d="M4.5 16.5l.75 2.25L7.5 19.5l-2.25.75L4.5 22.5l-.75-2.25L1.5 19.5l2.25-.75L4.5 16.5z"/><path d="M19.5 3l.75 2.25L22.5 6l-2.25.75L19.5 9l-.75-2.25L16.5 6l2.25-.75L19.5 3z"/></svg></div>
+        <h3 style="color:white; margin-bottom:1rem; font-size:2rem;">Ready to Create Something Extraordinary?</h3>
+        <p style="color:rgba(255,255,255,0.8); max-width:600px; margin:0 auto 2.5rem; font-size:1.05rem;">Let's build the most magical birthday cake your child has ever dreamed of — together.</p>
+        <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+          <a href="contact.html" class="btn btn-white btn-lg">Book a Consultation <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a href="services.html" class="btn btn-outline btn-lg">View All Themes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer" role="contentinfo" aria-label="Site footer">
+  <div class="container" style="position:relative; z-index:2;">
+    <div class="footer-grid">
+
+      <!-- Column 1: Company -->
+      <div>
+        <a href="index.html" class="nav-logo" style="margin-bottom:1.25rem; display:inline-flex;" aria-label="Sugar Bliss Bakery — home">
+          <div class="nav-logo-icon" aria-hidden="true"><svg class="icon icon-xl icon-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z"/><path d="M4 14h16M8 10V6M16 10V6M12 10V4"/></svg></div>
+          <div class="nav-logo-text" style="color:var(--buttercream);">Sugar<span>Bliss</span></div>
+        </a>
+        <p class="footer-brand-desc">Luxury boutique children's cake studio crafting magical birthday experiences since 2018. Every cake tells a story — let us tell yours.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Instagram"><svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://facebook.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Facebook"><svg class="icon icon-md icon-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="https://x.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="X (Twitter)"><svg class="icon icon-md icon-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="https://youtube.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="YouTube"><svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <nav aria-label="Quick links">
+        <h3 class="footer-col-title">Quick Links</h3>
+        <ul class="footer-links" role="list">
+          <li><a href="index.html" class="footer-link"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Home</a></li>
+          <li><a href="home2.html" class="footer-link"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/></svg> Home 2</a></li>
+          <li><a href="about.html" class="footer-link"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> About</a></li>
+          <li><a href="services.html" class="footer-link"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z"/><path d="M4 14h16M12 10V4"/></svg> Services</a></li>
+          <li><a href="pricing.html" class="footer-link"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="2"/><path d="M4 2h5.5L21 13.5l-7.5 7.5L2 9.5V4c0-1.1.9-2 2-2z"/></svg> Pricing</a></li>
+          <li><a href="blog.html" class="footer-link"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Blog</a></li>
+          <li><a href="contact.html" class="footer-link"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.47-1.47a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Column 3: Contact -->
+      <div>
+        <h3 class="footer-col-title">Contact Us</h3>
+        <address style="font-style:normal;">
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <a href="https://maps.google.com/?q=42+Sweet+Lane+London+W1B+3AG" target="_blank" rel="noopener" style="color:inherit;">42 Sweet Lane, Bakery District, London W1B 3AG</a>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.47-1.47a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <a href="tel:+442071234567" style="color:inherit;">+44 (0)207 123 4567</a>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <a href="mailto:hello@sugarbliss.co.uk" style="color:inherit;">hello@sugarbliss.co.uk</a>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <span>Mon – Sat: 9am – 6pm</span>
+          </div>
+        </address>
+      </div>
+
+      <!-- Column 4: Newsletter -->
+      <div>
+        <h3 class="footer-col-title">Newsletter</h3>
+        <p class="footer-brand-desc" style="margin-top:0;">Subscribe for sweet updates — new cake themes, party tips and exclusive offers.</p>
+        <form class="footer-newsletter" data-newsletter-form novalidate>
+          <label class="sr-only" for="footer-newsletter-email">Email address</label>
+          <input type="email" id="footer-newsletter-email" name="email" placeholder="Your email address" aria-label="Email address" autocomplete="email" required />
+          <button class="footer-newsletter-btn" type="submit"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/></svg> Subscribe</button>
+        </form>
+      </div>
+
+    </div><!-- /.footer-grid -->
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p class="footer-bottom-text">© 2026 Sugar Bliss Bakery. All rights reserved.</p>
+      <nav class="footer-bottom-links" aria-label="Legal links">
+        <a href="privacy.html" class="footer-bottom-link">Privacy Policy</a>
+        <span class="footer-legal-sep" aria-hidden="true">|</span>
+        <a href="terms.html" class="footer-bottom-link">Terms &amp; Conditions</a>
+        <span class="footer-legal-sep" aria-hidden="true">|</span>
+        <a href="sitemap.html" class="footer-bottom-link">Sitemap</a>
+      </nav>
+    </div>
+
+  </div><!-- /.container -->
+</footer>
+
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer"><button class="lightbox-close" aria-label="Close"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><img class="lightbox-img" src="" alt="Enlarged image" /></div>
+<div class="cookie-banner" role="banner"><p><svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/></svg> We use cookies. <a href="privacy.html">Learn more</a></p><button data-accept-cookies class="btn btn-primary btn-sm">Accept</button></div>
+<div class="toast-container" aria-live="polite"></div>
+<button id="back-to-top" aria-label="Back to top"><svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button>
+<script src="js/icons.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

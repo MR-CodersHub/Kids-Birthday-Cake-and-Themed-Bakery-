@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Sugar Bliss Bakery — Get in touch to order your dream birthday cake, ask a question, book a studio consultation or check on an existing order." />
+  <title>Contact Us — Sugar Bliss Bakery | Order Your Dream Birthday Cake</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E87578' stroke-width='1.8'%3E%3Cpath d='M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z'/%3E%3Cpath d='M4 14h16M8 10V6M16 10V6M12 10V4'/%3E%3C/svg%3E" />
+  <style>
+    .contact-info-card { display:flex; align-items:flex-start; gap:1.25rem; padding:2rem; background:rgba(255,255,255,0.1); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,0.15); border-radius:var(--radius-xl); margin-bottom:1.25rem; transition:all var(--transition-base); }
+    .contact-info-card:hover { background:rgba(255,255,255,0.15); transform:translateX(4px); }
+    .contact-icon-box { width:54px; height:54px; border-radius:var(--radius-lg); background:rgba(255,255,255,0.15); display:flex; align-items:center; justify-content:center; font-size:1.5rem; flex-shrink:0; }
+    .map-placeholder { background:linear-gradient(135deg, var(--lavender-light) 0%, var(--mint-light) 100%); border-radius:var(--radius-xl); height:300px; display:flex; align-items:center; justify-content:center; text-align:center; position:relative; overflow:hidden; border:2px dashed var(--lavender); cursor:pointer; }
+  </style>
+</head>
+<body>
+<div class="page-transition" aria-hidden="true"></div>
+<nav class="navbar scrolled" id="main-navbar" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <a href="index.html" class="nav-logo" aria-label="Sugar Bliss Bakery Home"><div class="nav-logo-icon" aria-hidden="true"><svg class="icon icon-xl icon-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z"/><path d="M4 14h16"/><path d="M8 10V6"/><path d="M16 10V6"/><path d="M12 10V4"/><path d="M8 4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2"/></svg></div><div class="nav-logo-text">Sugar<span>Bliss</span></div></a>
+    <ul class="nav-menu" role="list">
+      <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="home2.html" class="nav-link">Home 2</a></li>
+      <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+      <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+      <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+      <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+      <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="nav-icon-btn" id="theme-toggle" aria-label="Toggle dark mode"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+      <button class="nav-icon-btn nav-text-btn" id="rtl-toggle" aria-label="Toggle RTL/LTR direction" title="Toggle RTL/LTR">RTL</button>
+      <div class="profile-wrap">
+        <button class="nav-icon-btn profile-btn" id="profile-btn" aria-label="Account" aria-haspopup="menu" aria-expanded="false" aria-controls="profile-menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></button>
+        <div class="profile-menu" id="profile-menu" role="menu" aria-label="Account">
+          <p class="profile-menu-title">Profile</p>
+          <a href="login.html" role="menuitem"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>Login</a>
+          <a href="signup.html" role="menuitem"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>Signup</a>
+        </div>
+      </div>
+      <a href="login.html" class="btn btn-secondary btn-sm nav-login-btn">Login/Signup</a>
+      <a href="contact.html" class="btn btn-primary btn-sm">Order Now</a>
+    </div>
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+  <a href="index.html" class="mobile-nav-link">Home</a>
+  <a href="home2.html" class="mobile-nav-link">Home 2</a>
+  <a href="about.html" class="mobile-nav-link">About</a>
+  <a href="services.html" class="mobile-nav-link">Services</a>
+  <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+  <a href="blog.html" class="mobile-nav-link">Blog</a>
+  <a href="contact.html" class="mobile-nav-link">Contact</a>
+  <div style="margin-top: 2rem; display:flex; flex-direction:column; gap: 1rem;">
+    <a href="contact.html" class="btn btn-primary" style="flex:1; justify-content:center;">Order Now</a>
+    <a href="login.html" class="btn btn-secondary" style="flex:1; justify-content:center;">Login/Signup</a>
+  </div>
+</nav>
+
+<!-- Page Hero -->
+<div class="page-hero page-hero--inner" role="banner">
+  <div class="floating-shapes"><div class="shape shape-1"></div><div class="shape shape-2"></div></div>
+  <div class="container page-hero-content">
+    <div class="section-badge" style="margin:0 auto 1.5rem; background:rgba(255,240,201,0.2); color:var(--buttercream); border:1px solid rgba(255,240,201,0.3); display:inline-flex;"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.47-1.47a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Get in Touch</div>
+    <h1 class="page-hero-title">Let's Create Something <span style="color:var(--buttercream);">Extraordinary</span> Together</h1>
+    <p class="page-hero-sub">Tell us about your dream cake — we reply within 24 hours and love creative challenges.</p>
+  </div>
+</div>
+
+<!-- =============================
+     SECTION 1: CONTACT MAIN
+     ============================= -->
+<section aria-labelledby="contact-heading">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 1.4fr; gap:5rem; align-items:start;">
+
+      <!-- Contact Info -->
+      <div class="reveal-left">
+        <div style="background:linear-gradient(135deg, var(--plum), var(--lavender-dark)); border-radius:var(--radius-2xl); padding:3rem; position:relative; overflow:hidden;">
+          <div style="position:absolute; inset:0; opacity:0.04; background-image:radial-gradient(circle, white 1px, transparent 1px); background-size:24px 24px;" aria-hidden="true"></div>
+          <div style="position:relative; z-index:2;">
+            <div class="section-badge" style="background:rgba(255,240,201,0.2); color:var(--buttercream); border:1px solid rgba(255,240,201,0.3); margin-bottom:1.5rem; display:inline-flex;"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/><path d="M4.5 16.5l.75 2.25L7.5 19.5l-2.25.75L4.5 22.5l-.75-2.25L1.5 19.5l2.25-.75L4.5 16.5z"/><path d="M19.5 3l.75 2.25L22.5 6l-2.25.75L19.5 9l-.75-2.25L16.5 6l2.25-.75L19.5 3z"/></svg> Contact Info</div>
+            <h2 id="contact-heading" style="color:white; margin-bottom:0.75rem; font-size:1.75rem;">We'd Love to <span style="color:var(--buttercream);">Hear from You</span></h2>
+            <p style="color:rgba(255,255,255,0.7); margin-bottom:2.5rem; font-size:0.95rem;">Whether you have a question, want to check availability, or are ready to create the most magical birthday cake ever — we're here!</p>
+
+            <div class="contact-info-card">
+              <div class="contact-icon-box" aria-hidden="true"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <div>
+                <div style="font-weight:700; color:var(--buttercream); margin-bottom:0.25rem;">Studio Address</div>
+                <div style="color:rgba(255,255,255,0.7); font-size:0.9rem;">42 Sweet Lane, Bakery District<br />London W1B 3AG, UK</div>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-icon-box" aria-hidden="true"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.47-1.47a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+              <div>
+                <div style="font-weight:700; color:var(--buttercream); margin-bottom:0.25rem;">Phone</div>
+                <a href="tel:+442071234567" style="color:rgba(255,255,255,0.7); font-size:0.9rem;">+44 (0)207 123 4567</a><br />
+                <div style="color:rgba(255,255,255,0.5); font-size:0.8rem;">Mon–Sat: 9am – 6pm</div>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-icon-box" aria-hidden="true"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+              <div>
+                <div style="font-weight:700; color:var(--buttercream); margin-bottom:0.25rem;">Email</div>
+                <a href="mailto:hello@sugarbliss.co.uk" style="color:rgba(255,255,255,0.7); font-size:0.9rem;">hello@sugarbliss.co.uk</a><br />
+                <div style="color:rgba(255,255,255,0.5); font-size:0.8rem;">Response within 24 hours</div>
+              </div>
+            </div>
+
+            <div class="contact-info-card" style="margin-bottom:0;">
+              <div class="contact-icon-box" style="display:flex; align-items:center; justify-content:center;" aria-hidden="true"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+              <div>
+                <div style="font-weight:700; color:var(--buttercream); margin-bottom:0.25rem;">Studio Hours</div>
+                <div style="color:rgba(255,255,255,0.7); font-size:0.9rem;">Monday – Friday: 9am – 6pm<br />Saturday: 10am – 4pm<br />Sunday: Closed</div>
+              </div>
+            </div>
+
+            <div style="margin-top:2.5rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.15);">
+              <div style="color:var(--buttercream); font-weight:700; margin-bottom:1rem;">Follow Us for Daily Inspiration</div>
+              <div style="display:flex; gap:0.75rem;">
+                <a href="#" style="width:42px; height:42px; border-radius:50%; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; font-size:1rem; transition:all 0.3s ease; text-decoration:none;" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'" aria-label="Instagram"><svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                <a href="#" style="width:42px; height:42px; border-radius:50%; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; font-size:1rem; transition:all 0.3s ease; text-decoration:none;" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'" aria-label="Facebook"><svg class="icon icon-md icon-fill" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                <a href="#" style="width:42px; height:42px; border-radius:50%; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; font-size:1rem; transition:all 0.3s ease; text-decoration:none;" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'" aria-label="Pinterest"><svg class="icon icon-md icon-fill" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg></a>
+                <a href="#" style="width:42px; height:42px; border-radius:50%; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; font-size:1rem; transition:all 0.3s ease; text-decoration:none;" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'" aria-label="TikTok"><svg class="icon icon-md icon-fill" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.24 8.24 0 0 0 4.83 1.54V6.78a4.85 4.85 0 0 1-1.06-.09z"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="reveal-right">
+        <div class="section-badge"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="12" y2="16"/></svg> Send a Message</div>
+        <h2 style="margin-bottom:0.5rem; font-size:2rem;">Tell Us About Your <span class="gradient-text">Dream Cake</span></h2>
+        <p style="margin-bottom:2.5rem; color:var(--gray-400);">Fill in your details below and our team will get back to you within 24 hours — usually much sooner!</p>
+
+        <form data-validate aria-label="Contact form" style="background:var(--white); border-radius:var(--radius-2xl); padding:3rem; box-shadow:var(--shadow-md); border:1px solid var(--gray-100);">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+            <div class="form-group">
+              <label class="form-label" for="c-name">Full Name *</label>
+              <input type="text" id="c-name" class="form-control" placeholder="e.g., Sarah Mitchell" required aria-required="true" />
+              <span class="form-error" role="alert">Please enter your name.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="c-email">Email Address *</label>
+              <input type="email" id="c-email" class="form-control" placeholder="sarah@email.com" required aria-required="true" />
+              <span class="form-error" role="alert">Please enter a valid email.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="c-phone">Phone Number</label>
+              <input type="tel" id="c-phone" class="form-control" placeholder="+44 7700 900000" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="c-subject">Subject *</label>
+              <select id="c-subject" class="form-control form-select" required aria-required="true">
+                <option value="">Select a subject</option>
+                <option value="order">New Cake Order</option>
+                <option value="quote">Request a Quote</option>
+                <option value="consultation">Book a Consultation</option>
+                <option value="existing">Existing Order Query</option>
+                <option value="tasting">Tasting Box Request</option>
+                <option value="press">Press / Media</option>
+                <option value="other">General Enquiry</option>
+              </select>
+              <span class="form-error" role="alert">Please select a subject.</span>
+            </div>
+            <div class="form-group" style="grid-column:1/-1;">
+              <label class="form-label" for="c-party-date">Party Date (if applicable)</label>
+              <input type="date" id="c-party-date" class="form-control" />
+            </div>
+            <div class="form-group" style="grid-column:1/-1;">
+              <label class="form-label" for="c-message">Message *</label>
+              <textarea id="c-message" class="form-control" placeholder="Tell us about your dream birthday cake — theme, size, flavour, date and any special requests..." required aria-required="true" style="min-height:140px;"></textarea>
+              <span class="form-error" role="alert">Please enter your message.</span>
+            </div>
+            <div style="grid-column:1/-1;">
+              <label style="display:flex; align-items:flex-start; gap:0.75rem; cursor:pointer; font-size:0.875rem;">
+                <input type="checkbox" id="c-privacy" required aria-required="true" style="margin-top:0.2rem; accent-color:var(--coral); width:18px; height:18px;" />
+                <span>I agree to the <a href="privacy.html" style="color:var(--coral);">Privacy Policy</a> and consent to Sugar Bliss contacting me about my enquiry. *</span>
+              </label>
+            </div>
+            <div style="grid-column:1/-1;">
+              <button type="submit" class="btn btn-primary btn-lg" style="width:100%; justify-content:center;" data-original="Send Message">Send Message</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================
+     SECTION 2: MAP + DIRECTIONS
+     ============================= -->
+<section class="bg-cream" aria-labelledby="map-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-badge"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Find Us</div>
+      <h2 class="section-title" id="map-heading">Visit Our <span class="gradient-text">Covent Garden Studio</span></h2>
+      <p class="section-subtitle">Drop in for a studio consultation by appointment, or collect your order in person!</p>
+    </div>
+
+    <div class="grid-2" style="gap:3rem; align-items:start;">
+      <div class="map-placeholder reveal" role="img" aria-label="Map showing Sugar Bliss Bakery location at 42 Sweet Lane, London W1B 3AG">
+        <div style="position:relative; z-index:2; padding:2rem;">
+          <div style="margin-bottom:1rem;" aria-hidden="true" class="icon-coral"><svg class="icon icon-2xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></div>
+          <h3 style="margin-bottom:0.5rem;">42 Sweet Lane</h3>
+          <p style="color:var(--gray-400); margin-bottom:1.5rem; font-size:0.9rem;">Covent Garden, London W1B 3AG</p>
+          <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Open in Google Maps</a>
+        </div>
+      </div>
+
+      <div class="reveal-right">
+        <h3 style="margin-bottom:2rem;">Getting Here</h3>
+        <div style="display:flex; flex-direction:column; gap:1.25rem;">
+          <div style="display:flex; align-items:flex-start; gap:1rem; padding:1.25rem; background:var(--white); border:1px solid var(--gray-100); border-radius:var(--radius-lg); box-shadow:var(--shadow-sm);">
+            <div style="flex-shrink:0;" aria-hidden="true" class="icon-lavender"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="16" rx="2"/><path d="M4 11h16"/><path d="M12 3v8"/><circle cx="8" cy="15" r="1"/><circle cx="16" cy="15" r="1"/><path d="M7 21l-2 2"/><path d="M17 21l2 2"/></svg></div>
+            <div>
+              <div style="font-weight:700; margin-bottom:0.25rem;">By Tube</div>
+              <div style="font-size:0.875rem; color:var(--gray-400);">Covent Garden station (Piccadilly Line) — 3 minute walk. Turn left on James Street.</div>
+            </div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem; padding:1.25rem; background:var(--white); border:1px solid var(--gray-100); border-radius:var(--radius-lg); box-shadow:var(--shadow-sm);">
+            <div style="flex-shrink:0;" aria-hidden="true" class="icon-coral"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6v6"/><path d="M15 6v6"/><path d="M2 12h19.6"/><path d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20 6.3 18.7 5 17.2 5H6.8C5.3 5 4 6.3 3.6 7.8L2.2 12.8c-.1.4-.2.8-.2 1.2 0 .4.1.8.2 1.2.3 1.1.8 2.8.8 2.8h3"/><circle cx="7" cy="18" r="2"/><path d="M9 18h5"/><circle cx="16" cy="18" r="2"/></svg></div>
+            <div>
+              <div style="font-weight:700; margin-bottom:0.25rem;">By Bus</div>
+              <div style="font-size:0.875rem; color:var(--gray-400);">Routes 9, 11, 13 stop at The Strand — 5 minute walk to Sweet Lane.</div>
+            </div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem; padding:1.25rem; background:var(--white); border:1px solid var(--gray-100); border-radius:var(--radius-lg); box-shadow:var(--shadow-sm);">
+            <div style="flex-shrink:0;" aria-hidden="true" class="icon-gold"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg></div>
+            <div>
+              <div style="font-weight:700; margin-bottom:0.25rem;">Parking</div>
+              <div style="font-size:0.875rem; color:var(--gray-400);">Nearest NCP car park: Drury Lane (0.2 miles). Street parking available on St Martin's Lane.</div>
+            </div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem; padding:1.25rem; background:var(--white); border:1px solid var(--gray-100); border-radius:var(--radius-lg); box-shadow:var(--shadow-sm);">
+            <div style="flex-shrink:0;" aria-hidden="true" class="icon-mint"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4" r="2"/><path d="M8 19.5a5.5 5.5 0 1 0 7.8-5.3L15 9h-4v6l4 2"/><path d="M7 13h4"/></svg></div>
+            <div>
+              <div style="font-weight:700; margin-bottom:0.25rem;">Accessibility</div>
+              <div style="font-size:0.875rem; color:var(--gray-400);">Our studio is fully wheelchair accessible with step-free entry and a disabled parking bay outside.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================
+     SECTION 3: QUICK CONTACT OPTIONS
+     ============================= -->
+<section aria-labelledby="quick-contact-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-badge"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Quick Connect</div>
+      <h2 class="section-title" id="quick-contact-heading">Prefer to <span class="gradient-text">Connect Directly</span>?</h2>
+    </div>
+    <div class="grid-3 stagger-children">
+      <a href="tel:+442071234567" style="text-decoration:none;" aria-label="Call us now">
+        <div class="feature-card" style="text-align:center; cursor:pointer;">
+          <div class="feature-icon-wrap" style="background:linear-gradient(135deg,var(--coral-light),var(--coral)); margin:0 auto 1.5rem;" aria-hidden="true"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.47-1.47a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <h4 style="margin-bottom:0.75rem;">Call Us Now</h4>
+          <p style="margin-bottom:1rem; font-size:0.875rem;">Mon–Sat 9am–6pm<br />We love a good chat about cakes!</p>
+          <div style="font-family:var(--font-display); font-weight:700; color:var(--coral);">+44 (0)207 123 4567</div>
+        </div>
+      </a>
+      <a href="mailto:hello@sugarbliss.co.uk" style="text-decoration:none;" aria-label="Email us">
+        <div class="feature-card" style="text-align:center; cursor:pointer;">
+          <div class="feature-icon-wrap" style="background:linear-gradient(135deg,var(--lavender-light),var(--lavender)); margin:0 auto 1.5rem;" aria-hidden="true"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <h4 style="margin-bottom:0.75rem;">Email Us</h4>
+          <p style="margin-bottom:1rem; font-size:0.875rem;">We respond within 24 hours.<br />Share photos, sketches and dreams!</p>
+          <div style="font-family:var(--font-display); font-weight:700; color:var(--coral); font-size:0.9rem;">hello@sugarbliss.co.uk</div>
+        </div>
+      </a>
+      <a href="https://wa.me/442071234567" target="_blank" rel="noopener noreferrer" style="text-decoration:none;" aria-label="Chat on WhatsApp">
+        <div class="feature-card" style="text-align:center; cursor:pointer;">
+          <div class="feature-icon-wrap" style="background:linear-gradient(135deg,var(--mint-light),var(--mint)); margin:0 auto 1.5rem; display:flex; align-items:center; justify-content:center; color:white;" aria-hidden="true"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <h4 style="margin-bottom:0.75rem;">WhatsApp Us</h4>
+          <p style="margin-bottom:1rem; font-size:0.875rem;">Send us a message, photos or voice note — we're on WhatsApp Business!</p>
+          <div style="font-family:var(--font-display); font-weight:700; color:var(--coral);">Chat Now</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =============================
+     SECTION 4: FAQ
+     ============================= -->
+<section class="bg-cream" aria-labelledby="contact-faq-heading">
+  <div class="container" style="max-width:800px;">
+    <div class="section-header reveal">
+      <div class="section-badge"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Common Questions</div>
+      <h2 class="section-title" id="contact-faq-heading">Quick <span class="gradient-text">Answers</span></h2>
+    </div>
+    <div class="faq-item open"><div class="faq-question" tabindex="0" role="button" aria-expanded="true">How quickly do you respond to enquiries? <div class="faq-icon" aria-hidden="true">+</div></div><div class="faq-answer">We aim to respond to all enquiries within 24 hours on business days. During busy periods (school holidays, December), it may take up to 48 hours. For urgent requests, please call us directly.</div></div>
+    <div class="faq-item"><div class="faq-question" tabindex="0" role="button" aria-expanded="false">Can I visit the studio without an appointment? <div class="faq-icon" aria-hidden="true">+</div></div><div class="faq-answer">Our studio is a working kitchen, so we ask all visitors to book a consultation appointment in advance. This ensures we have dedicated time to discuss your cake requirements properly. Appointments typically last 30–45 minutes.</div></div>
+    <div class="faq-item"><div class="faq-question" tabindex="0" role="button" aria-expanded="false">Do you offer urgent/rush cake orders? <div class="faq-icon" aria-hidden="true">+</div></div><div class="faq-answer">Rush orders (within 7 days) may be possible depending on our current schedule and cake complexity. Rush orders incur a 25% surcharge. Please call us directly to discuss and check availability — don't hesitate even if the date is close!</div></div>
+    <div class="faq-item"><div class="faq-question" tabindex="0" role="button" aria-expanded="false">What information do you need to provide a quote? <div class="faq-icon" aria-hidden="true">+</div></div><div class="faq-answer">To provide an accurate quote, it helps to know: your party date, estimated guest count (for sizing), preferred theme/design, any dietary requirements, and your location (for delivery pricing). Inspiration photos are always welcome!</div></div>
+    <div class="faq-item"><div class="faq-question" tabindex="0" role="button" aria-expanded="false">Can I change my order after placing it? <div class="faq-icon" aria-hidden="true">+</div></div><div class="faq-answer">Minor changes (flavours, name spelling, colour tweaks) can usually be accommodated up to 2 weeks before delivery. Major design changes may incur additional costs and are subject to availability. Please contact us as early as possible if anything changes.</div></div>
+  </div>
+</section>
+
+<!-- =============================
+     SECTION 5: STUDIO TOUR IMAGE
+     ============================= -->
+<section aria-labelledby="studio-tour-heading">
+  <div class="container">
+    <div class="grid-2" style="align-items:center; gap:4rem;">
+      <div class="reveal-left">
+        <div class="section-badge"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Our Home</div>
+        <h2 class="section-title" id="studio-tour-heading">A Bakery that Feels Like <span class="gradient-text">Home</span></h2>
+        <p style="margin-bottom:1.5rem;">Our Covent Garden studio is more than a kitchen — it's a creative haven where edible magic is made daily. From our custom marble worktops to our gallery wall of celebration photos, every corner tells a sweet story.</p>
+        <p style="margin-bottom:2.5rem;">We'd love to welcome you for a consultation. Over a cup of tea (and maybe a test cupcake or two!), we'll plan the perfect cake for your child's big day together.</p>
+        <a href="#" class="btn btn-primary btn-lg" onclick="document.getElementById('c-subject').value='consultation'; document.querySelector('[for=c-name]').closest('form').scrollIntoView({behavior:'smooth'}); return false;">Book Studio Visit <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="reveal-right">
+        <div style="border-radius:var(--radius-2xl); overflow:hidden; box-shadow:var(--shadow-xl);">
+          <img src="images/bakery_interior_1790771843318.jpg" alt="The Sugar Bliss Bakery studio interior — a warm and welcoming creative space" style="width:100%; display:block;" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================
+     SECTION 6: TESTIMONIALS
+     ============================= -->
+<section style="background:linear-gradient(135deg, var(--plum), var(--lavender-dark));" aria-labelledby="contact-testimonials-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-badge" style="background:rgba(255,240,201,0.2); color:var(--buttercream); border:1px solid rgba(255,240,201,0.3);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Happy Families</div>
+      <h2 class="section-title" id="contact-testimonials-heading" style="color:white;">What Our <span style="color:var(--buttercream);">Customers Say</span></h2>
+    </div>
+    <div class="grid-3 stagger-children">
+      <div class="testimonial-card"><div class="testimonial-stars"><div class="star-rating" style="display:inline-flex; gap:2px;" aria-label="5 out of 5 stars"><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div></div><p class="testimonial-text">"Reached out on a Tuesday, had a design proposal by Wednesday and my cake was delivered perfectly on time. Incredible team!"</p><div class="testimonial-author"><div class="testimonial-avatar">J</div><div><div class="testimonial-name">James R.</div><div class="testimonial-role">Dad · Leo's 5th Birthday</div></div></div></div>
+      <div class="testimonial-card"><div class="testimonial-stars"><div class="star-rating" style="display:inline-flex; gap:2px;" aria-label="5 out of 5 stars"><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div></div><p class="testimonial-text">"The communication was flawless from first email to delivery. They answered every question patiently and delivered beyond expectations!"</p><div class="testimonial-author"><div class="testimonial-avatar" style="background:linear-gradient(135deg,var(--lavender),var(--lavender-dark));">P</div><div><div class="testimonial-name">Priya S.</div><div class="testimonial-role">Mum · Aanya's 8th Birthday</div></div></div></div>
+      <div class="testimonial-card"><div class="testimonial-stars"><div class="star-rating" style="display:inline-flex; gap:2px;" aria-label="5 out of 5 stars"><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div></div><p class="testimonial-text">"Booked a studio visit and the team was so warm and professional. They made us feel like family. The cake itself was beyond words!"</p><div class="testimonial-author"><div class="testimonial-avatar" style="background:linear-gradient(135deg,var(--gold),var(--gold-dark));">C</div><div><div class="testimonial-name">Claire M.</div><div class="testimonial-role">Mum · Ellie's 7th Birthday</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" role="contentinfo" aria-label="Site footer">
+  <div class="container" style="position:relative; z-index:2;">
+    <div class="footer-grid">
+
+      <!-- Column 1: Company -->
+      <div>
+        <a href="index.html" class="nav-logo" style="margin-bottom:1.25rem; display:inline-flex;" aria-label="Sugar Bliss Bakery — home">
+          <div class="nav-logo-icon" aria-hidden="true"><svg class="icon icon-xl icon-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z"/><path d="M4 14h16M8 10V6M16 10V6M12 10V4"/></svg></div>
+          <div class="nav-logo-text" style="color:var(--buttercream);">Sugar<span>Bliss</span></div>
+        </a>
+        <p class="footer-brand-desc">Luxury boutique children's cake studio crafting magical birthday experiences since 2018. Every cake tells a story — let us tell yours.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Instagram"><svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://facebook.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Facebook"><svg class="icon icon-md icon-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="https://x.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="X (Twitter)"><svg class="icon icon-md icon-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="https://youtube.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="YouTube"><svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <nav aria-label="Quick links">
+        <h3 class="footer-col-title">Quick Links</h3>
+        <ul class="footer-links" role="list">
+          <li><a href="index.html" class="footer-link"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Home</a></li>
+          <li><a href="home2.html" class="footer-link"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/></svg> Home 2</a></li>
+          <li><a href="about.html" class="footer-link"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> About</a></li>
+          <li><a href="services.html" class="footer-link"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z"/><path d="M4 14h16M12 10V4"/></svg> Services</a></li>
+          <li><a href="pricing.html" class="footer-link"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="2"/><path d="M4 2h5.5L21 13.5l-7.5 7.5L2 9.5V4c0-1.1.9-2 2-2z"/></svg> Pricing</a></li>
+          <li><a href="blog.html" class="footer-link"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Blog</a></li>
+          <li><a href="contact.html" class="footer-link"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.47-1.47a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Column 3: Contact -->
+      <div>
+        <h3 class="footer-col-title">Contact Us</h3>
+        <address style="font-style:normal;">
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <a href="https://maps.google.com/?q=42+Sweet+Lane+London+W1B+3AG" target="_blank" rel="noopener" style="color:inherit;">42 Sweet Lane, Bakery District, London W1B 3AG</a>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.47-1.47a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <a href="tel:+442071234567" style="color:inherit;">+44 (0)207 123 4567</a>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <a href="mailto:hello@sugarbliss.co.uk" style="color:inherit;">hello@sugarbliss.co.uk</a>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <span>Mon – Sat: 9am – 6pm</span>
+          </div>
+        </address>
+      </div>
+
+      <!-- Column 4: Newsletter -->
+      <div>
+        <h3 class="footer-col-title">Newsletter</h3>
+        <p class="footer-brand-desc" style="margin-top:0;">Subscribe for sweet updates — new cake themes, party tips and exclusive offers.</p>
+        <form class="footer-newsletter" data-newsletter-form novalidate>
+          <label class="sr-only" for="footer-newsletter-email">Email address</label>
+          <input type="email" id="footer-newsletter-email" name="email" placeholder="Your email address" aria-label="Email address" autocomplete="email" required />
+          <button class="footer-newsletter-btn" type="submit"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/></svg> Subscribe</button>
+        </form>
+      </div>
+
+    </div><!-- /.footer-grid -->
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p class="footer-bottom-text">© 2026 Sugar Bliss Bakery. All rights reserved.</p>
+      <nav class="footer-bottom-links" aria-label="Legal links">
+        <a href="privacy.html" class="footer-bottom-link">Privacy Policy</a>
+        <span class="footer-legal-sep" aria-hidden="true">|</span>
+        <a href="terms.html" class="footer-bottom-link">Terms &amp; Conditions</a>
+        <span class="footer-legal-sep" aria-hidden="true">|</span>
+        <a href="sitemap.html" class="footer-bottom-link">Sitemap</a>
+      </nav>
+    </div>
+
+  </div><!-- /.container -->
+</footer>
+
+<div class="cookie-banner" role="banner"><p><svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/></svg> We use cookies. <a href="privacy.html">Learn more</a></p><button data-accept-cookies class="btn btn-primary btn-sm">Accept</button></div>
+<div class="toast-container" aria-live="polite"></div>
+<button id="back-to-top" aria-label="Back to top"><svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button>
+<script src="js/icons.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

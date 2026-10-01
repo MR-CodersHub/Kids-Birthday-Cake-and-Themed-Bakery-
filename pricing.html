@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sugar Bliss Bakery Pricing — Transparent pricing for custom birthday cakes, cupcakes, party packages and add-ons. Packages from $99 to $699+." />
+  <title>Pricing — Sugar Bliss Bakery | Birthday Cake Packages & Costs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E87578' stroke-width='1.8'%3E%3Cpath d='M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z'/%3E%3Cpath d='M4 14h16M8 10V6M16 10V6M12 10V4'/%3E%3C/svg%3E" />
+  <style>
+    .pricing-toggle { display:flex; align-items:center; gap:1rem; justify-content:center; margin-bottom:3rem; }
+    .toggle-label { font-weight:700; color:var(--gray-400); font-size:0.95rem; }
+    .toggle-label.active { color:var(--plum); }
+    [data-theme="dark"] .toggle-label.active { color:var(--buttercream); }
+    .toggle-switch { position:relative; width:56px; height:28px; background:var(--lavender); border-radius:var(--radius-full); cursor:pointer; border:none; transition:background var(--transition-base); }
+    .toggle-switch-thumb { position:absolute; top:3px; left:3px; width:22px; height:22px; border-radius:50%; background:white; transition:transform var(--transition-bounce); box-shadow:0 2px 4px rgba(0,0,0,0.2); }
+    .toggle-switch.annual .toggle-switch-thumb { transform:translateX(28px); }
+    .comparison-table th { font-family:var(--font-display); }
+    .check-icon { color:var(--mint-dark); font-size:1rem; }
+    .cross-icon { color:var(--gray-200); font-size:1rem; }
+  </style>
+</head>
+<body>
+<div class="page-transition" aria-hidden="true"></div>
+<nav class="navbar scrolled" id="main-navbar" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <a href="index.html" class="nav-logo" aria-label="Sugar Bliss Bakery Home"><div class="nav-logo-icon" aria-hidden="true"><svg class="icon icon-xl icon-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z"/><path d="M4 14h16"/><path d="M8 10V6"/><path d="M16 10V6"/><path d="M12 10V4"/><path d="M8 4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2"/></svg></div><div class="nav-logo-text">Sugar<span>Bliss</span></div></a>
+    <ul class="nav-menu" role="list">
+      <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="home2.html" class="nav-link">Home 2</a></li>
+      <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+      <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+      <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+      <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+      <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="nav-icon-btn" id="theme-toggle" aria-label="Toggle dark mode"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+      <button class="nav-icon-btn nav-text-btn" id="rtl-toggle" aria-label="Toggle RTL/LTR direction" title="Toggle RTL/LTR">RTL</button>
+      <div class="profile-wrap">
+        <button class="nav-icon-btn profile-btn" id="profile-btn" aria-label="Account" aria-haspopup="menu" aria-expanded="false" aria-controls="profile-menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></button>
+        <div class="profile-menu" id="profile-menu" role="menu" aria-label="Account">
+          <p class="profile-menu-title">Profile</p>
+          <a href="login.html" role="menuitem"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>Login</a>
+          <a href="signup.html" role="menuitem"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>Signup</a>
+        </div>
+      </div>
+      <a href="login.html" class="btn btn-secondary btn-sm nav-login-btn">Login/Signup</a>
+      <a href="contact.html" class="btn btn-primary btn-sm">Order Now</a>
+    </div>
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+  <a href="index.html" class="mobile-nav-link">Home</a>
+  <a href="home2.html" class="mobile-nav-link">Home 2</a>
+  <a href="about.html" class="mobile-nav-link">About</a>
+  <a href="services.html" class="mobile-nav-link">Services</a>
+  <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+  <a href="blog.html" class="mobile-nav-link">Blog</a>
+  <a href="contact.html" class="mobile-nav-link">Contact</a>
+  <div style="margin-top: 2rem; display:flex; flex-direction:column; gap: 1rem;">
+    <a href="contact.html" class="btn btn-primary" style="flex:1; justify-content:center;">Order Now</a>
+    <a href="login.html" class="btn btn-secondary" style="flex:1; justify-content:center;">Login/Signup</a>
+  </div>
+</nav>
+
+<div class="page-hero page-hero--inner" role="banner">
+  <div class="floating-shapes"><div class="shape shape-1"></div><div class="shape shape-2"></div></div>
+  <div class="container page-hero-content">
+    <div class="section-badge" style="margin:0 auto 1.5rem; background:rgba(255,240,201,0.2); color:var(--buttercream); border:1px solid rgba(255,240,201,0.3); display:inline-flex;"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="2"/><path d="M4 2h5.5L21 13.5l-7.5 7.5L2 9.5V4c0-1.1.9-2 2-2z"/></svg> Transparent Pricing</div>
+    <h1 class="page-hero-title">Simple, Honest <span style="color:var(--buttercream);">Pricing</span> for Magic</h1>
+    <p class="page-hero-sub">Honest packages with no hidden fees — pick the perfect tier for your guest list and celebration style.</p>
+  </div>
+</div>
+
+<!-- SECTION 1: MAIN PRICING -->
+<section aria-labelledby="main-pricing-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-badge"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z"/><path d="M4 14h16"/><path d="M8 10V6"/><path d="M16 10V6"/><path d="M12 10V4"/><path d="M8 4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2"/><path d="M6 20v2M18 20v2"/></svg> Cake Packages</div>
+      <h2 class="section-title" id="main-pricing-heading">Choose Your Perfect <span class="gradient-text">Package</span></h2>
+      <p class="section-subtitle">All packages include premium ingredients, custom theme design, personalised name, and luxury packaging. No hidden fees — ever.</p>
+    </div>
+
+    <div class="grid-3 stagger-children">
+      <div class="pricing-card">
+        <div class="pricing-tier"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg> Sweetie</div>
+        <div class="pricing-name">Classic Joy</div>
+        <div class="pricing-amount"><span class="pricing-currency">$</span><span class="pricing-price">149</span></div>
+        <p style="font-size:0.875rem; color:var(--gray-300); margin-bottom:1.5rem;">Serves 15–25 guests</p>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>1-tier custom cake (6")</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>Choose from 20 themes</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>3 sponge flavour options</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>Name & age fondant topper</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>Premium packaging</li>
+          <li class="pricing-feature"><div class="pricing-x"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>Custom figurine</li>
+          <li class="pricing-feature"><div class="pricing-x"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>Free delivery</li>
+          <li class="pricing-feature"><div class="pricing-x"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>Tasting session</li>
+        </ul>
+        <a href="contact.html" class="btn btn-secondary" style="width:100%; justify-content:center;">Get Started</a>
+      </div>
+
+      <div class="pricing-card featured" style="position:relative;">
+        <div class="pricing-badge"><svg class="icon icon-xs icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> Most Popular</div>
+        <div class="pricing-tier"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l3-9 5 6 3-9 3 9 3-9 3 9"/><path d="M3 17h18v2H3z"/></svg> Royale</div>
+        <div class="pricing-name">Dream Celebration</div>
+        <div class="pricing-amount"><span class="pricing-currency">$</span><span class="pricing-price">289</span></div>
+        <p style="font-size:0.875rem; color:rgba(255,255,255,0.6); margin-bottom:1.5rem;">Serves 35–55 guests</p>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>3-tier masterpiece (6+8+10")</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>All 50+ premium themes</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>6 premium flavour options</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>Custom fondant figurine</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>Hand-painted accents</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>Free delivery (10km)</li>
+          <li class="pricing-feature"><div class="pricing-x"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>Tasting session</li>
+          <li class="pricing-feature"><div class="pricing-x"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>Setup service</li>
+        </ul>
+        <a href="contact.html" class="btn btn-featured">Order Now <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+
+      <div class="pricing-card">
+        <div class="pricing-tier"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.7 7.3L12 22l9.3-14.7M2.7 7.3L7 2h10l4.3 5.3M2.7 7.3h18.6"/><path d="M7 2l5 5.3L17 2"/><path d="M12 7.3L7 2"/></svg> Diamond</div>
+        <div class="pricing-name">Grand Extravaganza</div>
+        <div class="pricing-amount"><span class="pricing-currency">$</span><span class="pricing-price">499</span></div>
+        <p style="font-size:0.875rem; color:var(--gray-300); margin-bottom:1.5rem;">Serves 80–120 guests</p>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>5-tier showstopper</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>Fully bespoke design</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>Unlimited flavour mix</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>Multiple figurines & props</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>Sugar flowers arrangement</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>Free UK delivery</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>Tasting box session</li>
+          <li class="pricing-feature"><div class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>Setup & display service</li>
+        </ul>
+        <a href="contact.html" class="btn btn-secondary" style="width:100%; justify-content:center;">Get Started</a>
+      </div>
+    </div>
+
+    <p style="text-align:center; color:var(--gray-400); font-size:0.875rem; margin-top:2rem;"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> All prices shown are starting prices. Final quote provided after design consultation. 50% deposit required to confirm order.</p>
+  </div>
+</section>
+
+<!-- SECTION 2: ADD-ON PRICING TABLE -->
+<section class="bg-cream" aria-labelledby="addon-pricing-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-badge"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/><path d="M4.5 16.5l.75 2.25L7.5 19.5l-2.25.75L4.5 22.5l-.75-2.25L1.5 19.5l2.25-.75L4.5 16.5z"/><path d="M19.5 3l.75 2.25L22.5 6l-2.25.75L19.5 9l-.75-2.25L16.5 6l2.25-.75L19.5 3z"/></svg> Extras</div>
+      <h2 class="section-title" id="addon-pricing-heading">Add-On <span class="gradient-text">Pricing</span></h2>
+    </div>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:separate; border-spacing:0; background:var(--white); border-radius:var(--radius-xl); box-shadow:var(--shadow-md); overflow:hidden;">
+        <thead>
+          <tr style="background:linear-gradient(135deg, var(--plum), var(--lavender-dark));">
+            <th style="padding:1.25rem 1.5rem; text-align:left; color:var(--buttercream); font-family:var(--font-display);" scope="col">Add-On Item</th>
+            <th style="padding:1.25rem 1.5rem; text-align:center; color:var(--buttercream); font-family:var(--font-display);" scope="col">Small</th>
+            <th style="padding:1.25rem 1.5rem; text-align:center; color:var(--buttercream); font-family:var(--font-display);" scope="col">Medium</th>
+            <th style="padding:1.25rem 1.5rem; text-align:center; color:var(--buttercream); font-family:var(--font-display);" scope="col">Large</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:1.25rem 1.5rem; font-weight:600; color:var(--plum);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2c2 0 3 1 3 2.5 0 1-1 2-1 3l1 1h-1c1 0 2 1 2 2H8c0-1 1-2 2-2H9l1-1c0-1-1-2-1-3C9 3 10 2 12 2z"/><path d="M7.5 10.5l-1.5 9h12l-1.5-9"/></svg> Matching Cupcakes</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);">$65 / 12</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);">$120 / 24</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);">$220 / 48</td></tr>
+          <tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:1.25rem 1.5rem; font-weight:600; color:var(--plum);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg> Sugar Cookie Pack</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);">$55 / 12</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);">$100 / 24</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);">$185 / 48</td></tr>
+          <tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:1.25rem 1.5rem; font-weight:600; color:var(--plum);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z"/><path d="M4 14h16"/><path d="M8 10V6"/><path d="M16 10V6"/><path d="M12 10V4"/><path d="M8 4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2"/><path d="M6 20v2M18 20v2"/></svg> Smash Cake Mini</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);" colspan="3">$45 per smash cake</td></tr>
+          <tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:1.25rem 1.5rem; font-weight:600; color:var(--plum);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg> Edible Photo Print</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);" colspan="3">$25 per print</td></tr>
+          <tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:1.25rem 1.5rem; font-weight:600; color:var(--plum);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/><path d="M4.5 16.5l.75 2.25L7.5 19.5l-2.25.75L4.5 22.5l-.75-2.25L1.5 19.5l2.25-.75L4.5 16.5z"/><path d="M19.5 3l.75 2.25L22.5 6l-2.25.75L19.5 9l-.75-2.25L16.5 6l2.25-.75L19.5 3z"/></svg> Candy & Drip Pack</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);" colspan="3">$35 per cake</td></tr>
+          <tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:1.25rem 1.5rem; font-weight:600; color:var(--plum);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> Luxury Gift Packaging</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);" colspan="3">$20 per order</td></tr>
+          <tr><td style="padding:1.25rem 1.5rem; font-weight:600; color:var(--plum);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Delivery (beyond 10km)</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);">$25 (10–20km)</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);">$45 (20–50km)</td><td style="padding:1.25rem 1.5rem; text-align:center; font-weight:700; color:var(--coral);">POA (50km+)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: PARTY BUNDLES -->
+<section aria-labelledby="bundles-pricing-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-badge"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.8 11.3L2 22l10.7-3.79"/><path d="M4 3h.01"/><path d="M22 8h.01"/><path d="M15 2h.01"/><path d="M22 20h.01"/><path d="m22 2-2.24.75a2.9 2.9 0 0 0-1.96 3.12c.1.86-.57 1.63-1.45 1.63h-.38c-.86 0-1.6.6-1.76 1.44L14 10"/><path d="M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2z"/></svg> Save More</div>
+      <h2 class="section-title" id="bundles-pricing-heading">Bundle & <span class="gradient-text">Save Up to 20%</span></h2>
+    </div>
+    <div class="grid-3 stagger-children">
+      <div style="background:var(--white); border-radius:var(--radius-xl); padding:2.5rem; box-shadow:var(--shadow-md); border:2px solid var(--gray-100); text-align:center;">
+        <div style="margin-bottom:1rem;" aria-hidden="true" class="icon-coral"><svg class="icon icon-2xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></div>
+        <h4 style="margin-bottom:0.5rem;">Sweetie Bundle</h4>
+        <div style="font-family:var(--font-display); font-size:2.5rem; font-weight:800; color:var(--coral); margin-bottom:0.5rem;">$199</div>
+        <div style="font-size:0.8rem; text-decoration:line-through; color:var(--gray-200); margin-bottom:1.5rem;">Originally $229</div>
+        <ul style="list-style:none; text-align:left; display:flex; flex-direction:column; gap:0.625rem; margin-bottom:2rem;">
+          <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:0.875rem;"><span class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>1-tier birthday cake (serves 15)</li>
+          <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:0.875rem;"><span class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>12 matching cupcakes</li>
+          <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:0.875rem;"><span class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>12 themed sugar cookies</li>
+          <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:0.875rem;"><span class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>Luxury gift packaging</li>
+        </ul>
+        <a href="contact.html" class="btn btn-secondary" style="width:100%; justify-content:center;">Order Bundle</a>
+      </div>
+
+      <div style="background:linear-gradient(135deg, var(--plum), var(--lavender-dark)); border-radius:var(--radius-xl); padding:2.5rem; box-shadow:var(--shadow-xl); text-align:center; transform:scale(1.05);">
+        <div style="font-size:0.75rem; font-weight:700; color:var(--buttercream); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem;"><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> Best Value</div>
+        <div style="margin-bottom:1rem;" aria-hidden="true" class="icon-gold"><svg class="icon icon-2xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l3-9 5 6 3-9 3 9 3-9 3 9"/><path d="M3 17h18v2H3z"/></svg></div>
+        <h4 style="color:white; margin-bottom:0.5rem;">Dream Bundle</h4>
+        <div style="font-family:var(--font-display); font-size:2.5rem; font-weight:800; color:var(--buttercream); margin-bottom:0.5rem;">$389</div>
+        <div style="font-size:0.8rem; text-decoration:line-through; color:rgba(255,255,255,0.4); margin-bottom:1.5rem;">Originally $469</div>
+        <ul style="list-style:none; text-align:left; display:flex; flex-direction:column; gap:0.625rem; margin-bottom:2rem;">
+          <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:0.875rem; color:rgba(255,255,255,0.85);"><span class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>3-tier masterpiece (serves 45)</li>
+          <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:0.875rem; color:rgba(255,255,255,0.85);"><span class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>24 cupcakes + 24 cookies</li>
+          <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:0.875rem; color:rgba(255,255,255,0.85);"><span class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>Smash cake mini included</li>
+          <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:0.875rem; color:rgba(255,255,255,0.85);"><span class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>Free local delivery</li>
+          <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:0.875rem; color:rgba(255,255,255,0.85);"><span class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>Priority scheduling</li>
+        </ul>
+        <a href="contact.html" class="btn btn-featured">Order Bundle <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+
+      <div style="background:var(--white); border-radius:var(--radius-xl); padding:2.5rem; box-shadow:var(--shadow-md); border:2px solid var(--gray-100); text-align:center;">
+        <div style="margin-bottom:1rem;" aria-hidden="true" class="icon-lavender"><svg class="icon icon-2xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.7 7.3L12 22l9.3-14.7M2.7 7.3L7 2h10l4.3 5.3M2.7 7.3h18.6"/><path d="M7 2l5 5.3L17 2"/><path d="M12 7.3L7 2"/></svg></div>
+        <h4 style="margin-bottom:0.5rem;">Grand Bundle</h4>
+        <div style="font-family:var(--font-display); font-size:2.5rem; font-weight:800; color:var(--coral); margin-bottom:0.5rem;">$649</div>
+        <div style="font-size:0.8rem; text-decoration:line-through; color:var(--gray-200); margin-bottom:1.5rem;">Originally $799</div>
+        <ul style="list-style:none; text-align:left; display:flex; flex-direction:column; gap:0.625rem; margin-bottom:2rem;">
+          <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:0.875rem;"><span class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>5-tier showstopper (100+)</li>
+          <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:0.875rem;"><span class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>48 cupcakes + 36 cookies</li>
+          <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:0.875rem;"><span class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>Smash cake + all extras</li>
+          <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:0.875rem;"><span class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>Setup & display service</li>
+        </ul>
+        <a href="contact.html" class="btn btn-secondary" style="width:100%; justify-content:center;">Order Bundle</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: COMPARISON TABLE -->
+<section class="bg-cream" aria-labelledby="comparison-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-badge"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="12" y2="16"/></svg> Compare Plans</div>
+      <h2 class="section-title" id="comparison-heading">Full Feature <span class="gradient-text">Comparison</span></h2>
+    </div>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:separate; border-spacing:0; background:var(--white); border-radius:var(--radius-xl); box-shadow:var(--shadow-md); overflow:hidden;" class="comparison-table" role="table" aria-label="Feature comparison table">
+        <thead>
+          <tr style="background:linear-gradient(135deg, var(--plum), var(--lavender-dark));">
+            <th style="padding:1.25rem 1.5rem; text-align:left; color:var(--buttercream); font-family:var(--font-display);" scope="col">Feature</th>
+            <th style="padding:1.25rem 1.5rem; text-align:center; color:var(--buttercream); font-family:var(--font-display);" scope="col"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg> Sweetie</th>
+            <th style="padding:1.25rem 1.5rem; text-align:center; color:var(--buttercream); font-family:var(--font-display); background:rgba(255,255,255,0.1);" scope="col"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l3-9 5 6 3-9 3 9 3-9 3 9"/><path d="M3 17h18v2H3z"/></svg> Royale <svg class="icon icon-xs icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></th>
+            <th style="padding:1.25rem 1.5rem; text-align:center; color:var(--buttercream); font-family:var(--font-display);" scope="col"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.7 7.3L12 22l9.3-14.7M2.7 7.3L7 2h10l4.3 5.3M2.7 7.3h18.6"/><path d="M7 2l5 5.3L17 2"/><path d="M12 7.3L7 2"/></svg> Diamond</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:1.25rem 1.5rem; font-weight:600; color:var(--plum);">Cake Tiers</td><td style="text-align:center;">1</td><td style="text-align:center; background:rgba(232,117,120,0.03);">3</td><td style="text-align:center;">5</td></tr>
+          <tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:1.25rem 1.5rem; font-weight:600; color:var(--plum);">Serves (Guests)</td><td style="text-align:center;">15–25</td><td style="text-align:center; background:rgba(232,117,120,0.03);">35–55</td><td style="text-align:center;">80–120</td></tr>
+          <tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:1.25rem 1.5rem; font-weight:600; color:var(--plum);">Themes Available</td><td style="text-align:center;">20</td><td style="text-align:center; background:rgba(232,117,120,0.03);">50+</td><td style="text-align:center;">Unlimited</td></tr>
+          <tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:1.25rem 1.5rem; font-weight:600; color:var(--plum);">Custom Figurine</td><td style="text-align:center;" class="cross-icon"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td style="text-align:center; background:rgba(232,117,120,0.03);" class="check-icon"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></td><td style="text-align:center;" class="check-icon"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> <svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+          <tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:1.25rem 1.5rem; font-weight:600; color:var(--plum);">Hand-Painted Details</td><td style="text-align:center;" class="cross-icon"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td style="text-align:center; background:rgba(232,117,120,0.03);" class="check-icon"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></td><td style="text-align:center;" class="check-icon"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+          <tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:1.25rem 1.5rem; font-weight:600; color:var(--plum);">Sugar Flowers</td><td style="text-align:center;" class="cross-icon"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td style="text-align:center; background:rgba(232,117,120,0.03);" class="cross-icon"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td style="text-align:center;" class="check-icon"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+          <tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:1.25rem 1.5rem; font-weight:600; color:var(--plum);">Free Delivery</td><td style="text-align:center;" class="cross-icon"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td style="text-align:center; background:rgba(232,117,120,0.03);">10km</td><td style="text-align:center;">UK Wide</td></tr>
+          <tr style="border-bottom:1px solid var(--gray-100);"><td style="padding:1.25rem 1.5rem; font-weight:600; color:var(--plum);">Tasting Session</td><td style="text-align:center;" class="cross-icon"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td style="text-align:center; background:rgba(232,117,120,0.03);" class="cross-icon"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td style="text-align:center;" class="check-icon"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+          <tr><td style="padding:1.25rem 1.5rem; font-weight:600; color:var(--plum);">Setup Service</td><td style="text-align:center;" class="cross-icon"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td style="text-align:center; background:rgba(232,117,120,0.03);" class="cross-icon"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td style="text-align:center;" class="check-icon"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+        </tbody>
+        <tfoot>
+          <tr style="background:var(--light-gray);">
+            <td style="padding:1.25rem 1.5rem; font-family:var(--font-display); font-weight:800; font-size:1.1rem; color:var(--plum);">Starting Price</td>
+            <td style="text-align:center; font-family:var(--font-display); font-weight:800; font-size:1.25rem; color:var(--coral);">$149</td>
+            <td style="text-align:center; font-family:var(--font-display); font-weight:800; font-size:1.25rem; color:var(--coral); background:rgba(232,117,120,0.05);">$289</td>
+            <td style="text-align:center; font-family:var(--font-display); font-weight:800; font-size:1.25rem; color:var(--coral);">$499</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: FAQ -->
+<section aria-labelledby="pricing-faq-heading">
+  <div class="container" style="max-width:800px;">
+    <div class="section-header reveal">
+      <div class="section-badge"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Pricing FAQ</div>
+      <h2 class="section-title" id="pricing-faq-heading">Pricing <span class="gradient-text">Questions</span></h2>
+    </div>
+    <div class="faq-item open"><div class="faq-question" tabindex="0" role="button" aria-expanded="true">Are the prices shown final? <div class="faq-icon" aria-hidden="true">+</div></div><div class="faq-answer">The prices shown are starting prices. Your final quote depends on the complexity of your design, number of tiers, special ingredients and any add-ons. We always provide a detailed, itemised quote before you commit — no surprises!</div></div>
+    <div class="faq-item"><div class="faq-question" tabindex="0" role="button" aria-expanded="false">When do I pay? <div class="faq-icon" aria-hidden="true">+</div></div><div class="faq-answer">We require a 50% deposit to confirm your booking and date. The remaining balance is due 7 days before your delivery date. We accept bank transfer, credit/debit card and PayPal.</div></div>
+    <div class="faq-item"><div class="faq-question" tabindex="0" role="button" aria-expanded="false">Do you offer payment plans? <div class="faq-icon" aria-hidden="true">+</div></div><div class="faq-answer">For Diamond tier orders over $400, we offer a 3-month interest-free payment plan. Contact us for details — we want every family to be able to access our magic!</div></div>
+    <div class="faq-item"><div class="faq-question" tabindex="0" role="button" aria-expanded="false">What is your cancellation policy? <div class="faq-icon" aria-hidden="true">+</div></div><div class="faq-answer">Cancellations more than 4 weeks before delivery: full deposit refund. 2–4 weeks: 50% deposit refund. Less than 2 weeks: no refund (materials already purchased). We recommend event insurance for added peace of mind.</div></div>
+  </div>
+</section>
+
+<!-- SECTION 6: CTA -->
+<section class="pricing-cta-banner" aria-labelledby="pricing-cta-heading">
+  <div class="container text-center">
+    <div class="reveal">
+      <div style="font-size:3.5rem; margin-bottom:1.5rem;" aria-hidden="true"><svg class="icon icon-xl icon-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z"/><path d="M4 14h16"/><path d="M8 10V6"/><path d="M16 10V6"/><path d="M12 10V4"/></svg></div>
+      <h2 id="pricing-cta-heading" style="color:white; margin-bottom:1rem; font-size:2.25rem;">Ready to Create Magic?</h2>
+      <p style="color:rgba(255,255,255,0.85); max-width:600px; margin:0 auto 2.5rem; font-size:1.05rem;">Let's build the most extraordinary birthday cake your child has ever dreamed of. Contact us today for your personalised quote!</p>
+      <div style="display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-white btn-lg">Get Your Free Quote <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <a href="services.html" class="btn btn-outline btn-lg">Browse All Themes</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" role="contentinfo" aria-label="Site footer">
+  <div class="container" style="position:relative; z-index:2;">
+    <div class="footer-grid">
+
+      <!-- Column 1: Company -->
+      <div>
+        <a href="index.html" class="nav-logo" style="margin-bottom:1.25rem; display:inline-flex;" aria-label="Sugar Bliss Bakery — home">
+          <div class="nav-logo-icon" aria-hidden="true"><svg class="icon icon-xl icon-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z"/><path d="M4 14h16M8 10V6M16 10V6M12 10V4"/></svg></div>
+          <div class="nav-logo-text" style="color:var(--buttercream);">Sugar<span>Bliss</span></div>
+        </a>
+        <p class="footer-brand-desc">Luxury boutique children's cake studio crafting magical birthday experiences since 2018. Every cake tells a story — let us tell yours.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Instagram"><svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://facebook.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Facebook"><svg class="icon icon-md icon-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="https://x.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="X (Twitter)"><svg class="icon icon-md icon-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="https://youtube.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="YouTube"><svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <nav aria-label="Quick links">
+        <h3 class="footer-col-title">Quick Links</h3>
+        <ul class="footer-links" role="list">
+          <li><a href="index.html" class="footer-link"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Home</a></li>
+          <li><a href="home2.html" class="footer-link"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/></svg> Home 2</a></li>
+          <li><a href="about.html" class="footer-link"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> About</a></li>
+          <li><a href="services.html" class="footer-link"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z"/><path d="M4 14h16M12 10V4"/></svg> Services</a></li>
+          <li><a href="pricing.html" class="footer-link"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="2"/><path d="M4 2h5.5L21 13.5l-7.5 7.5L2 9.5V4c0-1.1.9-2 2-2z"/></svg> Pricing</a></li>
+          <li><a href="blog.html" class="footer-link"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Blog</a></li>
+          <li><a href="contact.html" class="footer-link"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.47-1.47a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Column 3: Contact -->
+      <div>
+        <h3 class="footer-col-title">Contact Us</h3>
+        <address style="font-style:normal;">
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <a href="https://maps.google.com/?q=42+Sweet+Lane+London+W1B+3AG" target="_blank" rel="noopener" style="color:inherit;">42 Sweet Lane, Bakery District, London W1B 3AG</a>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.47-1.47a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <a href="tel:+442071234567" style="color:inherit;">+44 (0)207 123 4567</a>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <a href="mailto:hello@sugarbliss.co.uk" style="color:inherit;">hello@sugarbliss.co.uk</a>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <span>Mon – Sat: 9am – 6pm</span>
+          </div>
+        </address>
+      </div>
+
+      <!-- Column 4: Newsletter -->
+      <div>
+        <h3 class="footer-col-title">Newsletter</h3>
+        <p class="footer-brand-desc" style="margin-top:0;">Subscribe for sweet updates — new cake themes, party tips and exclusive offers.</p>
+        <form class="footer-newsletter" data-newsletter-form novalidate>
+          <label class="sr-only" for="footer-newsletter-email">Email address</label>
+          <input type="email" id="footer-newsletter-email" name="email" placeholder="Your email address" aria-label="Email address" autocomplete="email" required />
+          <button class="footer-newsletter-btn" type="submit"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/></svg> Subscribe</button>
+        </form>
+      </div>
+
+    </div><!-- /.footer-grid -->
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p class="footer-bottom-text">© 2026 Sugar Bliss Bakery. All rights reserved.</p>
+      <nav class="footer-bottom-links" aria-label="Legal links">
+        <a href="privacy.html" class="footer-bottom-link">Privacy Policy</a>
+        <span class="footer-legal-sep" aria-hidden="true">|</span>
+        <a href="terms.html" class="footer-bottom-link">Terms &amp; Conditions</a>
+        <span class="footer-legal-sep" aria-hidden="true">|</span>
+        <a href="sitemap.html" class="footer-bottom-link">Sitemap</a>
+      </nav>
+    </div>
+
+  </div><!-- /.container -->
+</footer>
+
+<div class="cookie-banner" role="banner"><p><svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/></svg> We use cookies. <a href="privacy.html">Learn more</a></p><button data-accept-cookies class="btn btn-primary btn-sm">Accept</button></div>
+<div class="toast-container" aria-live="polite"></div>
+<button id="back-to-top" aria-label="Back to top"><svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button>
+<script src="js/icons.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

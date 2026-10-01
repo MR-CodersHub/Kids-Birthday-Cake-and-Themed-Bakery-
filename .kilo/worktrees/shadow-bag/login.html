@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Login to your Sugar Bliss Bakery account to track orders, manage your profile and access exclusive member offers." />
+  <title>Login — Sugar Bliss Bakery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E87578' stroke-width='1.8'%3E%3Cpath d='M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z'/%3E%3Cpath d='M4 14h16M8 10V6M16 10V6M12 10V4'/%3E%3C/svg%3E" />
+  <style>
+    .auth-page { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; }
+    .auth-left { background: linear-gradient(160deg, var(--plum) 0%, var(--lavender-dark) 100%); display: flex; flex-direction: column; justify-content: center; padding: 4rem; position: relative; overflow: hidden; }
+    .auth-right { display: flex; align-items: center; justify-content: center; padding: 4rem 3rem; background: var(--white); }
+    [data-theme="dark"] .auth-right { background: var(--bg); }
+    .auth-card { width: 100%; max-width: 420px; }
+    .auth-logo { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 3rem; text-decoration: none; }
+    .divider-text { display: flex; align-items: center; gap: 1rem; margin: 1.5rem 0; color: var(--gray-300); font-size: 0.875rem; }
+    .divider-text::before, .divider-text::after { content: ''; flex: 1; height: 1px; background: var(--gray-100); }
+    .social-auth-btn { display: flex; align-items: center; justify-content: center; gap: 0.75rem; padding: 0.875rem 2rem; border: 2px solid var(--gray-100); border-radius: var(--radius-lg); font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: all var(--transition-bounce); background: var(--white); color: var(--gray-600); width: 100%; margin-bottom: 0.75rem; }
+    [data-theme="dark"] .social-auth-btn { background: var(--light-gray); border-color: var(--gray-200); color: var(--gray-400); }
+    .social-auth-btn:hover { border-color: var(--lavender); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    @media(max-width: 768px) { .auth-page { grid-template-columns: 1fr; } .auth-left { display: none; } .auth-right { padding: 2rem 1.5rem; padding-top: 8rem; } }
+  </style>
+</head>
+<body>
+<div class="page-transition" aria-hidden="true"></div>
+
+<!-- Simple nav for auth pages -->
+<nav style="position:fixed; top:0; left:0; right:0; z-index:var(--z-navbar); background:transparent; padding:1.5rem 2rem; display:flex; justify-content:space-between; align-items:center;" role="navigation" aria-label="Minimal navigation">
+  <a href="index.html" class="nav-logo" style="color:white;" aria-label="Sugar Bliss Bakery Home">
+    <div class="nav-logo-icon" aria-hidden="true"><svg class="icon icon-xl icon-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z"/><path d="M4 14h16"/><path d="M8 10V6"/><path d="M16 10V6"/><path d="M12 10V4"/></svg></div>
+    <div class="nav-logo-text">Sugar<span style="color:var(--buttercream);">Bliss</span></div>
+  </a>
+  <div style="display:flex; gap:1rem; align-items:center;">
+    <button class="nav-icon-btn" id="theme-toggle" aria-label="Toggle dark mode" style="background:rgba(255,255,255,0.1);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+    <a href="register.html" class="btn btn-outline btn-sm" style="border-color:rgba(255,255,255,0.4); color:white;">Register</a>
+  </div>
+</nav>
+
+<div class="auth-page">
+
+  <!-- Left Panel -->
+  <div class="auth-left" aria-label="Welcome back illustration">
+    <div style="position:absolute; inset:0; opacity:0.05; background-image:radial-gradient(circle, white 1px, transparent 1px); background-size:28px 28px;" aria-hidden="true"></div>
+    <div style="position:relative; z-index:2;">
+      <div style="font-size:4rem; margin-bottom:2rem;" aria-hidden="true"><svg class="icon icon-xl icon-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z"/><path d="M4 14h16"/><path d="M8 10V6"/><path d="M16 10V6"/><path d="M12 10V4"/></svg></div>
+      <h2 style="color:white; font-size:2.5rem; margin-bottom:1.25rem;">Welcome Back,<br /><span style="color:var(--buttercream);">Sweet Friend!</span></h2>
+      <p style="color:rgba(255,255,255,0.75); font-size:1.05rem; line-height:1.8; margin-bottom:3rem;">Log in to manage your cake orders, track deliveries, and access exclusive member offers.</p>
+
+      <!-- Testimonial mini -->
+      <div style="background:rgba(255,255,255,0.1); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.15); border-radius:var(--radius-xl); padding:1.75rem;">
+        <div style="display:flex; gap:4px; margin-bottom:1rem;"><span style="color:var(--gold);"><div class="star-rating" style="display:inline-flex; gap:2px;" aria-label="5 out of 5 stars"><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div></span></div>
+        <p style="color:rgba(255,255,255,0.85); font-size:0.95rem; font-style:italic; margin-bottom:1.25rem;">"Ordering again! The princess cake for Ella was so breathtaking that all 40 guests asked for your details!"</p>
+        <div style="display:flex; align-items:center; gap:0.875rem;">
+          <div style="width:42px; height:42px; border-radius:50%; background:var(--coral); display:flex; align-items:center; justify-content:center; color:white; font-weight:700;" aria-hidden="true">S</div>
+          <div>
+            <div style="color:var(--buttercream); font-weight:700; font-size:0.9rem;">Sophie Davies</div>
+            <div style="color:rgba(255,255,255,0.55); font-size:0.8rem;">Returning customer · 3rd order</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Decorative cake images collage -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-top:2.5rem; opacity:0.7; border-radius:var(--radius-lg); overflow:hidden;" aria-hidden="true">
+        <img src="images/cake_unicorn_1790771753982.jpg" alt="" style="width:100%; height:80px; object-fit:cover; border-radius:var(--radius-md);" />
+        <img src="images/hero_cake_princess_1790771679745.jpg" alt="" style="width:100%; height:80px; object-fit:cover; border-radius:var(--radius-md);" />
+      </div>
+    </div>
+    <!-- Decorative circles -->
+    <div style="position:absolute; top:-100px; right:-100px; width:300px; height:300px; border-radius:50%; background:rgba(255,255,255,0.04);" aria-hidden="true"></div>
+    <div style="position:absolute; bottom:-100px; left:-80px; width:250px; height:250px; border-radius:50%; background:rgba(255,255,255,0.04);" aria-hidden="true"></div>
+  </div>
+
+  <!-- Right Panel — Login Form -->
+  <div class="auth-right">
+    <div class="auth-card">
+      <h1 style="font-size:2rem; margin-bottom:0.5rem;">Sign In</h1>
+      <p style="color:var(--gray-400); margin-bottom:2rem; font-size:0.95rem;">Don't have an account? <a href="register.html" style="color:var(--coral); font-weight:700;">Create one free</a></p>
+
+      <!-- Social Login -->
+      <button class="social-auth-btn" aria-label="Sign in with Google">
+        <svg class="icon icon-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/></svg> Continue with Google
+      </button>
+      <button class="social-auth-btn" aria-label="Sign in with Facebook">
+        <svg class="icon icon-sm icon-fill" viewBox="0 0 24 24" aria-hidden="true" style="color:#1877F2;"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Continue with Facebook
+      </button>
+
+      <div class="divider-text" aria-label="Or sign in with email">or sign in with email</div>
+
+      <!-- Email Login Form -->
+      <form data-validate aria-label="Login form" id="login-form">
+        <div class="form-group">
+          <label class="form-label" for="login-email">Email Address *</label>
+          <input type="email" id="login-email" class="form-control" placeholder="your@email.com" required aria-required="true" autocomplete="email" />
+          <span class="form-error" role="alert">Please enter a valid email address.</span>
+        </div>
+
+        <div class="form-group" style="position:relative;">
+          <label class="form-label" for="login-password">Password *</label>
+          <input type="password" id="login-password" class="form-control" placeholder="••••••••••" required aria-required="true" autocomplete="current-password" style="padding-right:3rem;" />
+          <button type="button" style="position:absolute; right:1rem; bottom:0.875rem; background:none; border:none; cursor:pointer; color:var(--gray-300); font-size:1rem;" aria-label="Toggle password visibility" id="pw-toggle"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+          <span class="form-error" role="alert">Please enter your password.</span>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+          <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.875rem; cursor:pointer;">
+            <input type="checkbox" id="remember-me" style="accent-color:var(--coral);" />
+            Remember me
+          </label>
+          <a href="#" style="color:var(--coral); font-size:0.875rem; font-weight:600;" aria-label="Forgot your password?">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg" style="width:100%; justify-content:center;" data-original="Sign In �">Sign In</button>
+      </form>
+
+      <p style="margin-top:2rem; font-size:0.8rem; color:var(--gray-300); text-align:center;">By signing in you agree to our <a href="privacy.html" style="color:var(--coral);">Privacy Policy</a> and <a href="terms.html" style="color:var(--coral);">Terms of Service</a>.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast-container" aria-live="polite"></div>
+<script src="js/icons.js"></script>
+<script src="js/main.js"></script>
+<script>
+  // Password toggle
+  const pwToggle = document.getElementById('pw-toggle');
+  const pwInput = document.getElementById('login-password');
+  if (pwToggle && pwInput) {
+    pwToggle.addEventListener('click', () => {
+      pwInput.type = pwInput.type === 'password' ? 'text' : 'password';
+      pwToggle.innerHTML = pwInput.type === 'password' ? '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>' : '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>';
+    });
+  }
+</script>
+</body>
+</html>

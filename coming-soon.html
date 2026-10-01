@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sugar Bliss Bakery is launching something extraordinary! Join the waitlist for early access to our new online ordering platform and exclusive launch offers." />
+  <title>Coming Soon — Sugar Bliss Bakery | Something Sweet is Brewing!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E87578' stroke-width='1.8'%3E%3Cpath d='M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z'/%3E%3Cpath d='M4 14h16M8 10V6M16 10V6M12 10V4'/%3E%3C/svg%3E" />
+  <style>
+    .cs-page { min-height: 100vh; position: relative; overflow: hidden; background: linear-gradient(160deg, var(--plum) 0%, #1c0b1a 40%, var(--lavender-dark) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; }
+    .cs-particle { position: absolute; border-radius: 50%; pointer-events: none; animation: csFloat var(--dur, 8s) ease-in-out infinite; animation-delay: var(--delay, 0s); }
+    @keyframes csFloat { 0%, 100% { transform: translateY(0) scale(1); opacity: 0.4; } 50% { transform: translateY(-40px) scale(1.2); opacity: 0.8; } }
+    .countdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin: 2.5rem 0; max-width: 550px; width: 100%; }
+    .countdown-box { background: rgba(255,255,255,0.08); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius-xl); padding: 1.5rem 1rem; text-align: center; }
+    .countdown-number { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; color: var(--buttercream); line-height: 1; }
+    .countdown-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(255,255,255,0.5); margin-top: 0.5rem; }
+    .social-cs { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+    .social-cs-btn { width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; cursor: pointer; transition: all var(--transition-bounce); text-decoration: none; }
+    .social-cs-btn:hover { background: rgba(255,255,255,0.2); transform: translateY(-4px) scale(1.1); }
+    .progress-ring { width: 160px; height: 160px; margin: 0 auto 2rem; position: relative; }
+    .progress-ring-svg { transform: rotate(-90deg); }
+    .progress-ring-circle { stroke-dasharray: 440; stroke-dashoffset: 88; transition: stroke-dashoffset 1s ease; }
+    .progress-ring-text { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; flex-direction: column; }
+    @media(max-width:480px) { .countdown-grid { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+<div class="cs-page" role="main" aria-labelledby="cs-heading">
+
+  <!-- Particles -->
+  <div class="cs-particle" style="width:6px; height:6px; background:var(--coral); top:10%; left:8%; --dur:7s;" aria-hidden="true"></div>
+  <div class="cs-particle" style="width:10px; height:10px; background:var(--lavender); top:20%; right:12%; --dur:9s; --delay:1s;" aria-hidden="true"></div>
+  <div class="cs-particle" style="width:8px; height:8px; background:var(--gold); top:60%; left:5%; --dur:6s; --delay:2s;" aria-hidden="true"></div>
+  <div class="cs-particle" style="width:5px; height:5px; background:var(--mint); bottom:20%; right:8%; --dur:8s; --delay:0.5s;" aria-hidden="true"></div>
+  <div class="cs-particle" style="width:12px; height:12px; background:var(--buttercream); bottom:35%; left:15%; --dur:10s; --delay:3s;" aria-hidden="true"></div>
+  <div class="cs-particle" style="width:7px; height:7px; background:var(--coral); top:45%; right:20%; --dur:7.5s; --delay:1.5s;" aria-hidden="true"></div>
+  <div class="cs-particle" style="width:9px; height:9px; background:var(--lavender); bottom:10%; left:30%; --dur:6.5s; --delay:2.5s;" aria-hidden="true"></div>
+
+  <!-- Decorative blobs -->
+  <div style="position:absolute; top:-200px; right:-200px; width:600px; height:600px; border-radius:50%; background:radial-gradient(circle, rgba(168,138,212,0.15), transparent 70%);" aria-hidden="true"></div>
+  <div style="position:absolute; bottom:-200px; left:-200px; width:600px; height:600px; border-radius:50%; background:radial-gradient(circle, rgba(232,117,120,0.15), transparent 70%);" aria-hidden="true"></div>
+
+  <!-- Logo -->
+  <a href="index.html" class="nav-logo nav-logo--light" style="position:absolute; top:2rem; left:2rem;" aria-label="Sugar Bliss Bakery Home">
+    <div class="nav-logo-icon" aria-hidden="true"><svg class="icon icon-xl icon-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z"/><path d="M4 14h16"/><path d="M8 10V6"/><path d="M16 10V6"/><path d="M12 10V4"/><path d="M8 4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2"/></svg></div>
+    <div class="nav-logo-text">Sugar<span>Bliss</span></div>
+  </a>
+
+  <!-- Main content -->
+  <div style="text-align:center; max-width:680px; width:100%; position:relative; z-index:2;">
+
+    <!-- Launch progress ring -->
+    <div class="progress-ring" role="img" aria-label="80% progress to launch">
+      <svg class="progress-ring-svg" viewBox="0 0 160 160" width="160" height="160">
+        <circle cx="80" cy="80" r="70" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="12" />
+        <circle class="progress-ring-circle" cx="80" cy="80" r="70" fill="none" stroke="url(#gradient-ring)" stroke-width="12" stroke-linecap="round" />
+        <defs>
+          <linearGradient id="gradient-ring" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:var(--coral)" />
+            <stop offset="100%" style="stop-color:var(--lavender)" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <div class="progress-ring-text">
+        <span style="font-family:var(--font-display); font-size:2rem; font-weight:900; color:var(--buttercream); line-height:1;" aria-hidden="true">80%</span>
+        <span style="color:rgba(255,255,255,0.6); font-size:0.7rem; margin-top:0.25rem; text-transform:uppercase; letter-spacing:0.1em;" aria-hidden="true">Complete</span>
+      </div>
+    </div>
+
+    <div style="display:inline-flex; align-items:center; gap:0.5rem; padding:0.4rem 1.25rem; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); border-radius:var(--radius-full); color:var(--buttercream); font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1.5rem;">
+      <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg> Something Magical is Coming
+    </div>
+
+    <h1 id="cs-heading" style="color:white; font-size:clamp(2.5rem, 6vw, 4.5rem); line-height:1.2; margin-bottom:1.25rem;">
+      New Online Ordering<br /><span style="background:linear-gradient(135deg, var(--coral), var(--gold), var(--lavender)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">Platform Launching</span><br />January 2026
+    </h1>
+    <p style="color:rgba(255,255,255,0.75); font-size:1.05rem; line-height:1.8; max-width:520px; margin:0 auto 2rem;">
+      We're rebuilding our ordering experience from the ground up — with live design previews, real-time order tracking and exclusive member benefits. Be first to know!
+    </p>
+
+    <!-- Countdown Timer -->
+    <div class="countdown-grid" role="timer" aria-label="Launch countdown" aria-live="polite">
+      <div class="countdown-box">
+        <div class="countdown-number" id="cs-days" aria-label="Days">47</div>
+        <div class="countdown-label">Days</div>
+      </div>
+      <div class="countdown-box">
+        <div class="countdown-number" id="cs-hours" aria-label="Hours">12</div>
+        <div class="countdown-label">Hours</div>
+      </div>
+      <div class="countdown-box">
+        <div class="countdown-number" id="cs-minutes" aria-label="Minutes">30</div>
+        <div class="countdown-label">Minutes</div>
+      </div>
+      <div class="countdown-box">
+        <div class="countdown-number" id="cs-seconds" aria-label="Seconds">00</div>
+        <div class="countdown-label">Seconds</div>
+      </div>
+    </div>
+
+    <!-- Waitlist Form -->
+    <div style="background:rgba(255,255,255,0.08); backdrop-filter:blur(16px); border:1px solid rgba(255,255,255,0.15); border-radius:var(--radius-2xl); padding:2.5rem; max-width:520px; margin:0 auto;">
+      <h2 style="color:white; font-size:1.35rem; margin-bottom:0.5rem;"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg> Join the Early Access Waitlist</h2>
+      <p style="color:rgba(255,255,255,0.65); font-size:0.875rem; margin-bottom:1.75rem;">Be first in line + receive a 15% launch discount code!</p>
+
+      <form style="display:flex; gap:0.75rem; flex-wrap:wrap;" aria-label="Waitlist signup form">
+        <input type="email" style="flex:1; min-width:200px; padding:0.875rem 1.25rem; border-radius:var(--radius-lg); background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.2); color:white; font-size:0.9rem; outline:none; font-family:var(--font-body);" placeholder="Your email address" aria-label="Email address" required />
+        <button type="submit" class="btn btn-primary" data-original="Notify Me �">Notify Me</button>
+      </form>
+
+      <p style="color:rgba(255,255,255,0.4); font-size:0.75rem; margin-top:1rem;">No spam. Unsubscribe anytime. Launch offer expires 48h after launch.</p>
+
+      <!-- Features teaser -->
+      <div style="margin-top:2rem; padding-top:1.75rem; border-top:1px solid rgba(255,255,255,0.1);">
+        <p style="color:rgba(255,255,255,0.6); font-size:0.8rem; margin-bottom:1rem; text-align:left;">What's coming in v2.0:</p>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; text-align:left;">
+          <div style="display:flex; gap:0.5rem; align-items:center; font-size:0.8rem; color:rgba(255,255,255,0.65);"><span class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span> Live 3D Cake Preview</div>
+          <div style="display:flex; gap:0.5rem; align-items:center; font-size:0.8rem; color:rgba(255,255,255,0.65);"><span class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span> Real-time Order Tracking</div>
+          <div style="display:flex; gap:0.5rem; align-items:center; font-size:0.8rem; color:rgba(255,255,255,0.65);"><span class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span> Instant Online Booking</div>
+          <div style="display:flex; gap:0.5rem; align-items:center; font-size:0.8rem; color:rgba(255,255,255,0.65);"><span class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span> Birthday Reminder AI</div>
+          <div style="display:flex; gap:0.5rem; align-items:center; font-size:0.8rem; color:rgba(255,255,255,0.65);"><span class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span> Loyalty Points System</div>
+          <div style="display:flex; gap:0.5rem; align-items:center; font-size:0.8rem; color:rgba(255,255,255,0.65);"><span class="pricing-check"><svg class="icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span> Priority Member Queue</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Social follow -->
+    <p style="color:rgba(255,255,255,0.5); font-size:0.8rem; margin-top:2rem; margin-bottom:0.75rem;">Follow us for live behind-the-scenes updates:</p>
+    <div class="social-cs">
+      <a href="#" class="social-cs-btn" aria-label="Instagram"><svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a href="#" class="social-cs-btn" aria-label="Facebook"><svg class="icon icon-md icon-fill" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="#" class="social-cs-btn" aria-label="Pinterest"><svg class="icon icon-md icon-fill" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg></a>
+      <a href="#" class="social-cs-btn" aria-label="TikTok"><svg class="icon icon-md icon-fill" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.24 8.24 0 0 0 4.83 1.54V6.78a4.85 4.85 0 0 1-1.06-.09z"/></svg></a>
+    </div>
+
+    <!-- Quick Link -->
+    <div style="margin-top:2.5rem;">
+      <p style="color:rgba(255,255,255,0.45); font-size:0.8rem; margin-bottom:0.75rem;">In the meantime, you can still:</p>
+      <div style="display:flex; gap:0.75rem; justify-content:center; flex-wrap:wrap;">
+        <a href="contact.html" style="color:rgba(255,255,255,0.6); font-size:0.85rem; font-weight:600; border-bottom:1px solid rgba(255,255,255,0.3); padding-bottom:2px; text-decoration:none;">Order by Phone/Email</a>
+        <a href="index.html" style="color:rgba(255,255,255,0.6); font-size:0.85rem; font-weight:600; border-bottom:1px solid rgba(255,255,255,0.3); padding-bottom:2px; text-decoration:none;">Visit Main Site</a>
+      </div>
+    </div>
+
+  </div><!-- content end -->
+
+  <!-- Footer strip -->
+  <div style="position:absolute; bottom:0; left:0; right:0; padding:1.25rem 2rem; text-align:center; background:rgba(0,0,0,0.2);" role="contentinfo">
+    <p style="color:rgba(255,255,255,0.35); font-size:0.75rem; margin:0;">© 2025 Sugar Bliss Bakery · <a href="privacy.html" style="color:rgba(255,255,255,0.4);">Privacy</a> · <a href="terms.html" style="color:rgba(255,255,255,0.4);">Terms</a></p>
+  </div>
+</div>
+
+<div class="toast-container" aria-live="polite"></div>
+<script src="js/icons.js"></script>
+<script src="js/main.js"></script>
+<script>
+  // Countdown to January 15, 2026
+  const launchDate = new Date('2026-01-15T09:00:00').getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = launchDate - now;
+
+    if (distance <= 0) {
+      document.querySelector('.countdown-grid').innerHTML = '<div style="grid-column:1/-1; text-align:center; color:var(--buttercream); font-family:var(--font-display); font-size:2rem; font-weight:900;">We\'re Live!</div>';
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    const dEl = document.getElementById('cs-days');
+    const hEl = document.getElementById('cs-hours');
+    const mEl = document.getElementById('cs-minutes');
+    const sEl = document.getElementById('cs-seconds');
+
+    if (dEl) dEl.textContent = String(days).padStart(2, '0');
+    if (hEl) hEl.textContent = String(hours).padStart(2, '0');
+    if (mEl) mEl.textContent = String(minutes).padStart(2, '0');
+    if (sEl) sEl.textContent = String(seconds).padStart(2, '0');
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // Waitlist form
+  const waitlistForm = document.querySelector('.cs-page form');
+  if (waitlistForm) {
+    waitlistForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = waitlistForm.querySelector('button[type="submit"]');
+      btn.textContent = 'You\'re on the list!';
+      btn.style.background = 'var(--mint-dark)';
+      btn.disabled = true;
+    });
+  }
+</script>
+</body>
+</html>
