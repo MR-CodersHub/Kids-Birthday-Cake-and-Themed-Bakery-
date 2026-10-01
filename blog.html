@@ -35,6 +35,67 @@
     .page-btn.active { background:var(--coral); border-color:var(--coral); color:white; }
     .page-btn:hover:not(.active) { border-color:var(--coral); color:var(--coral); }
     @media(max-width:992px) { .blog-grid { grid-template-columns:1fr; } }
+    /* ── Featured article: image left, content right ── */
+    .blog-featured { position:relative; display:grid; grid-template-columns:1.05fr 1fr; min-height:0; background:var(--light-gray); }
+    .blog-featured > img { position:relative; inset:auto; width:100%; height:100%; min-height:440px; object-fit:cover; object-position:center 30%; background:var(--light-gray); display:block; }
+    .blog-featured-overlay { position:relative; width:100%; display:flex; align-items:center; padding:3rem; background:linear-gradient(135deg, var(--plum), var(--lavender-dark)); }
+    .blog-featured-overlay > div { width:100%; }
+    .blog-featured-flag { position:absolute; top:1.25rem; left:1.25rem; z-index:2; display:inline-flex; align-items:center; gap:0.4rem; padding:0.45rem 1rem; background:var(--buttercream); color:var(--plum); border-radius:var(--radius-full); font-size:0.75rem; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; box-shadow:var(--shadow-md); }
+    /* ── Featured badge star: deep gold in light theme ── */
+    [data-theme="light"] section[aria-labelledby="featured-article-heading"] .section-badge .icon-gold { color:var(--plum); }
+    /* ── Tighten Featured → Latest Articles gap ── */
+    section[aria-labelledby="featured-article-heading"] { padding-bottom:0; }
+    section[aria-labelledby="blog-articles-heading"] { padding-top:var(--space-2xl); }
+    /* ── Stay Sweet: frosted icon badge (sits on CTA band) ── */
+    .stay-icon-badge { margin:0 auto 1.25rem; width:76px; height:76px; border-radius:50%; background:rgba(255,240,201,0.18); border:1.5px solid rgba(255,240,201,0.5); color:var(--buttercream); display:flex; align-items:center; justify-content:center; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); box-shadow:0 8px 30px rgba(0,0,0,0.25); }
+    /* ── Stay Sweet pill: solid high-contrast colours, immune to dark-mode text flip ── */
+    section.pricing-cta-banner .section-badge.stay-pill { background:var(--buttercream); color:#2E162B; border-color:var(--buttercream); }
+    section.pricing-cta-banner .section-badge.stay-pill svg { color:#2E162B; stroke:#2E162B; }
+    /* ── Sidebar subscribe: solid coral, no faded edge ── */
+    .sidebar-news-btn { display:flex; align-items:center; justify-content:center; width:100%; background:var(--coral); color:#fff; }
+    button.sidebar-news-btn:hover { background:var(--coral-dark); }
+    @media(max-width:860px) {
+      .blog-featured { grid-template-columns:1fr; }
+      .blog-featured > img { min-height:0; height:300px; }
+      .blog-featured-overlay { padding:2rem 1.5rem; }
+    }
+    /* ── Article cards: equal-height grid, uniform text, bottom footers ── */
+    .articles-grid { display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:stretch; }
+    .articles-grid .blog-card { display:flex; flex-direction:column; height:100%; }
+    .articles-grid .blog-card-img img { object-position:center top; }
+    .articles-grid .blog-card-body { display:flex; flex-direction:column; flex:1; }
+    .articles-grid .blog-card-title { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; min-height:2.8em; }
+    .articles-grid .blog-card-excerpt { flex:1; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+    .articles-grid .blog-card-footer { margin-top:auto; flex-wrap:wrap; gap:0.75rem; }
+    /* ── Sidebar recent posts: uniform thumbs ── */
+    .recent-post { align-items:center; }
+    .recent-post-img { background:var(--light-gray); }
+    .recent-post-img img { object-position:center; display:block; }
+    .sidebar-news-btn { width:100%; justify-content:center; }
+    /* ── Spotlight: fixed-ratio image, vertically centred ── */
+    .spotlight-media { border-radius:var(--radius-2xl); overflow:hidden; box-shadow:var(--shadow-xl); aspect-ratio:4/3; background:var(--light-gray); }
+    .spotlight-media img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+    /* ── Quick tips: equal heights, bottom read-more ── */
+    section[aria-labelledby="quick-reads-heading"] .grid-4 { align-items:stretch; }
+    section[aria-labelledby="quick-reads-heading"] .grid-4 > a { display:flex; height:100%; }
+    section[aria-labelledby="quick-reads-heading"] .feature-card { display:flex; flex-direction:column; height:100%; flex:1; }
+    section[aria-labelledby="quick-reads-heading"] .feature-card > p { flex:1; }
+    section[aria-labelledby="quick-reads-heading"] .feature-card > div:last-child { margin-top:auto; }
+    /* ── Instagram feed: responsive grid, CSS hover ── */
+    .insta-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:0.5rem; }
+    .insta-item { border-radius:var(--radius-md); overflow:hidden; aspect-ratio:1/1; cursor:pointer; transition:transform 0.3s ease; background:rgba(255,255,255,0.08); }
+    .insta-item:hover { transform:scale(0.97); }
+    .insta-item img { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
+    /* ── Newsletter form: stacked error, mobile column ── */
+    .blog-news-form { display:flex; gap:1rem; max-width:480px; margin:0 auto; align-items:flex-start; text-align:left; }
+    .blog-news-form .blog-news-field { flex:1; min-width:0; }
+    @media(max-width:640px) {
+      .articles-grid { grid-template-columns:1fr; }
+      .blog-featured-overlay { padding:1.5rem; }
+      .insta-grid { grid-template-columns:repeat(3,1fr); }
+      .blog-news-form { flex-direction:column; }
+      .blog-news-form .btn { width:100%; justify-content:center; }
+    }
   </style>
 </head>
 <body>
@@ -100,6 +161,7 @@
     <div class="section-badge reveal"><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> Featured Article</div>
     <div class="blog-featured reveal" role="article" aria-labelledby="featured-article-heading">
       <img src="images/cake_unicorn_1790771753982.jpg" alt="Beautiful unicorn birthday cake with gold horn and edible flowers - our most popular theme" loading="lazy" />
+      <div class="blog-featured-flag" aria-hidden="true"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> Featured</div>
       <div class="blog-featured-overlay">
         <div>
           <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-bottom:1rem;">
@@ -126,17 +188,18 @@
       <!-- Main Blog Grid -->
       <main aria-label="Blog articles">
         <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:2rem; flex-wrap:wrap; gap:1rem;">
-          <h2 id="blog-articles-heading" style="font-size:1.5rem;">Latest <span class="gradient-text">Articles</span></h2>
-          <select class="form-control form-select" style="width:auto;" aria-label="Sort blog posts">
+          <h2 id="blog-articles-heading" style="font-size:1.75rem;">Latest <span class="gradient-text">Articles</span></h2>
+          <select id="blog-sort-select" class="form-control form-select" style="width:auto;" aria-label="Sort blog posts">
             <option>Sort: Newest First</option>
             <option>Sort: Most Popular</option>
             <option>Sort: Category</option>
           </select>
         </div>
 
-        <div style="display:flex; flex-direction:column; gap:2rem;" class="stagger-children">
+        <p id="blog-results-note" style="display:none; font-size:0.875rem; color:var(--gray-400); margin-bottom:1rem;" role="status" aria-live="polite"></p>
+        <div id="articles-grid" class="articles-grid stagger-children">
 
-          <article class="blog-card">
+          <article class="blog-card" data-title="10 Breathtaking Princess Cake Ideas for Your Little Royal's Birthday Party" data-category="Princess" data-date="2025-12-20" data-popular="98">
             <div class="blog-card-img">
               <img src="images/hero_cake_princess_1790771679745.jpg" alt="Royal princess birthday cake featured in blog post" loading="lazy" />
               <div class="blog-card-category"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l3-9 5 6 3-9 3 9 3-9 3 9"/><path d="M3 17h18v2H3z"/></svg> Princess</div>
@@ -159,7 +222,7 @@
             </div>
           </article>
 
-          <article class="blog-card">
+          <article class="blog-card" data-title="Roar into Celebrations: How We Made This Epic Dinosaur Birthday Cake" data-category="Adventure" data-date="2025-12-12" data-popular="87">
             <div class="blog-card-img">
               <img src="images/cake_dinosaur_1790771782894.jpg" alt="Dinosaur themed birthday cake for a jungle party" loading="lazy" />
               <div class="blog-card-category" style="background:var(--mint-dark);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2h2l2 3v2l2 1v3l-2 1-1 3-2 1H9l-1-2H5l-1-3 1-2 2-1V7l1-3h2"/><path d="M9 15l-2 5h2l1-2 1 2h2l-1-5"/><path d="M15 15l2 5h-2l-1-2"/></svg> Adventure</div>
@@ -182,7 +245,7 @@
             </div>
           </article>
 
-          <article class="blog-card">
+          <article class="blog-card" data-title="Why Matching Cupcakes Make Your Birthday Cake Party 10x More Magical" data-category="Cupcakes" data-date="2025-12-05" data-popular="76">
             <div class="blog-card-img">
               <img src="images/cupcakes_display_1790772029150.jpg" alt="Themed birthday cupcakes display" loading="lazy" />
               <div class="blog-card-category" style="background:var(--coral);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2c2 0 3 1 3 2.5 0 1-1 2-1 3l1 1h-1c1 0 2 1 2 2H8c0-1 1-2 2-2H9l1-1c0-1-1-2-1-3C9 3 10 2 12 2z"/><path d="M7.5 10.5l-1.5 9h12l-1.5-9"/></svg> Cupcakes</div>
@@ -205,7 +268,7 @@
             </div>
           </article>
 
-          <article class="blog-card">
+          <article class="blog-card" data-title="5 Out-of-This-World Space Cake Ideas That Will Make Your Little Astronaut Feel Like a Star" data-category="Space" data-date="2025-11-28" data-popular="91">
             <div class="blog-card-img">
               <img src="images/cake_space_1790771885759.jpg" alt="Galaxy space themed birthday cake" loading="lazy" />
               <div class="blog-card-category" style="background:#3F51B5;"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg> Space</div>
@@ -228,7 +291,7 @@
             </div>
           </article>
 
-          <article class="blog-card">
+          <article class="blog-card" data-title="Mermaid Birthday Cakes: The Complete Under-the-Sea Party Planning Guide" data-category="Mermaid" data-date="2025-11-18" data-popular="84">
             <div class="blog-card-img">
               <img src="images/cake_mermaid_1790771864114.jpg" alt="Mermaid ocean themed birthday cake" loading="lazy" />
               <div class="blog-card-category" style="background:#00BCD4;"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12c1.5-3 3-3 4.5 0s3 3 4.5 0 3-3 4.5 0"/><path d="M2 17c1.5-3 3-3 4.5 0s3 3 4.5 0 3-3 4.5 0"/></svg> Mermaid</div>
@@ -251,7 +314,7 @@
             </div>
           </article>
 
-          <article class="blog-card">
+          <article class="blog-card" data-title="A Day in the Life of Our Sugar Bliss Cake Studio: From Dawn to Delivery" data-category="Studio" data-date="2025-11-10" data-popular="72">
             <div class="blog-card-img">
               <img src="images/baker_team_1790771959250.jpg" alt="Our professional baker team creating birthday cakes" loading="lazy" />
               <div class="blog-card-category" style="background:var(--gold);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18h12v3a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-3z"/><path d="M6 14v4h12v-4"/><path d="M6 14a4 4 0 0 1-2.5-7.1 5 5 0 0 1 9-3.9 5 5 0 0 1 9 3.9A4 4 0 0 1 18 14"/></svg> Studio</div>
@@ -275,14 +338,6 @@
           </article>
 
         </div><!-- articles end -->
-
-        <!-- Pagination -->
-        <nav class="pagination" aria-label="Blog pagination">
-          <button class="page-btn active" aria-label="Page 1" aria-current="page">1</button>
-          <button class="page-btn" aria-label="Page 2">2</button>
-          <button class="page-btn" aria-label="Page 3">3</button>
-          <button class="page-btn" aria-label="Next page">&rarr;</button>
-        </nav>
       </main>
 
       <!-- Sidebar -->
@@ -291,8 +346,8 @@
         <div class="sidebar-widget">
           <div class="widget-title"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Search Articles</div>
           <div style="position:relative;">
-            <input type="search" class="form-control" placeholder="Search cake ideas..." aria-label="Search blog articles" style="padding-right:3rem;" />
-            <button style="position:absolute; right:1rem; top:50%; transform:translateY(-50%); background:none; border:none; cursor:pointer; color:var(--coral); font-size:1.1rem;" aria-label="Submit search"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+            <input type="search" id="blog-search-input" class="form-control" placeholder="Search cake ideas..." aria-label="Search blog articles" style="padding-right:3rem;" autocomplete="off" />
+            <button id="blog-search-btn" style="position:absolute; right:1rem; top:50%; transform:translateY(-50%); background:none; border:none; cursor:pointer; color:var(--coral); font-size:1.1rem;" aria-label="Submit search"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
           </div>
         </div>
 
@@ -367,8 +422,11 @@
         <div class="sidebar-widget" style="background:linear-gradient(135deg, var(--plum), var(--lavender-dark)); border:none;">
           <div class="widget-title" style="color:var(--buttercream); border-color:rgba(255,255,255,0.3);"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/><path d="M4.5 16.5l.75 2.25L7.5 19.5l-2.25.75L4.5 22.5l-.75-2.25L1.5 19.5l2.25-.75L4.5 16.5z"/><path d="M19.5 3l.75 2.25L22.5 6l-2.25.75L19.5 9l-.75-2.25L16.5 6l2.25-.75L19.5 3z"/></svg> Sweet Updates</div>
           <p style="font-size:0.875rem; color:rgba(255,255,255,0.7); margin-bottom:1.25rem;">Get new cake ideas and exclusive offers delivered weekly!</p>
-          <input type="email" style="width:100%; padding:0.75rem 1rem; border-radius:var(--radius-lg); background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:white; font-size:0.875rem; margin-bottom:0.75rem; outline:none;" placeholder="Your email" aria-label="Newsletter email" />
-          <button class="footer-newsletter-btn" type="button">Subscribe</button>
+          <form data-newsletter-form novalidate style="display:flex; flex-direction:column; gap:0.75rem;">
+            <label class="sr-only" for="sidebar-newsletter-email">Email address</label>
+            <input type="email" id="sidebar-newsletter-email" name="email" style="width:100%; padding:0.75rem 1rem; border-radius:var(--radius-lg); background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:white; font-size:0.875rem; outline:none;" placeholder="Your email" aria-label="Newsletter email" autocomplete="email" required />
+            <button class="footer-newsletter-btn sidebar-news-btn" type="submit">Subscribe</button>
+          </form>
         </div>
 
       </aside>
@@ -386,8 +444,8 @@
       <h2 class="section-title" id="highlight-heading">This Month's Spotlight: <span class="gradient-text">Botanical Cakes</span></h2>
     </div>
     <div class="grid-2" style="align-items:center; gap:4rem;">
-      <div class="reveal-left" style="border-radius:var(--radius-2xl); overflow:hidden; box-shadow:var(--shadow-xl);">
-        <img src="images/cake_floral_1790772004332.jpg" alt="Botanical floral birthday cake with cascading fresh edible flowers" style="width:100%; display:block;" loading="lazy" />
+      <div class="reveal-left spotlight-media">
+        <img src="images/cake_floral_1790772004332.jpg" alt="Botanical floral birthday cake with cascading fresh edible flowers" loading="lazy" />
       </div>
       <div class="reveal-right">
         <h3 style="margin-bottom:1rem;">The Beauty of Botanical Birthday Cakes</h3>
@@ -455,14 +513,14 @@
       <h2 class="section-title" id="gallery-section-heading" style="color:white;">Follow the <span style="color:var(--buttercream);">Sweet Journey</span></h2>
       <p class="section-subtitle" style="color:rgba(255,255,255,0.7);">Join 48k+ followers for daily cake inspiration @sugarblissbakery</p>
     </div>
-    <div style="display:grid; grid-template-columns:repeat(6,1fr); gap:0.5rem;" class="stagger-children">
-      <div style="border-radius:var(--radius-md); overflow:hidden; aspect-ratio:1/1; cursor:pointer; transition:transform 0.3s ease;" onmouseover="this.style.transform='scale(0.97)'" onmouseout="this.style.transform='scale(1)'"><img src="images/hero_cake_princess_1790771679745.jpg" alt="Princess cake on Instagram" style="width:100%; height:100%; object-fit:cover;" loading="lazy" /></div>
-      <div style="border-radius:var(--radius-md); overflow:hidden; aspect-ratio:1/1; cursor:pointer; transition:transform 0.3s ease;" onmouseover="this.style.transform='scale(0.97)'" onmouseout="this.style.transform='scale(1)'"><img src="images/cake_unicorn_1790771753982.jpg" alt="Unicorn cake on Instagram" style="width:100%; height:100%; object-fit:cover;" loading="lazy" /></div>
-      <div style="border-radius:var(--radius-md); overflow:hidden; aspect-ratio:1/1; cursor:pointer; transition:transform 0.3s ease;" onmouseover="this.style.transform='scale(0.97)'" onmouseout="this.style.transform='scale(1)'"><img src="images/cake_superhero_1790771720769.jpg" alt="Superhero cake on Instagram" style="width:100%; height:100%; object-fit:cover;" loading="lazy" /></div>
-      <div style="border-radius:var(--radius-md); overflow:hidden; aspect-ratio:1/1; cursor:pointer; transition:transform 0.3s ease;" onmouseover="this.style.transform='scale(0.97)'" onmouseout="this.style.transform='scale(1)'"><img src="images/cake_rainbow_1790771981987.jpg" alt="Rainbow cake on Instagram" style="width:100%; height:100%; object-fit:cover;" loading="lazy" /></div>
-      <div style="border-radius:var(--radius-md); overflow:hidden; aspect-ratio:1/1; cursor:pointer; transition:transform 0.3s ease;" onmouseover="this.style.transform='scale(0.97)'" onmouseout="this.style.transform='scale(1)'"><img src="images/cake_mermaid_1790771864114.jpg" alt="Mermaid cake on Instagram" style="width:100%; height:100%; object-fit:cover;" loading="lazy" /></div>
-      <div style="border-radius:var(--radius-md); overflow:hidden; aspect-ratio:1/1; cursor:pointer; transition:transform 0.3s ease; position:relative;" onmouseover="this.style.transform='scale(0.97)'" onmouseout="this.style.transform='scale(1)'">
-        <img src="images/cake_space_1790771885759.jpg" alt="Space cake on Instagram" style="width:100%; height:100%; object-fit:cover; filter:brightness(0.5);" loading="lazy" />
+    <div class="insta-grid stagger-children">
+      <div class="insta-item"><img src="images/hero_cake_princess_1790771679745.jpg" alt="Princess cake on Instagram" loading="lazy" /></div>
+      <div class="insta-item"><img src="images/cake_unicorn_1790771753982.jpg" alt="Unicorn cake on Instagram" loading="lazy" /></div>
+      <div class="insta-item"><img src="images/cake_superhero_1790771720769.jpg" alt="Superhero cake on Instagram" loading="lazy" /></div>
+      <div class="insta-item"><img src="images/cake_rainbow_1790771981987.jpg" alt="Rainbow cake on Instagram" loading="lazy" /></div>
+      <div class="insta-item"><img src="images/cake_mermaid_1790771864114.jpg" alt="Mermaid cake on Instagram" loading="lazy" /></div>
+      <div class="insta-item" style="position:relative;">
+        <img src="images/cake_space_1790771885759.jpg" alt="Space cake on Instagram" style="filter:brightness(0.5);" loading="lazy" />
         <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:white; font-weight:700; font-size:1rem; text-align:center; flex-direction:column; gap:0.25rem;"><div style="font-size:1.5rem;" class="icon-white"><svg class="icon icon-2xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><div>View All</div><div style="font-size:0.75rem; opacity:0.75;">@sugarbliss</div></div>
       </div>
     </div>
@@ -475,19 +533,21 @@
 <!-- =============================
      SECTION 6: NEWSLETTER CTA
      ============================= -->
-<section aria-labelledby="blog-newsletter-heading">
+<section class="pricing-cta-banner" aria-labelledby="blog-newsletter-heading">
   <div class="container" style="max-width:700px; text-align:center;">
     <div class="reveal">
-      <div style="margin-bottom:1rem;" aria-hidden="true" class="icon-coral"><svg class="icon icon-2xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-      <div class="section-badge" style="margin:0 auto 1.5rem;"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg> Stay Sweet</div>
-      <h2 class="section-title" id="blog-newsletter-heading">Never Miss a Sweet <span class="gradient-text">Story</span></h2>
-      <p style="margin-bottom:2rem; font-size:1.05rem; color:var(--gray-400);">Join thousands of families who get our weekly cake inspiration, decorating tips and exclusive first-access deals every Tuesday morning.</p>
-      <form style="display:flex; gap:1rem; max-width:480px; margin:0 auto;" data-validate aria-label="Blog newsletter form">
-        <input type="email" class="form-control" placeholder="Your email address" required aria-required="true" style="flex:1;" aria-label="Email address" />
-        <button type="submit" class="btn btn-primary" data-original="Subscribe �">Subscribe</button>
-        <span class="form-error" role="alert">Please enter a valid email.</span>
+      <div class="stay-icon-badge" aria-hidden="true"><svg class="icon icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+      <div class="section-badge stay-pill" style="margin:0 auto 1.5rem; display:inline-flex;"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg> Stay Sweet</div>
+      <h2 class="section-title" id="blog-newsletter-heading" style="color:white;">Never Miss a Sweet <span style="color:var(--buttercream);">Story</span></h2>
+      <p style="margin-bottom:2rem; font-size:1.05rem; color:rgba(255,255,255,0.85);">Join thousands of families who get our weekly cake inspiration, decorating tips and exclusive first-access deals every Tuesday morning.</p>
+      <form class="blog-news-form" data-validate aria-label="Blog newsletter form">
+        <div class="blog-news-field">
+          <input type="email" class="form-control" placeholder="Your email address" required aria-required="true" style="width:100%;" aria-label="Email address" />
+          <span class="form-error" role="alert">Please enter a valid email.</span>
+        </div>
+        <button type="submit" class="btn btn-primary" data-original="Subscribe">Subscribe</button>
       </form>
-      <p style="margin-top:1rem; font-size:0.8rem; color:var(--gray-300);">No spam ever · Unsubscribe anytime · Your data is safe</p>
+      <p style="margin-top:1rem; font-size:0.8rem; color:rgba(255,255,255,0.7);">No spam ever · Unsubscribe anytime · Your data is safe</p>
     </div>
   </div>
 </section>
@@ -584,5 +644,57 @@
 <button id="back-to-top" aria-label="Back to top"><svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button>
 <script src="js/icons.js"></script>
 <script src="js/main.js"></script>
+<script>
+/* Blog: live search + sort (frontend only, no backend) */
+(function () {
+  var grid = document.getElementById('articles-grid');
+  if (!grid) return;
+  var cards = Array.prototype.slice.call(grid.querySelectorAll('.blog-card'));
+  var searchInput = document.getElementById('blog-search-input');
+  var searchBtn = document.getElementById('blog-search-btn');
+  var sortSelect = document.getElementById('blog-sort-select');
+  var note = document.getElementById('blog-results-note');
+
+  function norm(s) { return (s || '').toLowerCase(); }
+
+  function applyFilter() {
+    var q = norm(searchInput ? searchInput.value : '').trim();
+    var visible = 0;
+    cards.forEach(function (card) {
+      var hay = norm(card.getAttribute('data-title') + ' ' + card.getAttribute('data-category') + ' ' + card.textContent);
+      var show = !q || hay.indexOf(q) !== -1;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    if (note) {
+      if (!q) { note.style.display = 'none'; }
+      else if (visible === 0) { note.textContent = 'No articles found. Try another keyword.'; note.style.display = ''; }
+      else { note.textContent = visible + ' article' + (visible === 1 ? '' : 's') + ' found.'; note.style.display = ''; }
+    }
+  }
+
+  function applySort() {
+    if (!sortSelect) return;
+    var mode = sortSelect.value || '';
+    var sorted = cards.slice();
+    if (mode.indexOf('Popular') !== -1) {
+      sorted.sort(function (a, b) { return (+b.getAttribute('data-popular')) - (+a.getAttribute('data-popular')); });
+    } else if (mode.indexOf('Category') !== -1) {
+      sorted.sort(function (a, b) { return norm(a.getAttribute('data-category')).localeCompare(norm(b.getAttribute('data-category'))); });
+    } else {
+      sorted.sort(function (a, b) { return String(b.getAttribute('data-date')).localeCompare(String(a.getAttribute('data-date'))); });
+    }
+    sorted.forEach(function (card) { grid.appendChild(card); });
+    applyFilter();
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', applyFilter);
+    searchInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); applyFilter(); } });
+  }
+  if (searchBtn) searchBtn.addEventListener('click', applyFilter);
+  if (sortSelect) sortSelect.addEventListener('change', applySort);
+})();
+</script>
 </body>
 </html>
