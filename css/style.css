@@ -405,8 +405,7 @@ section { padding: var(--space-5xl) 0; overflow: hidden; }
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
 }
 
-.navbar.transparent .nav-actions .btn-secondary,
-.navbar.transparent .nav-login-btn {
+.navbar.transparent .nav-actions .btn-secondary {
   background: rgba(255, 255, 255, 0.16) !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -414,22 +413,19 @@ section { padding: var(--space-5xl) 0; overflow: hidden; }
   border: 1.5px solid rgba(255, 255, 255, 0.5) !important;
 }
 
-.navbar.transparent .nav-actions .btn-secondary:hover,
-.navbar.transparent .nav-login-btn:hover {
+.navbar.transparent .nav-actions .btn-secondary:hover {
   background: var(--coral) !important;
   border-color: var(--coral) !important;
   color: #FFFFFF !important;
 }
 
-[data-theme="dark"] .navbar.transparent .nav-actions .btn-secondary,
-[data-theme="dark"] .navbar.transparent .nav-login-btn {
+[data-theme="dark"] .navbar.transparent .nav-actions .btn-secondary {
   background: rgba(255, 240, 201, 0.16) !important;
   color: var(--buttercream) !important;
   border: 1.5px solid rgba(255, 240, 201, 0.45) !important;
 }
 
-[data-theme="dark"] .navbar.transparent .nav-actions .btn-secondary:hover,
-[data-theme="dark"] .navbar.transparent .nav-login-btn:hover {
+[data-theme="dark"] .navbar.transparent .nav-actions .btn-secondary:hover {
   background: var(--buttercream) !important;
   color: var(--plum-dark) !important;
 }
@@ -620,9 +616,8 @@ section { padding: var(--space-5xl) 0; overflow: hidden; }
   flex-shrink: 0;
 }
 
-/* Keep navbar roomy: hide secondary Login button on medium screens (still in mobile menu) */
+/* Keep navbar roomy on medium screens */
 @media (max-width: 1200px) {
-  .nav-actions .nav-login-btn { display: none; }
   .nav-link { padding: 0.5rem 0.6rem; }
 }
 
@@ -3502,76 +3497,3 @@ h3.footer-col-title { margin-top: 0; }
   .auth-card { padding: 1.5rem 1rem; }
   .auth-row { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
 }
-
-/* =====================================================
-   PROFILE / ACCOUNT DROPDOWN (navbar integration)
-   Click-controlled; reuses existing nav tokens.
-   ===================================================== */
-.profile-wrap { position: relative; }
-
-.profile-menu {
-  position: absolute;
-  top: calc(100% + 10px);
-  inset-inline-end: 0;
-  min-width: 210px;
-  background: var(--white);
-  border: 1px solid var(--gray-100);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-xl);
-  padding: var(--space-sm);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(8px);
-  transition: opacity var(--transition-base), transform var(--transition-base), visibility var(--transition-base);
-  z-index: var(--z-modal);
-}
-
-.profile-menu.open {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-[data-theme="dark"] .profile-menu { background: #261623; border-color: #44273F; }
-
-.profile-menu-title {
-  font-size: 0.72rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--gray-300);
-  padding: 0.5rem 1rem 0.35rem;
-}
-
-.profile-menu a {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  padding: 0.65rem 1rem;
-  border-radius: var(--radius-sm);
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--gray-500);
-  text-decoration: none;
-  transition: background var(--transition-fast), color var(--transition-fast);
-}
-
-[data-theme="dark"] .profile-menu a { color: #DDD0DA; }
-
-.profile-menu a:hover {
-  background: linear-gradient(135deg, var(--lavender-light), var(--coral-light));
-  color: var(--plum);
-}
-
-[data-theme="dark"] .profile-menu a:hover {
-  background: rgba(232, 117, 120, 0.2);
-  color: var(--buttercream);
-}
-
-.profile-menu a:focus-visible,
-.profile-btn:focus-visible {
-  outline: 2px solid var(--lavender);
-  outline-offset: 2px;
-}
-
-[dir="rtl"] .profile-menu { text-align: right; }

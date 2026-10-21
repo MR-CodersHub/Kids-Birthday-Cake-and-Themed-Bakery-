@@ -807,68 +807,6 @@ const LazyLoad = {
 };
 
 // ── ===========================
-// PROFILE DROPDOWN (navbar account menu — click-controlled)
-// =========================== //
-const ProfileDropdown = {
-  btn: null,
-  menu: null,
-
-  init() {
-    this.btn = document.getElementById('profile-btn');
-    this.menu = document.getElementById('profile-menu');
-    if (!this.btn || !this.menu) return;
-
-    this.btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      this.toggle();
-    });
-
-    this.btn.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        this.toggle();
-      } else if (e.key === 'ArrowDown' && !this.isOpen()) {
-        e.preventDefault();
-        this.open();
-      } else if (e.key === 'Escape') {
-        this.close();
-      }
-    });
-
-    // Close on outside click
-    document.addEventListener('click', (e) => {
-      if (this.isOpen() && !e.target.closest('.profile-wrap')) this.close();
-    });
-
-    // Close on Escape anywhere + on item select
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && this.isOpen()) { this.close(); this.btn.focus(); }
-    });
-
-    this.menu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => this.close());
-    });
-
-    // Keep menu inside viewport on small screens
-    window.addEventListener('resize', () => { if (this.isOpen()) this.close(); });
-  },
-
-  isOpen() { return this.menu?.classList.contains('open'); },
-
-  open() {
-    this.menu?.classList.add('open');
-    this.btn?.setAttribute('aria-expanded', 'true');
-  },
-
-  close() {
-    this.menu?.classList.remove('open');
-    this.btn?.setAttribute('aria-expanded', 'false');
-  },
-
-  toggle() { this.isOpen() ? this.close() : this.open(); }
-};
-
-// ── ===========================
 // AUTH PASSWORD TOGGLES (login / signup — vector eye icons)
 // =========================== //
 const AuthToggles = {
@@ -910,7 +848,6 @@ document.addEventListener('DOMContentLoaded', () => {
   ThemeManager.init();
   RTLManager.init();
   Navbar.init();
-  ProfileDropdown.init();
   AuthToggles.init();
   HeroSlider.init();
   ScrollReveal.init();
