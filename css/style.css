@@ -178,6 +178,7 @@ input, textarea, select {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   line-height: 1.2;
+  font-weight: 600;
   color: var(--plum);
   transition: color var(--transition-base);
 }
@@ -191,9 +192,9 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--buttercream);
 }
 
-h1 { font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 800; }
-h2 { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; }
-h3 { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700; }
+h1 { font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 600; }
+h2 { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 600; }
+h3 { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 600; }
 h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 600; }
 h5 { font-size: clamp(1.1rem, 2vw, 1.375rem); font-weight: 600; }
 h6 { font-size: 1.125rem; font-weight: 600; }
@@ -795,7 +796,7 @@ section { padding: var(--space-5xl) 0; overflow: hidden; }
   color: var(--white);
   font-size: clamp(2.4rem, 5.2vw, 4.2rem);
   line-height: 1.14;
-  font-weight: 800;
+  font-weight: 600;
   margin-bottom: var(--space-md);
   animation: slideInLeft 0.8s ease 0.4s both;
   text-shadow: 0 2px 24px rgba(0, 0, 0, 0.6), 0 1px 4px rgba(0, 0, 0, 0.9);
@@ -1107,7 +1108,7 @@ section { padding: var(--space-5xl) 0; overflow: hidden; }
 .card-title {
   font-family: var(--font-display);
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--plum);
   margin-bottom: var(--space-sm);
   transition: color var(--transition-fast);
@@ -1213,7 +1214,7 @@ section { padding: var(--space-5xl) 0; overflow: hidden; }
 .gallery-item-info h5 {
   font-family: var(--font-display);
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: 600;
   color: white;
   margin-bottom: 0.25rem;
 }
@@ -1286,7 +1287,7 @@ section { padding: var(--space-5xl) 0; overflow: hidden; }
 .testimonial-name {
   font-family: var(--font-display);
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--plum);
 }
 
@@ -1318,7 +1319,7 @@ section { padding: var(--space-5xl) 0; overflow: hidden; }
   cursor: pointer;
   font-family: var(--font-display);
   font-size: 1.05rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--plum);
   transition: all var(--transition-fast);
   gap: var(--space-md);
@@ -1410,7 +1411,7 @@ section { padding: var(--space-5xl) 0; overflow: hidden; }
 .pricing-name {
   font-family: var(--font-display);
   font-size: 1.75rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--plum);
   margin-bottom: 0.75rem;
 }
@@ -1705,7 +1706,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .section-title {
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 600;
   color: var(--plum);
   margin-bottom: var(--space-md);
 }
@@ -1820,7 +1821,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .size-name {
   font-family: var(--font-display);
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--plum);
 }
 
@@ -1906,7 +1907,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .blog-card-title {
   font-family: var(--font-display);
   font-size: 1.15rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--plum);
   margin-bottom: var(--space-sm);
   line-height: 1.4;
@@ -1996,7 +1997,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .footer-col-title {
   font-family: var(--font-display);
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--buttercream);
   margin-bottom: var(--space-xl);
   position: relative;
@@ -2315,6 +2316,7 @@ h3.footer-col-title { margin-top: 0; }
 
 .page-hero-title {
   color: var(--white);
+  font-weight: 600;
   margin-bottom: var(--space-md);
 }
 
@@ -3129,7 +3131,7 @@ h3.footer-col-title { margin-top: 0; }
 
 .artisan-card-name {
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.1rem;
   color: var(--plum);
 }
@@ -3202,7 +3204,7 @@ h3.footer-col-title { margin-top: 0; }
 
 .hero-fresh-title {
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 600;
   font-size: 0.95rem;
   color: var(--plum);
   line-height: 1.2;
@@ -3309,7 +3311,7 @@ h3.footer-col-title { margin-top: 0; }
 .auth-title {
   font-family: var(--font-display);
   font-size: 1.9rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--plum);
   text-align: center;
   line-height: 1.2;
