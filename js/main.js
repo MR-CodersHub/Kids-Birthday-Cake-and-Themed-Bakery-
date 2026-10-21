@@ -106,11 +106,12 @@ const Navbar = {
 
   handleScroll() {
     if (!this.el) return;
+    const isTransPage = this.el.classList.contains('is-transparent') || document.querySelector('.page-hero, .hero, .hero-alt, [aria-label="Article header"]');
     if (window.scrollY > 50) {
       this.el.classList.add('scrolled');
       this.el.classList.remove('transparent');
     } else {
-      if (this.el.classList.contains('is-transparent')) {
+      if (isTransPage) {
         this.el.classList.remove('scrolled');
         this.el.classList.add('transparent');
       }
