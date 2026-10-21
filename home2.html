@@ -222,12 +222,52 @@
     [data-theme="dark"] .flavor-name { color: var(--buttercream); }
     .flavor-desc { font-size: 0.85rem; color: var(--gray-400); }
     [data-theme="dark"] .flavor-desc { color: #DDD0DA; }
+    .studio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .faq-cta-grid { gap: 5rem; }
+    .magic-cta-card {
+      background: linear-gradient(135deg, var(--plum), var(--lavender-dark));
+      border-radius: var(--radius-2xl);
+      padding: 3rem;
+      text-align: center;
+      position: sticky;
+      top: calc(var(--header-h) + 2rem);
+    }
+    .magic-cta-card .btn-outline {
+      border-color: rgba(255, 255, 255, 0.4) !important;
+      color: #FFFFFF !important;
+      background: rgba(255, 255, 255, 0.08) !important;
+    }
+    .magic-cta-card .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.2) !important;
+      border-color: #FFFFFF !important;
+    }
     @media (max-width: 992px) {
       .split-hero { grid-template-columns: 1fr; min-height: 0; }
       .split-hero-right { height: 52vh; min-height: 320px; }
       .magazine-layout { grid-template-columns: 1fr; }
       .flavor-pane.active { grid-template-columns: repeat(2, 1fr); }
       .cake-mosaic { grid-template-rows: repeat(2, 150px); }
+      .studio-grid { grid-template-columns: 1fr; gap: 2.75rem; }
+      .faq-cta-grid { grid-template-columns: 1fr !important; gap: 2.75rem !important; width: 100%; max-width: 680px; margin: 0 auto; }
+      .magic-cta-card { position: relative !important; top: 0 !important; padding: 2.25rem 1.75rem; border-radius: var(--radius-xl); width: 100%; max-width: 100%; margin: 0 auto; }
+      .magic-cta-card .btn-lg { width: 100%; justify-content: center; padding: 0.85rem 1.25rem; font-size: 0.95rem; white-space: normal; text-align: center; }
+      .stat-ribbon { display: grid; grid-template-columns: repeat(2, 1fr); }
+      .stat-ribbon-item { padding: 1.5rem 1rem; border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
+      .stat-ribbon-item:nth-child(2n) { border-right: none; }
+      .reveal-left,
+      .reveal-right {
+        transform: translateY(20px) !important;
+        width: 100% !important;
+      }
+      .reveal-left.revealed,
+      .reveal-right.revealed {
+        transform: translateY(0) !important;
+      }
     }
     @media (max-height: 780px) and (min-width: 993px) {
       .split-hero-left { padding-top: 1.5rem; padding-bottom: 1.5rem; }
@@ -236,8 +276,31 @@
     @media (max-width: 768px) {
       .split-hero-left { padding: var(--space-3xl) var(--space-xl); }
       .flavor-pane.active { grid-template-columns: 1fr; }
-      .stat-ribbon { flex-wrap: wrap; }
-      .stat-ribbon-item { border: 1px solid rgba(255,255,255,0.1); }
+      .magazine-main { min-height: 320px; aspect-ratio: auto; }
+      .magazine-main-overlay { padding: 1.5rem 1.25rem; }
+      .magazine-side-item { grid-template-columns: 90px 1fr; gap: 0.75rem; }
+      .faq-question { padding: 1.15rem 1.25rem; font-size: 0.95rem; }
+      .faq-answer { padding: 0 1.25rem 1.25rem; font-size: 0.88rem; }
+      .faq-icon { width: 32px; height: 32px; font-size: 1.1rem; }
+      .magic-cta-card { padding: 2rem 1.25rem; }
+      .magic-cta-card h3 { font-size: 1.5rem; }
+    }
+    @media (max-width: 576px) {
+      section[aria-labelledby="flavors-heading"] .btn-lg { width: 100%; max-width: 320px; justify-content: center; padding: 0.85rem 1.25rem; font-size: 0.95rem; white-space: normal; text-align: center; }
+      .flavor-tabs-nav { width: 100%; justify-content: center; gap: 0.35rem; padding: 0.3rem; }
+      .flavor-tab { padding: 0.55rem 0.9rem; font-size: 0.82rem; }
+    }
+    @media (max-width: 480px) {
+      .stat-ribbon-item { padding: 1.15rem 0.5rem; }
+      .stat-ribbon-num { font-size: 1.75rem; }
+      .magazine-side-item { grid-template-columns: 80px 1fr; }
+      .magazine-side-body { padding: 0.75rem 0.5rem; }
+      .magic-cta-card { padding: 1.75rem 1rem; border-radius: var(--radius-lg); }
+      .magic-cta-card .btn { width: 100%; justify-content: center; padding: 0.8rem 1rem !important; font-size: 0.9rem !important; }
+      .magic-cta-card [style*="font-size:3.5rem"] { font-size: 2.5rem !important; margin-bottom: 1rem !important; }
+      .magic-cta-card p { font-size: 0.88rem !important; margin-bottom: 1.5rem !important; }
+      .faq-question { padding: 1rem; font-size: 0.9rem; }
+      .faq-answer { padding: 0 1rem 1rem; font-size: 0.85rem; }
     }
   </style>
 </head>
@@ -458,7 +521,7 @@
      ============================= -->
 <section class="bg-cream" aria-labelledby="our-studio-heading">
   <div class="container">
-    <div style="display:grid; grid-template-columns:1fr 1.2fr; gap:5rem; align-items:center;">
+    <div class="studio-grid">
       <div class="reveal-left">
         <div class="section-badge"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Our Studio</div>
         <h2 class="section-title" id="our-studio-heading">A Little Bakery with <span class="gradient-text">Big Dreams</span></h2>
@@ -602,7 +665,7 @@
      ============================= -->
 <section aria-labelledby="faq2-heading">
   <div class="container">
-    <div class="grid-2" style="align-items:start; gap:5rem;">
+    <div class="faq-cta-grid grid-2" style="align-items:start;">
       <div>
         <div class="section-badge reveal"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Quick Answers</div>
         <h2 class="section-title reveal" id="faq2-heading">Common <span class="gradient-text">Questions</span></h2>
@@ -637,7 +700,7 @@
       </div>
 
       <div class="reveal-right">
-        <div style="background:linear-gradient(135deg, var(--plum), var(--lavender-dark)); border-radius:var(--radius-2xl); padding:3rem; text-align:center; position:sticky; top:calc(var(--header-h) + 2rem);">
+        <div class="magic-cta-card">
           <div style="font-size:3.5rem; margin-bottom:1.5rem;" aria-hidden="true"><svg class="icon icon-xl icon-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v10h16V10z"/><path d="M4 14h16"/><path d="M8 10V6"/><path d="M16 10V6"/><path d="M12 10V4"/><path d="M8 4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2"/></svg></div>
           <h3 style="color:white; margin-bottom:1rem;">Ready to Create Magic?</h3>
           <p style="color:rgba(255,255,255,0.75); margin-bottom:2rem; font-size:0.95rem; line-height:1.7;">Every extraordinary birthday starts with a conversation. Tell us your dream — we'll make it delicious.</p>

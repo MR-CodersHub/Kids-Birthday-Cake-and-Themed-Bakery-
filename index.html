@@ -80,9 +80,89 @@
     @media (max-width: 992px) {
       .t-card { flex-basis: calc(50% - 0.75rem); }
     }
+    /* ── Simple Process: floating rating card responsive ── */
+    .process-floating-card {
+      position: absolute;
+      bottom: -24px;
+      left: -24px;
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      padding: 1.25rem 1.75rem;
+      box-shadow: var(--shadow-xl);
+      border: 1px solid var(--gray-100);
+      z-index: 2;
+      transition: all var(--transition-base);
+    }
+    [data-theme="dark"] .process-floating-card {
+      background: var(--light-gray);
+      border-color: var(--gray-200);
+    }
+    [data-theme="dark"] .process-card-rating {
+      color: var(--buttercream) !important;
+    }
+    @media (max-width: 992px) {
+      .process-floating-card {
+        bottom: 16px;
+        left: 16px;
+        padding: 1rem 1.4rem;
+      }
+    }
     @media (max-width: 768px) {
       .t-viewport { margin: 0 -0.4rem; padding: 0.5rem 0.4rem; }
       .t-card { flex-basis: 100%; padding: 1.5rem; }
+      .process-floating-card {
+        bottom: 12px;
+        left: 12px;
+        padding: 0.85rem 1.2rem;
+        border-radius: var(--radius-lg);
+      }
+    }
+    @media (max-width: 480px) {
+      .process-floating-card {
+        bottom: 10px;
+        left: 10px;
+        padding: 0.65rem 0.95rem;
+      }
+      .process-card-rating {
+        font-size: 1.05rem !important;
+      }
+      .process-card-sub {
+        font-size: 0.72rem !important;
+      }
+    }
+    /* ── Transparent Pricing: Royale card badge overlap fix ── */
+    .pricing-card.featured {
+      padding-top: 4.25rem !important;
+    }
+    .pricing-card.featured .pricing-badge {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.5rem;
+      white-space: nowrap;
+      z-index: 2;
+    }
+    @media (max-width: 768px) {
+      .pricing-card.featured {
+        padding-top: 4.25rem !important;
+      }
+      .pricing-card.featured .pricing-badge {
+        top: 1.25rem;
+        right: 1.25rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .pricing-card.featured {
+        padding-top: 4.25rem !important;
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+        padding-bottom: 2rem !important;
+      }
+      .pricing-card.featured .pricing-badge {
+        top: 1.15rem;
+        right: 1.15rem;
+        font-size: 0.72rem;
+        padding: 0.28rem 0.8rem;
+      }
     }
   </style>
 </head>
@@ -484,12 +564,12 @@
           <img src="images/bakery_interior_1790771843318.jpg" alt="Sugar Bliss Bakery interior with beautiful cake displays" style="width:100%; height:auto; display:block;" loading="lazy" />
         </div>
         <!-- Floating card -->
-        <div style="position:absolute; bottom: -24px; left: -24px; background:var(--white); border-radius:var(--radius-xl); padding:1.25rem 1.75rem; box-shadow:var(--shadow-xl); border:1px solid var(--gray-100);">
+        <div class="process-floating-card">
           <div style="display:flex; align-items:center; gap:0.75rem;">
             <div style="color:var(--gold);"><svg class="icon icon-xl" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
             <div>
-              <div style="font-family:var(--font-display); font-weight:800; color:var(--plum); font-size:1.25rem;">4.9 / 5.0</div>
-              <div style="font-size:0.8rem; color:var(--gray-300);">From 800+ Reviews</div>
+              <div class="process-card-rating" style="font-family:var(--font-display); font-weight:800; color:var(--plum); font-size:1.25rem;">4.9 / 5.0</div>
+              <div class="process-card-sub" style="font-size:0.8rem; color:var(--gray-300);">From 800+ Reviews</div>
             </div>
           </div>
         </div>

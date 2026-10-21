@@ -46,9 +46,47 @@
     .award-item { display:flex; align-items:center; gap:1.5rem; padding:1.5rem; background:var(--white); border-radius:var(--radius-lg); box-shadow:var(--shadow-sm); border:1px solid var(--gray-100); margin-bottom:1rem; transition:all var(--transition-base); }
     [data-theme="dark"] .award-item { background:var(--light-gray); border-color:var(--gray-200); }
     .award-item:hover { transform:translateX(6px); box-shadow:var(--shadow-md); }
-    .award-icon { width:56px; height:56px; border-radius:var(--radius-lg); display:flex; align-items:center; justify-content:center; font-size:1.5rem; flex-shrink:0; }
-    @media (max-width:768px) { .team-grid { grid-template-columns:repeat(2,1fr) !important; } }
-    @media (max-width:480px) { .team-grid { grid-template-columns:1fr !important; } }
+    .story-grid { gap: 5rem; }
+    .story-actions { display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; }
+    .story-image-wrap { border-radius: 32px; overflow: hidden; box-shadow: var(--shadow-xl); position: relative; }
+    .story-image-badge { position: absolute; top: 1.25rem; left: 1.25rem; background: var(--coral); border: 2px solid rgba(255, 255, 255, 0.85); border-radius: var(--radius-xl); padding: 1.1rem 1.6rem; box-shadow: var(--shadow-xl); color: white; text-align: center; }
+    .story-badge-num { font-family: var(--font-display); font-weight: 800; font-size: 2rem; line-height: 1; }
+    .story-badge-text { font-size: 0.8rem; font-weight: 600; }
+    .studio-gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 4rem; }
+    .about-cta-banner { border-radius: var(--radius-2xl); padding: 4rem; text-align: center; }
+    @media (max-width: 992px) {
+      .story-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; width: 100%; }
+      .story-image-wrap { max-width: 600px; margin: 0 auto; width: 100%; border-radius: var(--radius-xl); }
+      .story-image-wrap img { width: 100%; height: auto; display: block; object-fit: cover; }
+      .story-image-badge { top: 1rem; left: 1rem; padding: 0.75rem 1.15rem; border-radius: var(--radius-lg); }
+      .story-badge-num { font-size: 1.5rem; }
+      .story-badge-text { font-size: 0.75rem; }
+      .reveal-left,
+      .reveal-right {
+        transform: translateY(20px) !important;
+        width: 100% !important;
+      }
+      .reveal-left.revealed,
+      .reveal-right.revealed {
+        transform: translateY(0) !important;
+      }
+    }
+    @media (max-width: 768px) {
+      .team-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .studio-gallery-grid { grid-template-columns: 1fr !important; gap: 1rem !important; margin-bottom: 2.5rem !important; }
+      .about-cta-banner { padding: 2.5rem 1.25rem !important; border-radius: var(--radius-xl) !important; }
+      .about-cta-banner h3 { font-size: 1.6rem !important; }
+      .about-cta-banner .btn { width: 100% !important; justify-content: center !important; }
+      .story-actions { display: flex !important; flex-direction: column !important; width: 100% !important; gap: 0.75rem !important; }
+      .story-actions .btn { width: 100% !important; max-width: 100% !important; justify-content: center !important; padding: 0.85rem 1.25rem !important; font-size: 0.95rem !important; text-align: center !important; }
+      .story-image-wrap { max-width: 100%; border-radius: var(--radius-lg); }
+    }
+    @media (max-width: 480px) {
+      .team-grid { grid-template-columns: 1fr !important; }
+      .story-image-badge { top: 0.75rem; left: 0.75rem; padding: 0.5rem 0.8rem; }
+      .story-badge-num { font-size: 1.2rem; }
+      .story-badge-text { font-size: 0.68rem; }
+    }
   </style>
 </head>
 <body>
@@ -105,24 +143,24 @@
      ============================= -->
 <section aria-labelledby="brand-story-heading">
   <div class="container">
-    <div class="grid-2" style="align-items:center; gap:5rem;">
+    <div class="grid-2 story-grid" style="align-items:center;">
       <div class="reveal-left">
         <div class="section-badge"><svg class="icon icon-sm icon-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> Founded 2018</div>
         <h2 class="section-title" id="brand-story-heading">Born from a Mom's Love & a <span class="gradient-text">Passion for Art</span></h2>
         <p style="margin-bottom:1.5rem;">It all started in a small home kitchen in South London when Clara Whitmore, a trained pastry chef and mother of two, couldn't find a birthday cake that truly matched her daughter's love for unicorns.</p>
         <p style="margin-bottom:1.5rem;">So she made one herself. And then another. And another. Her kitchen became a magical studio, word spread, and Sugar Bliss Bakery was born — a boutique where edible art meets childhood dreams.</p>
         <p style="margin-bottom:2.5rem;">Today, we serve hundreds of families across London and beyond, crafting luxury children's cakes that don't just look extraordinary — they taste like pure joy.</p>
-        <div style="display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap;">
+        <div class="story-actions">
           <a href="contact.html" class="btn btn-primary btn-lg">Order Your Dream Cake <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           <a href="services.html" class="btn btn-secondary btn-lg">Explore Themes</a>
         </div>
       </div>
       <div class="reveal-right">
-        <div style="border-radius:32px; overflow:hidden; box-shadow:var(--shadow-xl); position:relative;">
-          <img src="images/bakery_boutique_interior_new.jpg" alt="The Sugar Bliss Bakery boutique studio interior" style="width:100%; display:block;" loading="lazy" />
-          <div style="position:absolute; top:1.25rem; left:1.25rem; background:var(--coral); border:2px solid rgba(255,255,255,0.85); border-radius:var(--radius-xl); padding:1.1rem 1.6rem; box-shadow:var(--shadow-xl); color:white; text-align:center;">
-            <div style="font-family:var(--font-display); font-weight:800; font-size:2rem; line-height:1;">8</div>
-            <div style="font-size:0.8rem; font-weight:600;">Years of Magic</div>
+        <div class="story-image-wrap">
+          <img src="images/bakery_boutique_interior_new.jpg" alt="The Sugar Bliss Bakery boutique studio interior" style="width:100%; height:auto; display:block;" loading="lazy" />
+          <div class="story-image-badge">
+            <div class="story-badge-num">8</div>
+            <div class="story-badge-text">Years of Magic</div>
           </div>
         </div>
       </div>
@@ -372,7 +410,7 @@
       <p class="section-subtitle">Our bakery is open for studio consultations by appointment. See the magic happen in person — from batter to masterpiece.</p>
     </div>
 
-    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-bottom:4rem;">
+    <div class="studio-gallery-grid">
       <div style="border-radius:var(--radius-xl); overflow:hidden; box-shadow:var(--shadow-md); aspect-ratio:4/3; cursor:pointer;" data-lightbox="images/bakery_interior_1790771843318.jpg" class="reveal-scale">
         <img src="images/bakery_interior_1790771843318.jpg" alt="Sugar Bliss bakery interior" style="width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" loading="lazy" />
       </div>
@@ -384,7 +422,7 @@
       </div>
     </div>
 
-    <div style="background:linear-gradient(135deg, var(--plum), var(--coral)); border-radius:var(--radius-2xl); padding:4rem; text-align:center; position:relative; overflow:hidden;" class="reveal">
+    <div class="about-cta-banner reveal" style="background:linear-gradient(135deg, var(--plum), var(--coral)); position:relative; overflow:hidden;">
       <div style="position:absolute; inset:0; opacity:0.05; background-image:radial-gradient(circle, white 1px, transparent 1px); background-size:24px 24px;" aria-hidden="true"></div>
       <div style="position:relative; z-index:2;">
         <div style="margin-bottom:1.5rem;" aria-hidden="true" class="icon-gold"><svg class="icon icon-2xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/><path d="M4.5 16.5l.75 2.25L7.5 19.5l-2.25.75L4.5 22.5l-.75-2.25L1.5 19.5l2.25-.75L4.5 16.5z"/><path d="M19.5 3l.75 2.25L22.5 6l-2.25.75L19.5 9l-.75-2.25L16.5 6l2.25-.75L19.5 3z"/></svg></div>

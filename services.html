@@ -148,7 +148,33 @@
       background-position: right 1.25rem center;
       background-size: 12px 8px;
     }
-    @media (max-width: 768px) { .custom-form-grid { grid-template-columns: 1fr; } .custom-form-grid .full { grid-column: 1; } }
+    .custom-order-grid { gap: 5rem; }
+    .custom-order-form {
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--gray-100);
+    }
+    [data-theme="dark"] .custom-order-form { background: var(--light-gray); border-color: var(--gray-200); }
+    .custom-order-addons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+    @media (max-width: 992px) {
+      .custom-order-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+      .custom-order-sidebar { position: static !important; }
+    }
+    @media (max-width: 768px) {
+      .custom-form-grid { grid-template-columns: 1fr; }
+      .custom-form-grid .full { grid-column: 1; }
+      .custom-order-form { padding: 1.5rem 1rem !important; border-radius: var(--radius-lg); }
+    }
+    @media (max-width: 576px) {
+      .custom-order-addons { grid-template-columns: 1fr !important; }
+      .addon-item { font-size: 0.85rem !important; }
+    }
   </style>
 </head>
 <body>
@@ -560,13 +586,13 @@
      ============================= -->
 <section aria-labelledby="custom-order-heading">
   <div class="container">
-    <div class="grid-2" style="gap:5rem; align-items:start;">
+    <div class="grid-2 custom-order-grid" style="align-items:start;">
       <div class="reveal-left">
         <div class="section-badge"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg> Custom Design</div>
         <h2 class="section-title" id="custom-order-heading">Design Your <span class="gradient-text">Dream Cake</span></h2>
         <p style="margin-bottom:2rem;">Fill in the form and our team will reach out within 24 hours with a personalised quote and design proposal.</p>
 
-        <form data-validate aria-label="Custom cake order form" style="background:var(--white); border-radius:var(--radius-xl); padding:2.5rem; box-shadow:var(--shadow-md); border:1px solid var(--gray-100);">
+        <form class="custom-order-form" data-validate aria-label="Custom cake order form">
           <div class="custom-form-grid">
             <div class="form-group">
               <label class="form-label" for="order-name">Your Name *</label>
@@ -629,7 +655,7 @@
             <!-- Add-ons -->
             <div class="form-group full">
               <label class="form-label">Add-On Options (optional)</label>
-              <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:0.75rem;">
+              <div class="custom-order-addons">
                 <label class="addon-item"><input type="checkbox" /><span class="addon-label">Matching Cupcakes (12)</span><span class="addon-price">+$65</span></label>
                 <label class="addon-item"><input type="checkbox" /><span class="addon-label">Sugar Cookie Pack (12)</span><span class="addon-price">+$55</span></label>
                 <label class="addon-item"><input type="checkbox" /><span class="addon-label">Smash Cake Mini</span><span class="addon-price">+$45</span></label>
@@ -644,7 +670,7 @@
         </form>
       </div>
 
-      <div class="reveal-right" style="position:sticky; top:calc(var(--header-h) + 2rem);">
+      <div class="reveal-right custom-order-sidebar" style="position:sticky; top:calc(var(--header-h) + 2rem);">
         <div style="border-radius:var(--radius-2xl); overflow:hidden; box-shadow:var(--shadow-xl); margin-bottom:2rem;">
           <img src="images/cake_unicorn_1790771753982.jpg" alt="Example custom cake design" style="width:100%; display:block;" loading="lazy" />
         </div>

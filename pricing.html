@@ -21,6 +21,8 @@
     /* Cake Packages: equal-height cards + bottom-aligned buttons */
     section[aria-labelledby="main-pricing-heading"] .grid-3 { align-items:stretch; }
     section[aria-labelledby="main-pricing-heading"] .pricing-card { display:flex; flex-direction:column; height:100%; transform:none; padding:2.25rem 2rem; }
+    section[aria-labelledby="main-pricing-heading"] .pricing-card.featured { padding-top:4.25rem !important; }
+    section[aria-labelledby="main-pricing-heading"] .pricing-card.featured .pricing-badge { position:absolute; top:1.25rem; right:1.5rem; z-index:2; white-space:nowrap; }
     section[aria-labelledby="main-pricing-heading"] .pricing-card:hover { transform:translateY(-8px); }
     section[aria-labelledby="main-pricing-heading"] .pricing-card .pricing-name { margin-bottom:0.75rem; }
     section[aria-labelledby="main-pricing-heading"] .pricing-card .pricing-amount { margin-bottom:0.35rem; }
@@ -36,9 +38,20 @@
     /* Compare Plans: strong red X marks */
     .comparison-table .cross-icon { color:#DC3545; font-size:1.1rem; font-weight:700; }
     .comparison-table .pricing-x { background:rgba(220,53,69,0.12); color:#DC3545; }
-    /* Extras table: filled, non-collapsing price columns */
-    .addon-table { table-layout:fixed; }
-    .addon-table th:nth-child(n+2), .addon-table td:nth-child(n+2) { min-width:130px; white-space:nowrap; }
+    /* Extras table: fluid responsive table with clean scrollable card */
+    .addon-table-wrap { width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; border-radius:var(--radius-xl); box-shadow:var(--shadow-md); background:var(--white); border:1px solid var(--gray-100); }
+    .addon-table { width:100%; min-width:580px; border-collapse:collapse; }
+    .addon-table th:nth-child(n+2), .addon-table td:nth-child(n+2) { min-width:115px; white-space:nowrap; }
+    @media(max-width:768px) {
+      .addon-table th, .addon-table td { padding:0.85rem 0.9rem !important; font-size:0.85rem !important; }
+      .addon-table th:nth-child(n+2), .addon-table td:nth-child(n+2) { min-width:95px !important; }
+      section[aria-labelledby="main-pricing-heading"] .pricing-card.featured { padding-top:4.25rem !important; }
+      section[aria-labelledby="main-pricing-heading"] .pricing-card.featured .pricing-badge { top:1.25rem; right:1.25rem; font-size:0.72rem; padding:0.28rem 0.85rem; }
+    }
+    @media(max-width:480px) {
+      section[aria-labelledby="main-pricing-heading"] .pricing-card.featured { padding:4.25rem 1.25rem 2rem !important; }
+      section[aria-labelledby="main-pricing-heading"] .pricing-card.featured .pricing-badge { top:1.15rem; right:1.15rem; font-size:0.72rem; padding:0.28rem 0.8rem; }
+    }
     /* CTA badge icon */
     .cta-badge-icon { margin:0 auto 1.5rem; width:88px; height:88px; border-radius:50%; background:rgba(255,240,201,0.18); border:1.5px solid rgba(255,240,201,0.5); display:flex; align-items:center; justify-content:center; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); box-shadow:0 8px 30px rgba(0,0,0,0.25); }
   </style>
@@ -169,8 +182,8 @@
       <div class="section-badge"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/><path d="M4.5 16.5l.75 2.25L7.5 19.5l-2.25.75L4.5 22.5l-.75-2.25L1.5 19.5l2.25-.75L4.5 16.5z"/><path d="M19.5 3l.75 2.25L22.5 6l-2.25.75L19.5 9l-.75-2.25L16.5 6l2.25-.75L19.5 3z"/></svg> Extras</div>
       <h2 class="section-title" id="addon-pricing-heading">Add-On <span class="gradient-text">Pricing</span></h2>
     </div>
-    <div style="overflow-x:auto;">
-      <table class="addon-table" style="width:100%; border-collapse:separate; border-spacing:0; background:var(--white); border-radius:var(--radius-xl); box-shadow:var(--shadow-md); overflow:hidden;">
+    <div class="addon-table-wrap">
+      <table class="addon-table">
         <thead>
           <tr style="background:linear-gradient(135deg, var(--plum), var(--lavender-dark));">
             <th style="padding:1.25rem 1.5rem; text-align:left; color:var(--buttercream); font-family:var(--font-display);" scope="col">Add-On Item</th>

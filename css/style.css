@@ -589,6 +589,7 @@ section { padding: var(--space-5xl) 0; overflow: hidden; }
   transition: all var(--transition-bounce);
   cursor: pointer;
   border: none;
+  flex-shrink: 0;
 }
 
 .navbar.transparent .nav-icon-btn {
@@ -622,9 +623,9 @@ section { padding: var(--space-5xl) 0; overflow: hidden; }
   .nav-link { padding: 0.5rem 0.6rem; }
 }
 
-/* On small phones hide desktop CTA buttons (both live in the hamburger menu) */
-@media (max-width: 480px) {
-  .nav-actions .btn { display: none; }
+/* On tablets and mobile screens, hide desktop CTA button in header (it lives inside the mobile menu drawer) */
+@media (max-width: 992px) {
+  .nav-actions .btn { display: none !important; }
 }
 
 .hamburger {
@@ -669,12 +670,18 @@ section { padding: var(--space-5xl) 0; overflow: hidden; }
   padding: var(--space-xl);
   overflow-y: auto;
   transform: translateX(100%);
-  transition: transform var(--transition-slow);
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform var(--transition-slow), visibility var(--transition-slow);
 }
 
 [data-theme="dark"] .mobile-nav { background: var(--off-white); }
 
-.mobile-nav.open { transform: translateX(0); }
+.mobile-nav.open {
+  transform: translateX(0);
+  visibility: visible;
+  pointer-events: auto;
+}
 
 .mobile-nav-link {
   display: flex;
@@ -1378,6 +1385,7 @@ section { padding: var(--space-5xl) 0; overflow: hidden; }
   background: linear-gradient(135deg, var(--plum) 0%, var(--lavender-dark) 100%);
   border-color: var(--lavender);
   transform: scale(1.05);
+  padding-top: 4.25rem !important;
 }
 
 .pricing-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-xl); }
@@ -1385,8 +1393,8 @@ section { padding: var(--space-5xl) 0; overflow: hidden; }
 
 .pricing-badge {
   position: absolute;
-  top: var(--space-lg);
-  right: var(--space-lg);
+  top: 1.25rem;
+  right: 1.5rem;
   padding: 0.35rem 1rem;
   background: var(--gold);
   color: white;
@@ -1395,6 +1403,9 @@ section { padding: var(--space-5xl) 0; overflow: hidden; }
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  white-space: nowrap;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(212, 174, 106, 0.4);
 }
 
 .pricing-tier {
@@ -1768,6 +1779,28 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 [data-theme="dark"] .step-content h4 {
+  color: var(--buttercream) !important;
+}
+
+.process-floating-card {
+  position: absolute;
+  bottom: -24px;
+  left: -24px;
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 1.25rem 1.75rem;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--gray-100);
+  z-index: 2;
+  transition: all var(--transition-base);
+}
+
+[data-theme="dark"] .process-floating-card {
+  background: var(--light-gray);
+  border-color: var(--gray-200);
+}
+
+[data-theme="dark"] .process-card-rating {
   color: var(--buttercream) !important;
 }
 
@@ -2745,9 +2778,14 @@ h3.footer-col-title { margin-top: 0; }
 @media (max-width: 992px) {
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 3rem 2rem; }
   section { padding: var(--space-4xl) 0; }
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
   .hero { padding: 0 !important; }
   .nav-menu { display: none; }
-  .hamburger { display: flex; }
+  .nav-actions { margin-left: auto; }
+  .hamburger { display: flex; margin-left: 0.5rem; flex-shrink: 0; }
   .hero-bottom-bar { bottom: 1.5rem; }
   .hero-stats { gap: var(--space-sm); }
   .hero-stat { padding: 0.6rem 0.9rem; }
@@ -2757,6 +2795,141 @@ h3.footer-col-title { margin-top: 0; }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
   .process-step { flex-direction: column; }
   .process-step::after { display: none; }
+
+  /* Transparent Pricing Section & Pricing Packages on tablet */
+  section[aria-labelledby="pricing-preview-heading"] .grid-3,
+  section[aria-labelledby="main-pricing-heading"] .grid-3,
+  section[aria-labelledby="bundles-pricing-heading"] .grid-3 {
+    grid-template-columns: 1fr !important;
+    max-width: 520px;
+    margin: 0 auto;
+    gap: 2rem;
+  }
+  .pricing-card.featured {
+    transform: none !important;
+    padding-top: 4.25rem !important;
+  }
+  .pricing-card.featured:hover {
+    transform: translateY(-8px) !important;
+  }
+
+  /* Home 2: Stats Ribbon */
+  .stat-ribbon {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .stat-ribbon-item {
+    padding: 1.5rem 1rem !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+  .stat-ribbon-item:nth-child(2n) {
+    border-right: none !important;
+  }
+
+  /* Home 2: Our Studio Section */
+  section[aria-labelledby="our-studio-heading"] .container > div,
+  .studio-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.75rem !important;
+  }
+
+  /* Home 2: Quick Answers & Ready to Create Magic */
+  section[aria-labelledby="faq2-heading"] .grid-2,
+  .faq-cta-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.75rem !important;
+    width: 100% !important;
+    max-width: 680px !important;
+    margin: 0 auto !important;
+  }
+  section[aria-labelledby="faq2-heading"] .reveal-right > div,
+  .magic-cta-card {
+    position: relative !important;
+    top: 0 !important;
+    padding: 2.25rem 1.5rem !important;
+    border-radius: var(--radius-xl) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+  .magic-cta-card .btn-outline {
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    color: #FFFFFF !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+  }
+  .magic-cta-card .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-color: #FFFFFF !important;
+  }
+
+  /* About Page: Founded 2018 Section */
+  section[aria-labelledby="brand-story-heading"] .grid-2,
+  .story-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+    width: 100% !important;
+  }
+  .story-image-wrap {
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+    border-radius: var(--radius-xl);
+  }
+
+  /* Services Page: Custom Design Section */
+  section[aria-labelledby="custom-order-heading"] .grid-2 {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+  section[aria-labelledby="custom-order-heading"] .reveal-right {
+    position: static !important;
+  }
+
+  /* Blog Page: Our Feed */
+  .insta-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.5rem !important;
+  }
+
+  /* Contact Page: Contact Info & Send a Message */
+  .contact-main-grid,
+  section[aria-labelledby="contact-heading"] .contact-main-grid,
+  section[aria-labelledby="contact-heading"] [style*="grid-template-columns:1fr 1.4fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+  .contact-info-panel,
+  section[aria-labelledby="contact-heading"] .reveal-left > div {
+    position: static !important;
+    padding: 2.25rem 1.75rem !important;
+    border-radius: var(--radius-xl) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .contact-form-card,
+  section[aria-labelledby="contact-heading"] form {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .contact-form-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+
+  /* Prevent reveal horizontal translate on tablets from pushing content offscreen */
+  .reveal-left,
+  .reveal-right {
+    transform: translateY(20px) !important;
+    width: 100% !important;
+  }
+  .reveal-left.revealed,
+  .reveal-right.revealed {
+    transform: translateY(0) !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -2787,9 +2960,210 @@ h3.footer-col-title { margin-top: 0; }
   .size-selector { flex-direction: column; }
   .section-header { margin: 0 auto 1.75rem; }
   .filter-tabs { margin-bottom: 1.5rem; }
+
+  /* Avoid horizontal translate on mobile to prevent right-side gaps */
+  .reveal-left,
+  .reveal-right {
+    transform: translateY(20px) !important;
+  }
+  .reveal-left.revealed,
+  .reveal-right.revealed {
+    transform: translateY(0) !important;
+  }
+
+  /* Home 2: Featured Creations magazine responsive */
+  .magazine-main {
+    min-height: 320px !important;
+    aspect-ratio: auto !important;
+  }
+  .magazine-main-overlay {
+    padding: 1.5rem 1.25rem !important;
+  }
+  .magazine-side-item {
+    grid-template-columns: 90px 1fr !important;
+    gap: 0.75rem !important;
+  }
+
+  /* About Page: Our Space Section */
+  section[aria-labelledby="studio-cta-heading"] [style*="grid-template-columns:repeat(3,1fr)"] {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    margin-bottom: 2.5rem !important;
+  }
+
+  /* About Page: Ready to Create Something Extraordinary */
+  section[aria-labelledby="studio-cta-heading"] [style*="background:linear-gradient(135deg, var(--plum), var(--coral))"] {
+    padding: 2.5rem 1.25rem !important;
+    border-radius: var(--radius-xl) !important;
+  }
+  section[aria-labelledby="studio-cta-heading"] [style*="background:linear-gradient(135deg, var(--plum), var(--coral))"] h3 {
+    font-size: 1.6rem !important;
+  }
+  section[aria-labelledby="studio-cta-heading"] [style*="background:linear-gradient(135deg, var(--plum), var(--coral))"] .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Services Page: Custom Design Form */
+  section[aria-labelledby="custom-order-heading"] form {
+    padding: 1.5rem 1rem !important;
+    border-radius: var(--radius-lg) !important;
+  }
+
+  /* Pricing Page: Extras Table padding */
+  .addon-table th,
+  .addon-table td {
+    padding: 0.85rem 0.9rem !important;
+    font-size: 0.85rem !important;
+  }
+  .addon-table th:nth-child(n+2),
+  .addon-table td:nth-child(n+2) {
+    min-width: 95px !important;
+  }
+
+  /* Contact Page: Send a Message Form */
+  .contact-form-card,
+  section[aria-labelledby="contact-heading"] form {
+    padding: 1.75rem 1.25rem !important;
+    border-radius: var(--radius-xl) !important;
+  }
+  .contact-form-grid,
+  section[aria-labelledby="contact-heading"] form [style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  .contact-info-panel {
+    padding: 2rem 1.25rem !important;
+    border-radius: var(--radius-xl) !important;
+  }
+  .contact-info-card {
+    padding: 1.25rem 1rem !important;
+    gap: 1rem !important;
+  }
+
+  /* Pricing Featured Card & Badge on tablet / mobile */
+  .pricing-card.featured {
+    padding-top: 4.25rem !important;
+  }
+  .pricing-card.featured .pricing-badge {
+    top: 1.25rem !important;
+    right: 1.25rem !important;
+  }
+
+  /* About Page: Story action buttons full-width stack */
+  .story-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0.75rem !important;
+  }
+  .story-actions .btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    justify-content: center !important;
+    padding: 0.85rem 1.25rem !important;
+    font-size: 0.95rem !important;
+    text-align: center !important;
+  }
+
+  /* FAQ items on tablets and mobile */
+  .faq-question {
+    padding: 1.15rem 1.25rem !important;
+    font-size: 0.98rem !important;
+  }
+  .faq-answer {
+    padding: 0 1.25rem 1.25rem !important;
+    font-size: 0.9rem !important;
+  }
+
+  /* Simple Process: floating rating card */
+  .process-floating-card {
+    bottom: 12px !important;
+    left: 12px !important;
+    padding: 0.85rem 1.2rem !important;
+    border-radius: var(--radius-lg) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Blog Page: Stay Sweet newsletter form */
+  .blog-news-form {
+    flex-direction: column !important;
+    width: 100% !important;
+    align-items: stretch !important;
+    gap: 0.75rem !important;
+  }
+  .blog-news-form .blog-news-field {
+    width: 100% !important;
+  }
+  .blog-news-form .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Home Page: 10% Off newsletter banner form */
+  .newsletter-section form {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0.75rem !important;
+  }
+  .newsletter-section form .newsletter-input {
+    width: 100% !important;
+  }
+  .newsletter-section form .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 576px) {
+
+  /* Home 2: Flavor Gallery button & tabs */
+  section[aria-labelledby="flavors-heading"] .btn-lg {
+    width: 100% !important;
+    max-width: 320px !important;
+    justify-content: center !important;
+    padding: 0.85rem 1.25rem !important;
+    font-size: 0.95rem !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+  .flavor-tabs-nav {
+    width: 100% !important;
+    justify-content: center !important;
+    gap: 0.35rem !important;
+    padding: 0.3rem !important;
+  }
+  .flavor-tab {
+    padding: 0.55rem 0.9rem !important;
+    font-size: 0.82rem !important;
+  }
+
+  /* About Page: Founded 2018 Buttons */
+  section[aria-labelledby="brand-story-heading"] .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Services Page: Add-on checkboxes */
+  section[aria-labelledby="custom-order-heading"] [style*="grid-template-columns:repeat(2,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+  section[aria-labelledby="custom-order-heading"] .addon-item {
+    font-size: 0.82rem !important;
+  }
 }
 
 @media (max-width: 480px) {
+  :root { --header-h: 68px; }
+  .navbar .container { padding: 0 1rem; }
+  .nav-logo-icon { width: 36px; height: 36px; font-size: 1.25rem; }
+  .nav-logo-text { font-size: 1.15rem; }
+  .nav-icon-btn { width: 36px; height: 36px; }
+  .nav-icon-btn.nav-text-btn { width: 36px; height: 36px; min-width: 36px; font-size: 0.65rem; }
+  .hamburger { width: 36px; height: 36px; }
+  .hamburger span { width: 20px; }
+
   .hero-title { font-size: 1.85rem; }
   .hero-actions { flex-direction: column; width: 100%; }
   .hero-actions .btn { width: 100%; }
@@ -2798,6 +3172,85 @@ h3.footer-col-title { margin-top: 0; }
   .gallery-grid { grid-template-columns: 1fr; }
   .filter-tabs { gap: var(--space-xs); }
   .filter-btn { padding: 0.5rem 1rem; font-size: 0.8rem; }
+
+  /* Pricing Cards on small phones */
+  .pricing-card {
+    padding: 2rem 1.25rem !important;
+  }
+  .pricing-card.featured {
+    padding-top: 4.25rem !important;
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+    padding-bottom: 2rem !important;
+  }
+  .pricing-card.featured .pricing-badge {
+    top: 1.15rem !important;
+    right: 1.15rem !important;
+    font-size: 0.72rem !important;
+    padding: 0.28rem 0.8rem !important;
+  }
+  .pricing-price {
+    font-size: 2.75rem !important;
+  }
+
+  /* FAQ on small phones */
+  .faq-question {
+    padding: 1rem 0.9rem !important;
+    font-size: 0.92rem !important;
+  }
+  .faq-answer {
+    padding: 0 0.9rem 1rem !important;
+    font-size: 0.88rem !important;
+  }
+  .faq-icon {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 1rem !important;
+  }
+
+  /* Home 2 Stats & Badges on small phones */
+  .stat-ribbon-item {
+    padding: 1.15rem 0.5rem !important;
+  }
+  .stat-ribbon-num {
+    font-size: 1.75rem !important;
+  }
+  section[aria-labelledby="our-studio-heading"] [style*="grid-template-columns:1fr 1fr"] {
+    gap: 0.75rem !important;
+  }
+  section[aria-labelledby="our-studio-heading"] [style*="grid-template-columns:1fr 1fr"] > div {
+    padding: 1rem 0.5rem !important;
+  }
+  .magazine-side-item {
+    grid-template-columns: 80px 1fr !important;
+  }
+  .magazine-side-body {
+    padding: 0.75rem 0.5rem !important;
+  }
+
+  /* Blog: Our Feed */
+  .insta-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Contact: Form & Card padding */
+  .contact-form-card,
+  section[aria-labelledby="contact-heading"] form {
+    padding: 1.5rem 1rem !important;
+    border-radius: var(--radius-lg) !important;
+  }
+  .contact-info-panel,
+  section[aria-labelledby="contact-heading"] .reveal-left > div {
+    padding: 1.75rem 1rem !important;
+    border-radius: var(--radius-lg) !important;
+  }
+
+  /* Simple Process: floating rating card on small phones */
+  .process-floating-card {
+    bottom: 10px !important;
+    left: 10px !important;
+    padding: 0.65rem 0.95rem !important;
+  }
 }
 
 /* ── ===========================

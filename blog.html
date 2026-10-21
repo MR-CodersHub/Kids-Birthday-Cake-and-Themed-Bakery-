@@ -89,12 +89,19 @@
     /* ── Newsletter form: stacked error, mobile column ── */
     .blog-news-form { display:flex; gap:1rem; max-width:480px; margin:0 auto; align-items:flex-start; text-align:left; }
     .blog-news-form .blog-news-field { flex:1; min-width:0; }
+    @media(max-width:992px) {
+      .insta-grid { grid-template-columns:repeat(3,1fr); }
+    }
     @media(max-width:640px) {
       .articles-grid { grid-template-columns:1fr; }
       .blog-featured-overlay { padding:1.5rem; }
-      .insta-grid { grid-template-columns:repeat(3,1fr); }
-      .blog-news-form { flex-direction:column; }
+      .blog-news-form { flex-direction:column; align-items:stretch; width:100%; gap:0.75rem; }
+      .blog-news-form .blog-news-field { width:100%; }
       .blog-news-form .btn { width:100%; justify-content:center; }
+    }
+    @media(max-width:480px) {
+      .insta-grid { grid-template-columns:repeat(2,1fr); }
+      section[aria-labelledby="gallery-section-heading"] .btn-lg { width:100%; justify-content:center; font-size:0.9rem; padding:0.85rem 1rem; }
     }
   </style>
 </head>
